@@ -1,9 +1,13 @@
- .title {
+.title {
     padding-top: 15px;
     text-align: left;
     display: flex;
     justify-content: left;
     break-inside: always;
+}
+
+span {
+	
 }
 
 form {
@@ -38,6 +42,7 @@ label {
 
 #overall {
 	align-content: center;
+	margin: 0
 }
 
 .indent {
@@ -120,7 +125,3 @@ label {
 
 div {
 }
-
-/*html { 
-	opacity: 20%; 
-}*/
