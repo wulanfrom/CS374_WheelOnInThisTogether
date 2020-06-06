@@ -1,0 +1,35 @@
+.noIndent {
+	margin: 0;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+.outside {
+	display: flex;
+	position: relative;
+	margin: 0;
+}
+
+.outside .topbar {
+	position: fixed;
+	width: 100%;
+	height: 10%;
+	background: #ffffff;
+	margin: 0;
+}
+
+.text {
+	margin-top: 15;
+	margin-left: 10;
+	padding: 10px;
+}
+
+.icon-check:before {
+	content: "\e9bd";
+}
