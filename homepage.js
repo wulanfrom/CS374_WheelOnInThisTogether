@@ -1,21 +1,21 @@
-function bindEvents() {
-	$(".default_primary").onclick {
-		var innerText = $(".default_primary").html();
-		if (innerText == "VIEW MORE POSTS") { 
-			//go to Forum page 
+$( document ).ready(function() {	
+	var defaultPrimary = document.getElementsByClassName('default_primary');
+	var Primary = document.getElementsByClassName('primary');
+	var BlueCards = document.getElementsByClassName('bluecards');
+	function bindEvents() {
+		defaultPrimary[0].onclick = function() { // go to Forum
 			console.log("View More Posts was clicked");
-		} else if (innerText == "VIEW MORE PLACES") {
-			//go to Rates page
+		}
+		defaultPrimary[1].onclick = function() { // go to Rates 
 			console.log("View More Places was clicked");
-		} 
+		}
+		Primary[0].onclick = function() { // go to Routes and set search results accordingly
+			console.log("Proceeding to Routes page");
+		}
+		BlueCards[0].onclick = function() { //go directly to Buff-Eat
+			console.log("Visit Buff-Eat webpage");
+		}
 	}
-	$(".primary").onclick {
-		var fromText = $("#fromPlace").html();
-		var toText = $("#toPlace").html();
-		console.log("Proceeding to Routes page");
-		//go to Routes page
-		//set values of the search bars respectively
-	}
-}
-
-//autocomplete for search bar
+	bindEvents();
+	//autocomplete for search bar
+});
