@@ -6,9 +6,6 @@
     break-inside: always;
 }
 
-span {
-	
-}
 
 form {
     padding-top: 15px;
@@ -35,26 +32,9 @@ h5 {
 	margin-left: 0;
 }
 
-label {
-	margin-left: 0;
-	margin-top: 0;
-}
-
 #overall {
 	align-content: center;
-	margin: 0
-}
-
-.indent {
-	margin-left: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-	margin-right: 0;
-}
-
-.navigationBar {
-  background-color: #333;
-  overflow: hidden;
+	margin-top: 0
 }
 
 .primary {
@@ -111,6 +91,8 @@ label {
 	margin-top: 0;
 	margin-right: 0;
 	padding: 16 32 16 32;	
+	color: #1971C2;
+	font-weight: bold;
 }
 
 .bluecards {
@@ -119,9 +101,4 @@ label {
 	padding: 16 32 10 32;
 	border-radius: 10px;
 	box-shadow: 2px 4px #CED4DA;
-}
-
-
-
-div {
 }
