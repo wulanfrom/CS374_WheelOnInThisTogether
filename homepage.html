@@ -8,20 +8,41 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="styleGuide.css" type="text/css">
         <link rel="stylesheet" href="homepage.css" type="text/css">
+        <link rel="stylesheet" href="topbar.css" type="text/css">
 	    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	</head>  
 	<body>
+		<div class="outside">
+			<div class="topbar">
+				<div class="row" style="margin: 0;">
+					<div class="col-md-1" style="margin-top: 25px;">
+						<span class="icon-star"></span>
+					</div>
+					<div class="col-md-4" style="margin-top: 20px; font-size: 20; color: #1971C2;">
+						<b>WheelOn</b>
+					</div>
+					<div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
+						<span> USERNAME </span>
+					</div>
+				</div>
+			</div>
+		</div>		
 		<div id="overall">
-			<div class="row" style="margin: 0;">
+			<div class="row" style="margin-top: 0;">
         		<div class="col-md-7">
-					<h1>Top Questions</h1><br>
+					<h1><br>Top Questions</h1><br>
 		            <div class="cards">
 			            <div class="paddings">	
 			            	<label class="tag">Advice</label>
 			            	<h3>What's the best way to get easy food around KAIST?</h3>
 			            	<h5>I'm having trouble with finding food around here.</h5>
 			            </div>
-		            	<div class="lowbar"></div>
+		            	<div class="lowbar">
+		            		<span> Username &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 10 Replies &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span> 24 Replies
+		            		<span class="links" style="float: right;"><u> READ MORE </u></span>
+		            	</div>
 		            </div>
 		            <br>
 		            <div class="cards">
@@ -30,7 +51,12 @@
 			            	<h3>Does Alibaba have spaces for people on wheelchairs?</h3>
 			            	<h5>I heard it's a good place, but I ain't sure whether I'd be comfortable there.</h5>
 			            </div>
-		            	<div class="lowbar"></div>
+		            	<div class="lowbar">
+		            		<span> Username &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 10 Replies &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span> 24 Replies
+		            		<span class="links" style="float: right;"><u> READ MORE </u></span>
+		            	</div>
 		            </div>
 		            <br>
 		            <div class="cards">
@@ -39,12 +65,17 @@
 			            	<h3>How did you guys adjust to having to use crutches at first?</h3>
 			            	<h5>I got injured recently and need to use crutches for a while, but up to now everything is so hard :((</h5>
 			            </div>
-		            	<div class="lowbar"></div>
+		            	<div class="lowbar">
+		            		<span> Username &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 10 Replies &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span> 24 Replies
+		            		<span class="links" style="float: right;"><u> READ MORE </u></span>
+		            	</div>
 		            </div>
 		            <br><center><button class="default_primary"> VIEW MORE POSTS </button></center>
 				</div>
 				<div class="col-md">
-					<h1>Recommendations</h1><br>
+					<h1><br>Recommendations</h1><br>
 		            <div class="bluecards">
 		            	<h3> 
 		            		BUFF-EAT
@@ -78,8 +109,8 @@
 		            <br><center><button class="default_primary"> VIEW MORE PLACES </button></center>
 		            <br><h1>Find Your Way!</h1><br>
 		            <div align="right" class="cards2">
-		                <input placeholder="From" class="input_default"><br>
-		                <input placeholder="To" class="input_default"><br>
+		                <input placeholder="From" id="fromPlace" class="input_default"><br>
+		                <input placeholder="To" id ="toPlace" class="input_default"><br>
 		                <button class="primary"> SEARCH ROUTE </button>
 		            </div>
 				</div>
