@@ -253,4 +253,7 @@ h5 {
   }
   .icon-search:before {
 	content: "\e90d";
+  }
+  .icon-menu:before {
+	content: "\e90e";
   }  
