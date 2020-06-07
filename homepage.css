@@ -6,6 +6,10 @@
     break-inside: always;
 }
 
+.row {
+	margin-top: 0;
+}
+
 
 form {
     padding-top: 15px;
@@ -34,11 +38,14 @@ h5 {
 
 #overall {
 	align-content: center;
-	margin-top: 0
+	margin-top: 0;
+	position: relative;
+	/*opacity: 10%;*/
 }
 
 .primary {
 	/*margin: 10px;*/
+	cursor: pointer;
 	border:none;
 	border-radius: 10px;
 	font-size: 16px;
@@ -52,6 +59,7 @@ h5 {
 
 .primary:hover{
 	background-color: #1971C2;
+	cursor: pointer;
 }
 
 .cards{
@@ -95,10 +103,17 @@ h5 {
 	font-weight: bold;
 }
 
+.links {
+	color: #1971C2;
+	float: right; 
+	text-decoration: underline;
+}
+
 .bluecards {
 	background-color: #D0EBFF;
 	margin: 0;
 	padding: 16 32 10 32;
 	border-radius: 10px;
 	box-shadow: 2px 4px #CED4DA;
+	cursor: pointer;
 }
