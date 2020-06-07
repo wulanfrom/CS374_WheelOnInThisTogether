@@ -54,12 +54,23 @@
     padding: 0px 2rem;
 }
 
+#comment-list{
+    margin:0px;
+}
 
 .comment-star {
     margin-left: 0px;
 }
 .container {
     padding-left: 0;
+}
+
+.cross {
+    margin-left: 60%;
+}
+
+.error_alert {
+    padding: 0.5rem 1rem;
 }
 
 .google-map-api {
@@ -108,6 +119,10 @@
 
 .input_default {
     margin-top: 1rem;
+}
+
+.input-error {
+    padding: 0px 2rem 1rem;
 }
 .input-rating {
     padding: 1rem 2rem;
@@ -195,6 +210,10 @@
     font-weight: 900;
 }
 
+.restaurant-name {
+    text-transform: uppercase;
+}
+
 .search-route-btn {
     background-color: #4DABF7;
     height: 15%;
@@ -202,6 +221,17 @@
     text-align: center;
     padding: 5%;
     color: white;
+}
+
+.success_alert {
+    width: 100%;
+    margin: 0px;
+}
+#success-msg {
+    margin: 32px 0px 16px 0px;
+}
+.success-msg {
+    width: 45
 }
 
 .user-circle {

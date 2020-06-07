@@ -217,6 +217,10 @@ h5 {
 	content: "\e901";
 	color: #4dabf7;
   }
+  .icon-star-unselected:before {
+	content: "\e901";
+	color: grey;
+  }
   .icon-comment-alt:before {
 	content: "\e902";
   }
