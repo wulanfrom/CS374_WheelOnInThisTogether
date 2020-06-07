@@ -1,4 +1,4 @@
-* {
+div {
     /*background-color: #eee;*/
     margin: 32px;
     font-family: 'Roboto', sans-serif;
@@ -15,7 +15,7 @@ font-weight: 700; //bold
 	background-color: #F1F3F5;
  }
  
-.default_primary {
+.default_primary{
 	margin: 10px;
 	border:none;
 	border-radius: 10px;
@@ -214,39 +214,43 @@ h5 {
 	-moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-comment-alt:before {
-	content: "\e900";
-  }
-  .icon-alert:before {
+  .icon-star:before {
 	content: "\e901";
+	color: #4dabf7;
   }
-  .icon-cross:before {
+  .icon-comment-alt:before {
 	content: "\e902";
   }
-  .icon-check:before {
+  .icon-alert:before {
 	content: "\e903";
   }
-  .icon-notification:before {
+  .icon-cross:before {
 	content: "\e904";
   }
-  .icon-comment:before {
+  .icon-check:before {
 	content: "\e905";
   }
-  .icon-like:before {
+  .icon-notification:before {
 	content: "\e906";
   }
-  .icon-up-down:before {
+  .icon-comment:before {
 	content: "\e907";
   }
-  .icon-wheelchair:before {
+  .icon-like:before {
 	content: "\e908";
   }
-  .icon-elevator:before {
+  .icon-up-down:before {
 	content: "\e909";
   }
-  .icon-ramp:before {
+  .icon-wheelchair:before {
 	content: "\e90a";
   }
-  .icon-search:before {
+  .icon-elevator:before {
 	content: "\e90b";
   }
+  .icon-ramp:before {
+	content: "\e90c";
+  }
+  .icon-search:before {
+	content: "\e90d";
+  }  
