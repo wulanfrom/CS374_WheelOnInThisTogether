@@ -181,7 +181,8 @@ h5 {
 	border-radius: 10px;
 	width:200px;
 	height:500px;
-	box-shadow: 1px 1px #CED4DA;
+	/*box-shadow: 2px 4px #CED4DA;*/
+	box-shadow: 1px 1px rgba(206, 212, 218, 0.15);
 }
 
 /* 	ICONS 
