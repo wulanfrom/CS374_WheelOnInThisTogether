@@ -6,15 +6,21 @@
         <link rel="stylesheet" href="styleGuide.css" type="text/css">
         <link rel="stylesheet" href="topbar.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+        <script src="./topbar.js" type="text/javascript"></script>       
 	</head>  
 	<body>
-		<div class="outside">
+		<div class="outside_topbar">
 			<div class="topbar">
 				<div class="row" style="margin: 0;">
 					<div class="col-md-1" style="margin-top: 25px;">
-						<span class="icon-star"></span>
+						<span class="icon-star" id='sideBarOpen'></span>
 					</div>
-					<div class="col-md-4" style="margin-top: 20px; font-size: 20; color: #1971C2;">
+					<div class="col-md-4" id="logo" style="margin-top: 20px; font-size: 20; color: #1971C2;">
 						<b>WheelOn</b>
 					</div>
 					<div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
