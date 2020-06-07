@@ -1,11 +1,18 @@
-$( document ).ready(function() {		
+$( document ).ready(function() {
+	var Logo = document.getElementById('logo');
+	var SideBar = document.getElementById('sideBarClose');
+	var Options = document.getElementsByClassName('options');		
+	
 	function bindEvents() {
-		var SideBar = document.getElementById('sideBarClose');
-		var Options = document.getElementsByClassName('options');
-
 		SideBar.onclick = function() { //close sidebar
 			console.log("Closing sidebar");
+			window.open("homepage.html", "_self");
 			// window.open(url);
+		}
+
+		Logo.onclick = function() {
+			console.log("Go to Homepage");
+			window.open("homepage.html", "_self");
 		}
 
 		Options[0].onclick = function() { // go to Forum page
