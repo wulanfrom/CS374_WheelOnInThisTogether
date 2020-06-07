@@ -112,6 +112,11 @@ h5 {
 	text-decoration: underline;
 }
 
+.link:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .bluecards {
 	background-color: #D0EBFF;
 	margin: 0;
