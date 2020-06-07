@@ -2,6 +2,10 @@
 	margin: 0;
 }
 
+.row {
+	margin: 0;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -38,6 +42,9 @@
 #logo {
 	cursor: pointer;
 	background-color: #eee;
+	margin-top: 20px; 
+	font-size: 20; 
+	color: #1971C2;
 }
 
 #sideBarOpen {
