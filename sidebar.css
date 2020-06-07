@@ -2,7 +2,7 @@
 	margin: 0;
 }
 
-div:not(.outside):not(.sidebar) {
+div:not(.outside_sidebar):not(.sidebar) {
 	background-color: #F1F3F5;
 	opacity: 50%;
 }
@@ -15,14 +15,14 @@ div:not(.outside):not(.sidebar) {
 	text-decoration: none;
 }
 
-.outside {
+.outside_sidebar {
 	display: flex;
-	position: relative;
+	position: absolute;
 	margin: 0;
-	z-index: 1;
+	z-index: 100;
 }
 
-.outside .sidebar {
+.outside_sidebar .sidebar {
 	position: fixed;
 	width: 200px;
 	height: 100%;
@@ -35,10 +35,11 @@ div:not(.outside):not(.sidebar) {
 	background: #A5D8FF;
 }
 
-.outside .sidebar ul li {
+.outside_sidebar .sidebar ul li {
 	padding: 15px;
 	font-size: 20;
 	margin-top: 0;
+	cursor: pointer;
 }
 
 span {
@@ -46,7 +47,7 @@ span {
 	/*margin-top: 0;*/
 }
 
-.outside .sidebar ul p {
+.outside_sidebar .sidebar ul p {
 	padding: 15px;
 	font-size: 20;
 	margin-top: 0;
