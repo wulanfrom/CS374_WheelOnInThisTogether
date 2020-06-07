@@ -106,6 +106,9 @@ h5 {
 .links {
 	color: #1971C2;
 	float: right; 
+}
+
+.links:hover {
 	text-decoration: underline;
 }
 
