@@ -74,9 +74,11 @@ function OnInput(){
   			comment_card.setAttribute("class", "card");
   			comment_card.classList.add("user_comment");
   			comment_card.setAttribute("data-key", comment_key);
+  			// comment_card.style.marginLeft="0px";
 
   			//Comment Data
   			var username_info = document.createElement("div");
+  			username_info.setAttribute('class',"username_info");
 
   			var user_circle = document.createElement("span");
   			user_circle.setAttribute("class","user-circle");
@@ -93,6 +95,17 @@ function OnInput(){
 			username_info.append(username);
 			comment_card.append(username_info);
 			comment_card.append(user_write);
+
+			var number_replies = document.getElementsByClassName('number_replies')[0];
+			var total_like = document.getElementById('total_like');
+			if (comment_array.length == 1){
+				number_replies.innerHTML = comment_array.length + " Reply";
+				total_like.innerHTML = comment_array.length + " Reply";
+			}
+			else{
+				number_replies.innerHTML = comment_array.length + " Replies";
+				total_like.innerHTML = comment_array.length + " Replies";
+			}
 
 			// $(.comment_container).append('<div class="container comment_card"> <div class="user_comment card"><div class="username_info row"><span class="user-circle"></span><label class="username">Username</label></div><p class="comment_content">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p></div></div>');
 

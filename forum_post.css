@@ -2,6 +2,9 @@
 	margin:0;
 	padding:0px;
 }
+#main_like{
+ 	float: right;
+}
 .container{
 	margin:0 auto;
 	padding: 0px;
@@ -98,7 +101,7 @@ body{
 }
 
 .content_post{
-	margin: 0px 0px 12px 0px;
+	margin: 12px 0px 12px 0px;
 }
 
 .reply_like{
@@ -171,6 +174,7 @@ body{
 }
 
 .comment_container{
+	margin:0px;
 	height:auto;
 }
 
@@ -179,3 +183,20 @@ body{
 	text-align: center;
 	padding: 50px 0px;
 }
+
+.icon-like{
+  	-webkit-text-fill-color: #74C0FC;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #74C0FC;
+}
+
+.icon-comment{
+	-webkit-text-fill-color: #74C0FC;
+	-webkit-text-stroke-width: 0.75px;
+	-webkit-text-stroke-color: #74C0FC;
+	/*border-width: 1.5px;*/
+}
+/*
+.div{
+	margin:0!important;
+}*/
