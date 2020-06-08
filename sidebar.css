@@ -4,7 +4,7 @@
 
 div:not(.outside_sidebar):not(.sidebar) {
 	background-color: #F1F3F5;
-	opacity: 50%;
+	/*opacity: 50%;*/
 }
 
 *{
