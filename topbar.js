@@ -5,7 +5,7 @@ $( document ).ready(function() {
 	var ULContent = document.getElementsByTagName("UL")[0];
 	var SideBarWidth = document.getElementsByClassName("sidebar")[0];
 
-	var SideBarText = '<li><span class="col-md-2" id="logo"><b> WheelOn </b></span><span class="icon-star" id="sideBarClose" onclick="closeMenu()"></span></li><br><li class="options">Forum</li><li class="options">Routes</li><li class="options">Rate</li><li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>'
+	var SideBarText = '<li><span class="col-md-2" id="logo"><b> WheelOn </b></span><span class="icon-menu" id="sideBarClose" onclick="closeMenu()"></span></li><br><li class="options">Forum</li><li class="options">Routes</li><li class="options">Rate</li><li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>'
 
 	function bindEvents() {
 		Logo.onclick = function() {
