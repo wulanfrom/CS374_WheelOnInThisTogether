@@ -110,7 +110,7 @@
           post_card.classList.add("comment");
           post_card.setAttribute("data-key", post_key);
 
-
+          //upper section of the card
           var upper_part = document.createElement("div");
           upper_part.setAttribute('class', 'comment-info');
           var topic_name = document.createElement('label');
@@ -127,8 +127,60 @@
           upper_part.append(big_title);
           upper_part.append(caption);
 
-          post_section.append(upper_part);
+
+          //lower section
+          var lower_part = document.createElement("div");
+          lower_part.setAttribute('class', 'user-info');
+          lower_part.classList.add("row");
+          var profile_pic = document.createElement("span");
+          profile_pic.setAttribute('class', 'user-circle');
+          var poster_name = document.createElement("span");
+          poster_name.setAttribute('class', 'username');
+          poster_name.innerHTML = post_poster;
+          var separator = document.createElement("div");
+          separator.setAttribute('class', 'vertical-line');
+
+          var comment_icon = document.createElement("span");
+          comment_icon.setAttribute('class', 'icon-comment-alt');
+          comment_icon.classList.add("icon");
+          var comment_number = document.createElement("span");
+          comment_number.setAttribute('class', 'comment-number');
+          if (post_replies == 1){
+            comment_number.innerHTML = post_replies + " Reply";
+          }
+          else{
+            comment_number.innerHTML = post_replies + " Replies";
+          }
+
+          var likes_icon = document.createElement("span");
+          likes_icon.setAttribute('class', 'icon-like');
+          likes_icon.classList.add("icon");
+          var like_number = document.createElement("span");
+          like_number.setAttribute('class', 'like-number');
+          if (post_likes == 1){
+            like_number.innerHTML = post_likes + " Like";
+          }
+          else{
+            like_number.innerHTML = post_likes + " Likes";
+          }
+
+          var read_more = document.createElement("span");
+          read_more.setAttribute('class', 'go_more');
+          read_more.innerHTML = "READ MORE";
+
+          lower_part.append(profile_pic);
+          lower_part.append(poster_name);
+          lower_part.append(separator);
+          lower_part.append(comment_icon);
+          lower_part.append(comment_number);
+          lower_part.append(likes_icon);
+          lower_part.append(like_number);
+          lower_part.append(read_more);
+          
+          post_card.append(upper_part);
+          post_card.append(lower_part);
           post_section.append(post_card);
+          // post_section.append(post_card);
         }
 
 
