@@ -1,23 +1,33 @@
+*{
+	margin:0;
+	padding:0px;
+}
+#main_like{
+ 	float: right;
+}
 .container{
-	margin:0px auto;
+	margin:0 auto;
 	padding: 0px;
+	width:auto;
 	display: block;
+}
+
+div{
+	margin:0;
 }
 
 .row{
 	margin: 0px;
 }
 
-/*.div{
-	content: none;
-}
-*/
 .container{
 	margin: 0;
 }
 
-.all_items{
-	margin: auto;
+#all_items{
+	width: 900px;
+	margin:0 auto;
+	/*margin-left:auto;*/
 }
 
 .card{
@@ -41,13 +51,17 @@ body{
 .tag{
 	width: auto;
 	height: 35px;
+	margin:0;
 }
-
+.comment_content{
+	margin-top:12px;
+}
 .username_info{
 	/*background-color: blue;*/
 	/*height: auto;*/
-	display: inline;
-	content: none;
+	/*display: inline-block;*/
+	margin:0;
+	height:auto;
 	/*margin:0px;*/
 }
 
@@ -59,9 +73,12 @@ body{
 .username{
 	margin: 0px;
 	text-transform: uppercase;
-	display: inline;
+	/*display: inline;*/
+	vertical-align: middle;
     color: #1971C2;
     font-weight: 700;
+    height: auto;
+	margin: 12px 0px 0px 12px;
     /*margin-top: 8px;*/
 }
 
@@ -71,7 +88,12 @@ body{
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+    margin:0;
     /*margin: 16px 7px 16px 32px;*/
+}
+
+#back_home{
+	margin:0;
 }
 
 .like_post{
@@ -79,7 +101,7 @@ body{
 }
 
 .content_post{
-	margin: 0px 0px 12px 0px;
+	margin: 12px 0px 12px 0px;
 }
 
 .reply_like{
@@ -95,6 +117,7 @@ body{
 
 .your_comment{
 	/*margin: 12px 32px 32px 32px;*/
+	margin:0;
 	margin-top: 28px;
 	display: block;
 }
@@ -125,6 +148,7 @@ body{
 }
 
 .number_replies{
+	margin:0;
 	margin-top: 28px;
 	margin-bottom: 20px;
 }
@@ -148,3 +172,31 @@ body{
 	display: block;
 	width: 100%;
 }
+
+.comment_container{
+	margin:0px;
+	height:auto;
+}
+
+.empty_comment{
+	color: #868E96;
+	text-align: center;
+	padding: 50px 0px;
+}
+
+.icon-like{
+  	-webkit-text-fill-color: #74C0FC;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #74C0FC;
+}
+
+.icon-comment{
+	-webkit-text-fill-color: #74C0FC;
+	-webkit-text-stroke-width: 0.75px;
+	-webkit-text-stroke-color: #74C0FC;
+	/*border-width: 1.5px;*/
+}
+/*
+.div{
+	margin:0!important;
+}*/

@@ -29,9 +29,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="all_items">
+	<div id="all_items">
 		<div class="container">
-			<a href="" id="back_home" class="hyperlinks">BACK TO FORUM PAGE</a>
+			<a href="forum_homepage.html" id="back_home" class="hyperlinks">BACK TO FORUM PAGE</a>
 		<div id="post_title">
 			<label class="tag">Advice</label>
 			<h2 class="disc_topic">How do you get meals by yourself around KAIST when you're in a crutch?</h2>
@@ -39,16 +39,16 @@
 		<div class="user_post card">
 			<div class="username_info row">
 				<span class="user-circle"></span>
-				<span class="username"> Username </span>
-				<span class="icon-like icon like_post"></span>
+				<label class="username">Username</label>
+				<!-- <span id="main_like" class="icon-like icon like_post"></span> -->
 			</div>
 			<p class="content_post">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p>
 			
 			<div class="reply_like">
-				<span class="icon-like icon"></span>
-	            <span class="like-number"> 10 Replies </span>
+				<span class="icon-comment icon"></span>
+	            <span id="total_like" class="like-number"> 0 Replies </span>
 	            <span class="icon-like icon"></span>
-	            <span class="like-number"> 24 Likes </span>
+	            <span class="like-number"> 0 Likes </span>
 			</div>
 
 			<div class="your_comment">
@@ -59,16 +59,17 @@
 		</div>
 			
 
-		<h4 class="number_replies">10 Replies</h4>
-		<div class="container">
+		<h4 class="number_replies">0 Replies</h4>
+		<div class="comment_container">
 			<!-- <h4 class="number_replies">10 Replies</h4> -->
 			<div class="container comment_card"> 
-				<div class="user_comment card">
+				<h3 class="empty_comment">Be the First to Comment!</h3>
+				<!-- div class="user_comment card">
 				<div class="username_info row">
 					<span class="user-circle"></span>
-					<span class="username">Username</span>
+					<label class="username">Username</label>
 				</div>
-				<p>I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p>
+				<p class="comment_content">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p>
 				</div>
 			</div>
 
@@ -76,11 +77,11 @@
 				<div class="user_comment card ">
 				<div class="username_info">
 					<span class="user-circle"></span>
-					<span class="username">Username</span>
+					<label class="username">Username</label>
 				</div>
-				<p> I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible? </p>
+				<p class="comment_content"> I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible? </p>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
