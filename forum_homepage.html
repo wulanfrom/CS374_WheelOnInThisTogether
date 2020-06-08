@@ -41,7 +41,9 @@
 
 				<div id="create_post" class = "card">
 					<div class="form-group">
+						<label for="topic_input" class="input_label" style="color:#1971C2">Post Title</label>
 						<input id="topic_input" class="input_default" type="message" placeholder="Write your question title here...">
+						<label for="user_input" class="input_label" style="color:#1971C2">Post Content</label>
 						<textarea  id="user_input" placeholder="What's on your mind?"></textarea>
 					</div>
 				
@@ -52,57 +54,57 @@
 						</div>
 
 						<div class="form-group" id="drop_category">
-							<select name="topic">
-								<option value="all">All</option>
-								<option value="advice">Advice</option>
-								<option value="health">Health</option>
-								<option value="lifestyle">Lifestyle</option>
-								<option value="other">Other</option>
+							<select name="topic" id="select_category">
+								<option value="1">All</option>
+								<option value="2">Advice</option>
+								<option value="3">Health</option>
+								<option value="4">Exercise</option>
+								<option value="5">Other</option>
 							</select>
 						</div>
 
-						<div class="form-group" id="create_button">
+						<!-- <div class="form-group" id="create_button"> -->
 							<button id="post_button" class="default_primary">Post</button>
-						</div>
+						<!-- </div> -->
 					</form>
 				</div>
-
-				<div class="card comment">
-					<div class="comment-info">
-						<label class="tag">Advice</label>
-						<h2 class="disc_topic">How do you eat without friends?</h2>
-						<p class="disc_content">I’m having trouble with finding food around here.</p>
+				
+				<div id="post_container">
+					<div class="card comment">
+						<div class="comment-info">
+							<label class="tag">Advice</label>
+							<h2 class="disc_topic">How do you eat without friends?</h2>
+							<p class="disc_content">I’m having trouble with finding food around here.</p>
+						</div>
+						<div class="user-info row">
+	                    	<span class="user-circle"></span>
+	                    	<span class="username"> Username </span>
+	                        <div class="vertical-line"></div>
+	                        <span class="icon-comment-alt icon"></span>
+	                        <span class="comment-number"> 10 Replies </span>
+	                        <span class="icon-like icon"></span>
+	                        <span class="like-number"> 24 Likes </span>
+	                        <span class="go_more"><a href="">READ MORE</a></span>
+						</div>
 					</div>
 
-					<div class="user-info row">
-                    	<span class="user-circle"></span>
-                    	<span class="username"> Username </span>
-                        <div class="vertical-line"></div>
-                        <span class="icon-comment-alt icon"></span>
-                        <span class="comment-number"> 10 Replies </span>
-                        <span class="icon-like icon"></span>
-                        <span class="like-number"> 24 Likes </span>
-                        <span class="go_more"><a href="">READ MORE</a></span>
-					</div>
-				</div>
+					<div class="card comment">
+						<div class="comment-info">
+							<label class="tag">Exercise</label>
+							<h2 class="disc_topic">Are there any clubs for people with moving disabilities?</h2>
+							<p class="disc_content">I’m getting tired of saying inside, I want to socialize.</p>
+						</div>
 
-
-				<div class="card comment">
-					<div class="comment-info">
-						<label class="tag">Exercise</label>
-						<h2 class="disc_topic">Are there any clubs for people with moving disabilities?</h2>
-						<p class="disc_content">I’m getting tired of saying inside, I want to socialize.</p>
-					</div>
-
-					<div class="user-info row">
-                    	<span class="user-circle"></span>
-                    	<span class="username"> Username </span>
-                        <div class="vertical-line"></div>
-                        <span class="icon-comment-alt icon"></span>
-                        <span class="comment-number"> 10 Replies </span>
-                        <span class="icon-like icon"></span>
-                        <span class="like-number"> 24 Likes </span>
-                        <span class="go_more"><a href="">READ MORE</a></span>
+						<div class="user-info row">
+	                    	<span class="user-circle"></span>
+	                    	<span class="username"> Username </span>
+	                        <div class="vertical-line"></div>
+	                        <span class="icon-comment-alt icon"></span>
+	                        <span class="comment-number"> 10 Replies </span>
+	                        <span class="icon-like icon"></span>
+	                        <span class="like-number"> 24 Likes </span>
+	                        <span class="go_more"><a href="">READ MORE</a></span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -125,6 +127,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="Forum_homepage.js"></script>
+	<script src="forum_homepage.js"></script>
 </body>
 </html>
