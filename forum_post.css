@@ -56,7 +56,7 @@ body{
 .username_info{
 	/*background-color: blue;*/
 	/*height: auto;*/
-	display: inline-block;
+	/*display: inline-block;*/
 	margin:0;
 	height:auto;
 	/*margin:0px;*/
@@ -70,9 +70,12 @@ body{
 .username{
 	margin: 0px;
 	text-transform: uppercase;
-	display: inline;
+	/*display: inline;*/
+	vertical-align: middle;
     color: #1971C2;
     font-weight: 700;
+    height: auto;
+	margin: 12px 0px 0px 12px;
     /*margin-top: 8px;*/
 }
 

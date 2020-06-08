@@ -1,20 +1,15 @@
-/**{
-	margin:0px;
-	padding: 0px;
-}
-*/
 
-/*#right_side{
-	background-color: blue;
-	float:right;
-}
-*/
+
 .container{
 	margin:0 !important;
 }
 .row {
 	margin: 0px!important;
 	padding: 0px;
+}
+
+.div{
+	margin:0;
 }
 
 .card{
@@ -25,9 +20,7 @@
 }
 
 #create_post{
-	/*padding: 32px;*/
-	width: 100%;
-	/*display: inline-block;*/
+	width: auto;
 	height:auto;
 	/*margin-bottom: 12px;*/
 	position: relative;
@@ -35,8 +28,9 @@
 
 #under_input{
 	/*vertical-align: baseline;*/
+	vertical-align: center;
 	margin:0px;
-	align-content: center;
+	/*align-content: center;*/
 	display: inline;
 }
 
@@ -53,7 +47,7 @@
 
 #create_button{
 	/*align-items:center;*/
-	display: initial;
+	display: inline-block;
 	margin-left: 0px;
 	float:right;
 	/*background-color: green;*/
