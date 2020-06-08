@@ -1,5 +1,6 @@
-
-
+.all_items{
+	padding:32px;
+}
 .container{
 	margin:0 !important;
 }
@@ -22,6 +23,7 @@
 #create_post{
 	width: auto;
 	height:auto;
+	padding: 32px 32px 12px 32px;
 	/*margin-bottom: 12px;*/
 	position: relative;
 }
@@ -43,6 +45,13 @@
 	margin-left: 18px;
 	display: inline;
 	/*background-color:red;*/
+}
+
+#right_side{
+	height: auto;
+	position:-webkit-sticky; 
+	position:sticky; 
+	top:0;
 }
 
 #create_button{
@@ -148,7 +157,8 @@
 	/*justify-content: right;*/
 	align-items: right;
 	/*padding-left: 40%;*/
-	/*width: 50%;*/
+	width: 60%;
+	padding-left: 50%;
 }
 
 .user-circle {
@@ -245,6 +255,7 @@ ul.list-unstyled {
 }
 
 #forum_title{
+	margin:0;
 	margin-bottom: 24px;
 }
 
@@ -275,4 +286,8 @@ ul.list-unstyled {
 	text-transform: uppercase;
 	text-decoration: underline;
 	font-weight: 700px;
+}
+
+*{
+	margin:0;
 }
