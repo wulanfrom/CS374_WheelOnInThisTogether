@@ -1,10 +1,7 @@
-.noIndent {
-	margin: 0;
-}
-
-.row {
-	margin: 0;
-}
+/*div:not(.sidebar) {
+	background-color: #F1F3F5;
+	opacity: 50%;
+}*/
 
 *{
 	margin: 0;
@@ -12,6 +9,50 @@
 	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
+}
+
+.sidebar{
+	display: flex;
+	position: fixed;
+	margin: 0;
+	z-index: 2;
+	width: 0;
+	height: 100%;
+	background: #ffffff;
+}
+
+.options:hover {
+	background: #A5D8FF;
+}
+
+.sidebar ul {
+	width: 100%;
+	margin-left: 20; 
+	margin-right: 20;
+}
+
+.sidebar ul li {
+	padding: 15px;
+	font-size: 20;
+	cursor: pointer;
+}
+
+#sideBarClose {
+	font-size: 20;
+	float: right;
+}
+
+.sidebar ul .copyright {
+	padding: 15px;
+	font-size: 16;
+	margin-top: 0;
+	position: absolute;
+	bottom: 0;
+	color: #6b6b6b;
+}
+
+.row {
+	margin: 0;
 }
 
 .outside_topbar {
@@ -29,24 +70,16 @@
 	margin: 0;
 }
 
-.text {
-	margin-top: 15;
-	margin-left: 10;
-	padding: 10px;
-}
-
-.icon-check:before {
-	content: "\e9bd";
-}
-
 #logo {
 	cursor: pointer;
 	background-color: #eee;
+	margin-left: 0;
 	margin-top: 20px; 
-	font-size: 20; 
+	font-size: 28; 
 	color: #1971C2;
 }
 
 #sideBarOpen {
+	font-size: 20;
 	cursor: pointer;
 }
