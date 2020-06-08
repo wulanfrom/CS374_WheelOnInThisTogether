@@ -36,6 +36,14 @@ h5 {
 	margin-left: 0;
 }
 
+.user-circle {
+	height: 30px;
+	width: 30px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+}
+
 #overall {
 	align-content: center;
 	margin-top: 0;
