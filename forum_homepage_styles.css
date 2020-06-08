@@ -49,9 +49,12 @@
 
 #right_side{
 	height: auto;
+}
+
+.sticky_item{
 	position:-webkit-sticky; 
 	position:sticky; 
-	top:0;
+	top:32px;
 }
 
 #create_button{
