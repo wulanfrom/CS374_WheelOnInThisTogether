@@ -53,7 +53,6 @@ a{
 #gmaps{
   border-radius: 10px;
   margin-top: 0;
-  margin-left: 32px;
   box-shadow: 2px 4px #CED4DA;
   border-width: 2px;
   border-color: #CED4DA;
@@ -79,8 +78,8 @@ h4{
 
 #heart-this{
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 0;
+  right: 0;
   font-size: 32px;
   color: #4DABF7;
 }
@@ -271,7 +270,6 @@ p{
 .route-form{
   width: 36%;
   height: auto;
-  padding: 32px;
 }
 
 .route-list{
