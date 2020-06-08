@@ -9,6 +9,10 @@
 	display: block;
 }
 
+div{
+	margin:0;
+}
+
 .row{
 	margin: 0px;
 }
