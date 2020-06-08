@@ -223,6 +223,25 @@
     color: white;
 }
 
+.spinner {
+    position: fixed;
+    z-index: 99999999999;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: rgba(128, 128, 128, 0.404);
+}
+
+.spinner-border {
+    position: relative;
+    left: 45%;
+    top: 35%;
+    margin: 0px;
+    color: #1971C2;
+    opacity: 100%;
+}
+
+
 .success_alert {
     width: 100%;
     margin: 0px;

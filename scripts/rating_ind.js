@@ -55,6 +55,7 @@ $(document).ready(function() {
         console.log(result.key)
         rest_key = result.key
         display_rating_page(result.val())
+        $(".spinner").hide()
     })
 
     //Helper function
