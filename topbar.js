@@ -3,6 +3,14 @@ $( document ).ready(function() {
 	var SideBar = document.getElementById('sideBarOpen');
 	var wholePage = document.getElementsByClassName('outside_topbar');
 
+	function openSideBar() {
+
+	}
+
+	function closeSideBar() {
+		
+	}
+
 	function bindEvents() {
 		Logo.onclick = function() {
 			console.log("Return to Homepage");
