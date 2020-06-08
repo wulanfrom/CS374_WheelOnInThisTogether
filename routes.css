@@ -1,0 +1,344 @@
+a{
+  margin-left: 0;
+}
+
+.addList{
+  position: absolute;
+  top: 59px;
+  left: 70%;
+}
+
+#addRouteButton{
+  padding: 12px 42px 12px 42px;
+  font-size: 14px;
+  margin: 0;
+  display: inline-block;
+}
+
+#arrow-logo{
+  position: absolute;
+  top: 134px;
+  left: 88%;
+  margin: 0;
+}
+
+.chevron-icon{
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: 88%;
+  top: 414px;
+  margin: 0;
+  fill: #4DABF7;
+}
+
+.container{
+  margin: 0;
+}
+
+.description-list{
+  font-size: 16px;
+}
+
+.from-place{
+  margin: 0 0 28px 0;
+  width: auto;
+}
+
+#fromPlace, #toPlace{
+  font-size: 16px;
+}
+
+#gmaps{
+  border-radius: 10px;
+  margin-top: 0;
+  box-shadow: 2px 4px #CED4DA;
+  border-width: 2px;
+  border-color: #CED4DA;
+}
+
+h2{
+  margin-left: 0;
+}
+
+h3{
+  margin-left: 0;
+}
+
+h4{
+  margin-left: 0;
+}
+
+#heart-number{
+  margin: 0 8px 0 0;
+  color: #4DABF7;
+  font-size: 20px;
+}
+
+#heart-this{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 32px;
+  color: #4DABF7;
+}
+
+html{
+  margin: 0;
+}
+
+.icon-ramp{
+  font-size: 30px;
+}
+
+#icon-ramp{
+  position: absolute;
+  top: 32px;
+  left: 66px;
+  margin: 0;
+}
+
+.icon-elevator{
+  font-size: 24px;
+}
+
+#icon-elevator{
+  position: absolute;
+  top: 32px;
+  left: 66px;
+  margin: 0;
+  margin-left: 12%;
+}
+
+.icon-wheelchair{
+  font-size: 30px;
+}
+
+#icon-wheelchair{
+  position: absolute;
+  top: 32px;
+  left: 66px;
+  margin: 0;
+  margin-left: 22%;
+}
+
+.individual-created-by{
+  position: relative;
+}
+
+.individual-likes{
+  margin-top: 8px;
+  position: relative;
+}
+
+.individual-description, .individual-landmarks, .individual-pictures{
+  margin-top: 0;
+}
+
+label{
+  margin: 0;
+  font-weight: bold;
+}
+
+li{
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.my-list-item{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#my-list-last{
+  margin: 0;
+}
+
+.number-of-likes{
+  margin: 0;
+  color: #4DABF7;
+  position: absolute;
+  top: 2px;
+}
+
+ol{
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+p{
+  margin:0;
+}
+
+.place-picture{
+  width: 148px;
+  height: 156px;
+  margin: 12px 0 0 0;
+}
+
+#place-picture-1{
+  background-color: #6B6B6B;
+  display: inline-block;
+}
+
+#place-picture-2{
+  background-color: #D8D8D8;
+  display: inline-block;
+}
+
+.route-buttons{
+  width: auto;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.route-card{
+  width: 24.167%;
+  height: 450px;
+  z-index: -1;
+  position: absolute;
+  overflow: hidden;
+}
+
+#route-card-1{
+  left: 38%;
+  top: 0;
+}
+
+#route-card-2{
+  left: 66%;
+  top: 0;
+}
+
+#route-card-3{
+  left: 38%;
+  top: 494px;
+}
+
+#route-card-4{
+  left: 66%;
+  top: 494px;
+}
+
+.route-card-blue{
+  width: 100%;
+  height: 48px;
+  border-radius: 0 0 10px 10px;
+  background-color: #D0EBFF;
+  position: absolute;
+  margin: 0;
+  top: 402px;
+  left: 0;
+}
+
+.route-card-contents{
+  position: absolute;
+  width: 70.115%;
+  height: 95px;
+  margin: 0 0 0 40px;
+  top: 260px;
+  overflow: hidden;
+}
+
+.route-card-icons{
+  position: absolute;
+  width: 100%;
+  top: 330px;
+  margin: 0;
+}
+
+.route-card-image{
+  width: 100%;
+  height:200px;
+  border-radius: 10px 10px 0 0;
+  background-color: #D8D8D8;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+.route-card-individual{
+  width: 72%;
+  height: auto;
+}
+
+.route-form{
+  width: 36%;
+  height: auto;
+}
+
+.route-list{
+  position: absolute;
+  width: 24.44%;
+  height: auto;
+  top: 99px;
+  left: 70%;
+}
+
+.route-list-lists{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.route-my-List{
+  position: absolute;
+  top: 32px;
+}
+
+#searchRouteButton{
+  padding: 12px 32px 12px 32px;
+  font-size: 14px;
+  margin: 0;
+  display: inline-block;
+}
+
+.to-place{
+  margin: 0 0 32px 0;
+  width: auto;
+}
+
+.username{
+  display: inline-block;
+  margin: 0 0 0 10px;
+  color: #6B6B6B;
+  position: absolute;
+  top: 5px;
+}
+
+#username-index{
+  margin-left: 44px;
+}
+
+#username-individual{
+  left: 16%;
+}
+
+.username-circle{
+  background-color: #6B6B6B;
+  width: 32px;
+  height: 32px;
+  border-radius: 25px;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  left: 12%;
+}
+
+.username-created{
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.username-group{
+  position: absolute;
+  top: 220px;
+  margin: 0 0 0 20px;
+}
