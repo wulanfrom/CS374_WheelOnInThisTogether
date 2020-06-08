@@ -85,7 +85,7 @@ function OnInput(){
 
   			var username = document.createElement("span");
   			username.setAttribute("class","username");
-  			username.innerHTML = "Wheelie";
+  			username.innerHTML = "Wheelie" + " (you)";
 
   			var user_write = document.createElement("p");
   			user_write.innerHTML = comment_content;
