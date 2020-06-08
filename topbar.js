@@ -24,7 +24,7 @@ $( document ).ready(function() {
 
 		$(document).on('click', '.options', function() {
 			if (this.innerHTML == "Forum") {window.open("forum_homepage.html", "_self");}
-			else if (this.innerHTML == "Routes") { window.open("routes-index.html") }
+			else if (this.innerHTML == "Routes") { window.open("routes-index.html", , "_self") }
 			else if (this.innerHTML == "Rate") {window.open("rates.html", "_self");}
 		});
 	}
