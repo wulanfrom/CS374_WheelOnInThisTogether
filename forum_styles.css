@@ -1,0 +1,12 @@
+#outer_left{
+	margin: 32px;
+	width: 70%;
+}
+#create_post{
+	padding: 32px;
+}
+
+#user_input{
+	padding: 16px 24px 16px 24px;
+	border-radius: 10px;
+}

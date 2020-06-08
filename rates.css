@@ -24,3 +24,20 @@ h1 {
 .no-result {
     text-align: center;
 }
+
+.card {
+    height:300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+
+.card-image {
+    background-color: #868E96;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    width: auto;
+    height: 50%;
+    margin: 0;
+}
+
