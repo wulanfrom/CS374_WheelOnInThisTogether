@@ -1,6 +1,7 @@
 // Makes sure the codes run when we open the page
+$(document).ready(function(){
   // Make textarea height automatically grow with content
-  console.log("js works!");
+  // console.log("js works!");
   const tx = document.getElementsByTagName('textarea');
   for (let i=0; i<tx.length; i++){
   	tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px; overflow-y:hidden;');
@@ -11,7 +12,7 @@
   	this.style.height = 'auto';
   	this.style.height = (this.scrollHeight) + 'px';
   }
-  console.log("still js works!");
+  // console.log("still js works!");
 
   // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -29,7 +30,7 @@
     firebase.initializeApp(firebaseConfig);
     // firebase.analytics();
     // 
-    console.log("still js works 2!");
+    // console.log("still js works 2!");
 
    // $('.go_more').on('click', function(){
    // 	go_to_post();
@@ -45,7 +46,7 @@
       get_post();
       add_new_post();
    });
-    console.log("still js works 3!");
+    // console.log("still js works 3!");
 
    function get_post(){
     console.log('getting post');
@@ -185,8 +186,9 @@
 
 
       });
-   };
-
+   }
+   add_new_post();
+})
 
 
 

@@ -322,6 +322,12 @@ select{
 	border-radius: 8px;
 	border-color: #CED4DA;
 }
+
+#empty_posts{
+	margin-top:32px;
+	text-align: center;
+	color: #868E96;
+}
 /*
 li:first-child{
 	background-color:yellow;
