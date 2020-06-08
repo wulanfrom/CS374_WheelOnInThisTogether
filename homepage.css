@@ -125,3 +125,7 @@ h5 {
 	box-shadow: 2px 4px #CED4DA;
 	cursor: pointer;
 }
+
+.tag {
+	cursor: pointer;
+}
