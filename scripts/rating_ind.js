@@ -124,6 +124,7 @@ async function get_restaurant_db(rest_name) {
                 result = res
             });
         })
+        await display_image(rest_name)
     }
     finally {
         return result
@@ -134,6 +135,20 @@ async function insert_new_comment(rest_key, new_comment) {
     try {
         const ref = firebase.database().ref("restaurant/"+rest_key).child("user_ratings")
         await ref.push(new_comment)
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+async function display_image(rest_name) {
+    try {
+        var img_ref = firebase.storage().ref('restaurants/'+rest_name+'/'+rest_name+'.jpg')
+        img_ref.getDownloadURL().then(function(url) {
+            //Display the image
+            var image_html = "<img class='rest-image' src='"+url+"'>"
+            $(".image").html(image_html)
+        })
     }
     catch(error) {
         console.log(error)
