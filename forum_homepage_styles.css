@@ -1,0 +1,265 @@
+/**{
+	margin:0px;
+	padding: 0px;
+}
+*/
+
+/*#right_side{
+	background-color: blue;
+	float:right;
+}
+*/
+.container{
+	margin:0 !important;
+}
+.row {
+	margin: 0px!important;
+	padding: 0px;
+}
+
+.card{
+	height: auto !important; 
+	width: 100% !important;
+	margin: 0px;
+	padding: 0px;
+}
+
+#create_post{
+	padding: 32px;
+	width: 100%;
+	/*display: inline-block;*/
+	height:auto;
+	/*margin-bottom: 12px;*/
+	position: relative;
+}
+
+#under_input{
+	/*vertical-align: baseline;*/
+	align-content: center;
+	display: inline;
+}
+
+#post_topic{
+	display: inline;
+	/*background-color: yellow;*/
+}
+
+#drop_category{
+	margin-left: 18px;
+	display: inline;
+	/*background-color:red;*/
+}
+
+#create_button{
+	/*align-items:center;*/
+	display: initial;
+	margin-left: 0px;
+	float:right;
+	/*background-color: green;*/
+}
+
+#user_input{
+	padding: 16px 24px 16px 24px;
+	border-radius: 10px;
+	font-size: 16px;
+	width:100%;
+	resize: none;
+}
+
+.topic_names{
+	display: inline-block;
+	color: #6B6B6B;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0px;
+	/*display: inline-block;*/
+}
+
+.container{
+	margin-top: 32px;
+}
+
+#categories{
+	height:50%;
+	padding: 32px;
+	height: auto;
+	position: absolute;
+}
+
+#categories ul li{
+ 	margin: 0px 0px 24px;
+}
+
+#categories ul li:last-child {
+ 	margin: 0;
+}
+
+.default_primary{
+	float:right;
+	margin: 0 !important;
+}
+
+.post_card{
+	margin: 20px 0px 20px;
+	/*padding: 32px;*/
+	width: 100%;
+}
+
+/*Important to note you need to envelop the label inside the div*/
+.field_set{
+	min-width: 20px;
+	display: inline-block;
+}
+
+.disc_topic{
+	display: block;
+	margin: 4px 0px 12px 0px;
+}
+
+.comment {
+	margin-top: 20px;
+	height: auto;
+	/*width: 100%;*/
+}
+.comment-info {
+	height: auto;
+	padding: 32px 32px 20px 32px;
+}
+
+.user-info{
+	height: auto;
+	width: 100%;
+    margin: 0px;
+    background-color: #D0EBFF;
+}
+
+.container {
+    padding-left: 0;
+}
+
+.go_more {
+	font-size: 16px;
+	font-weight: 700;
+	text-decoration: underline;
+	color: #1971C2;
+	margin: 22px 32px 16px;	
+	/*float: right;*/
+	display: flex;
+	/*justify-content: right;*/
+	align-items: right;
+	padding-left: 40%;
+	width: 50%;
+}
+
+.user-circle {
+	height: 32px;
+    width: 32px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 16px 7px 16px 32px;
+}
+
+.username{
+	text-transform: uppercase;
+	display: inline-block;
+    margin-top: 23px;
+    /*margin-right: 16px;*/
+    color: #1971C2;
+    font-weight: 700;
+}
+
+.vertical-line{
+	/*display:inline-block;*/
+	border-left: 1px solid #979797;
+    height: auto;
+    /*width: 10;*/
+    opacity: 60%;
+    margin: 17px 16px 17px 16px;
+    z-index: 10;
+    /*margin: 0px 16px;*/
+}
+
+.icon{
+	/*margin: 23px 16px 0px 16px;*/
+	margin-top: 25px;
+    color: #1971C2;
+    font-weight: 900;
+}
+
+.icon-comment-alt::before{
+	width: 20px !important;
+	height: 20px !important;
+	-webkit-text-stroke: 0.75px #1971C2;
+	/*margin: 0px !important;*/
+}
+
+.icon-like{
+	width: 20px;
+	height: 20px;
+	-webkit-text-stroke: 1px #1971C2;
+}
+
+.like-number {
+    color: #1971C2;
+    font-weight: 700;
+    margin: 23px 9px 0px 9px;
+}
+
+.comment-number{
+	color: #1971C2;
+    font-weight: 700;
+    margin: 23px 9px 0px 9px;
+}
+
+ul.list-unstyled {
+	margin:0;
+	padding: 32px;
+	width: 245px;
+}
+
+.user{
+	height: 32px;
+	width: 32px;
+}
+
+.disc_content{
+	/*margin-bottom: 24px;*/
+	margin: 0px;
+}
+
+#tag_name{
+	margin-bottom: 12px;
+}
+
+#forum_title{
+	margin-bottom: 24px;
+}
+
+.tag{
+	display: inline-block;
+	height: 35px;
+}
+
+.hyperlinks{
+	font-size: 16px;
+	color: #868E96;
+	text-transform: uppercase;
+	font-weight: 500px;
+}
+
+.hyperlinks:hover{
+	font-size: 16px;
+	color: #1971C2;
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-weight: 700px;
+}
+
+.hyperlinks:active{
+	font-size: 16px;
+	color: #1971C2;
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-weight: 700px;
+}
