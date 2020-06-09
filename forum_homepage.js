@@ -73,7 +73,7 @@ $(document).ready(function(){
       };
 
       var updates = {};
-      updates["/post_comment/" + key] = post;
+      updates["post_comment/" + key] = post;
       firebase.database().ref().update(updates);
     }
   };
