@@ -77,10 +77,11 @@ $( document ).ready(function() {
                 + "<img src='icon-chevron.svg' class='chevron-icon' alt='more_information' style='border:none;'></a></div>";
 
     $('#routes-index-main').append(card);
-    console.log("card loaded");
   }
 
   function searchRoute(){
+    $('.route-card').remove();
+
     var from_value = document.getElementById("fromPlace").value;
     var to_value = document.getElementById("toPlace").value;
     var dataList = [];
@@ -115,16 +116,21 @@ $( document ).ready(function() {
         }
       });
 
-    var x = 0; var y = -468;
-    for (var i=0; i<(dataList.length); i++){
-      loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8]);
-      if (i%2 == 0){
-        x = 38;
-        y = y + 524;
-      } else {
-        x = 66;
+    if (dataList.length != 0){
+      $("#no_result").hide();
+      var x = 0; var y = -468;
+      for (var i=0; i<(dataList.length); i++){
+        loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8]);
+        if (i%2 == 0){
+          x = 38;
+          y = y + 524;
+        } else {
+          x = 66;
+        }
+        document.getElementById(dataList[i][0]).style.cssText = "left:" + x + "%; top:" + y + "px;";
       }
-      document.getElementById(dataList[i][0]).style.cssText = "left:" + x + "%; top:" + y + "px;";
+    } else{
+      $("#no_result").show();
     }
     })
   }
@@ -143,9 +149,11 @@ $( document ).ready(function() {
     searchRoute();
   })
 
-  $("#routes-index-main").on("click", ".chevron-icon", function(){
-    console.log("arrow clicked!");
-    movePage($(this));
+  $( document ).ready(function() {
+    $( document ).on("click", ".chevron-icon", function(){
+      console.log("arrow clicked!");
+      movePage($(this));
+    })
   })
 
 })
