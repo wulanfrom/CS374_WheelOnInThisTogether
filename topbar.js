@@ -17,18 +17,12 @@ $( document ).ready(function() {
 			$("div").not(".sidebar").css("opacity", "0.5");
 		}
 
-		$(document).on('click', '#sideBarClose', function() { // Close the Sidebar
-			SideBarWidth.style.width = '0';
-			ULContent.innerHTML = "";
-			$("div").not(".sidebar").css("opacity", "1"); // opacity code
-		})
-
 		$(document).on('click', function(event){
 			if (!$(event.target).is($("ul")) && !$(event.target).is($("#sideBarOpen"))) {
 				if ($('#sideBarClose').length != 0) {
 					SideBarWidth.style.width = 0;
 					ULContent.innerHTML = "";
-					console.log("hey")
+					$("div").not(".sidebar").css("opacity", "1"); // opacity code
 				}
 			}
 		})
