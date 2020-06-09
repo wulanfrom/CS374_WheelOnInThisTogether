@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  //We're going to be redirected from the homepage, so we need to prepare the data already available in Firebase
+  var curr_url = new URLSearchParams(window.location.search);
+  var post_key = curr_url.get('data-key');
+  // console.log(post_key);
+  
 	// Make textarea height automatically grow with content
 const tx = document.getElementsByTagName('textarea');
 for (let i=0; i<tx.length; i++){
@@ -47,6 +52,68 @@ function OnInput(){
   		firebase.database().ref().update(updates);
   	}
   }
+
+  var values = [];
+  var title = 
+  //Read the Data from Firebase
+  firebase.database().ref('post_comment').once('value',function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+        var childKey = childSnapshot.key;
+        if (childKey.localeCompare(post_key) == 0){
+          console.log('this is the item');
+          var childValue = childSnapshot.val(); 
+          console.log(childValue);
+          $('.tag').html(childValue.category);
+          $('.content_post').html(childValue.content);
+          $('.username').html(childValue.poster);
+          $('.disc_topic').html(childValue.title);
+          if (childValue.title.total_replies == 1){
+            $('#total_likes').html(childValue.total_replies + " Reply");
+            $('.number_replies').html(childValue.total_replies + " Reply");
+          } else{
+            $('#total_likes').html(childValue.total_replies + " Replies");
+            $('.number_replies').html(childValue.total_replies + " Reply");
+          }
+          if (childValue.title.total_likes == 1){
+            $('#total_replies').html(childValue.total_likes + " Like");
+          } else{
+            $('#total_replies').html(childValue.total_likes + " Likes");
+          }
+          // values.push(Object.values(childValue));
+        }
+    })
+
+    // // console.log(values);
+    // for (var i=0;i<values.length;i++){
+    //   console.log(values[i]);
+    //   if (i==0){
+    //     $('.tag').html(values[i]);
+    //   }
+    //   else if(i==1){
+    //     $('.content_post').html(values[i]);
+    //   }
+    //   // else if(i==2){
+    //   //   $('.content_post').html(values[i]);
+    //   // }
+    //   else if(i==3){
+    //     $('.username').html(values[i]);
+    //   }
+    //   else if(i==4){
+    //     $('#disc_topic').html(values[i]);
+    //   }
+    //   else if(i==5){
+    //     $('#total_like').html(values[i] + "Replies");
+    //   }
+    //   else{
+    //     $('.like_number').html(values[i] + "Likes");
+    //   }
+    // }
+    // //Change the values
+    // // console.log(values[2]);
+    // $('.tag').html(values[0]);
+    // $('#disc_topic').html(values[4]);
+    // $('.content_post').html(values[1]);
+
 
   function create_comment(){
   	var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
@@ -115,24 +182,5 @@ function OnInput(){
   	});
   }
   create_comment();
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
+});
