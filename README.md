@@ -10,3 +10,19 @@ To use it, use
 ```
 To change the styling of the icon for individual page, add new styling in the page's CSS.
 **DO NOT** modify the styling in styleguide.css, unless it is already agreed upon (e.g must fit 24 x 24 box)
+
+### Homepage
+The homepage shows the three core functionalities of our application: routes, forum, and rating. By clicking on the "View More" button, you will be redirected to the page you want to see.
+
+### Routes
+You can find the most optimal route to go to a certain place according to other users here. Type in the place you want to go from in the "from" input box, and then type in the place you want to go to in the "to" input box. After that, click on the search button. If the places you want to go to and from have been added by other users, route cards will show. The maps at the bottom of the route search form will also show the place you want to go to. Otherwise, the page will show "No entry to show".
+
+If you click on the blue arrow button at the bottom of each card, a new window containing the full route information, which includes the complete route description, landmarks, and pictures, will open. You can click on the "Back to Route Search Page" to go back to the routes search page.
+
+Route information is stored in Firebase Realtime Database, and pictures are stored in Firebase Storage. Links to each image a user includes in their route card are stored under each route entry's data in the realtime database. When you search for a certain route, the web application will look for matching routes in the database.
+
+In this prototype, we prepared route cards for going from "한국과학기술원 진리관" to "Starbucks Eoeun-dong, Yuseong-gu, Daejeon".
+
+### Forum
+
+### Rating

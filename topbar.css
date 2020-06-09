@@ -72,6 +72,13 @@
 #sideBarClose {
 	font-size: 20;
 	float: right;
+#logo {
+	cursor: pointer;
+	background-color: #eee;
+	margin-left: 0;
+	margin-top: 20px; 
+	font-size: 28px; 
+	color: #1971C2;
 }
 
 #sideBarOpen {

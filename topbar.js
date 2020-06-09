@@ -23,7 +23,17 @@ $( document ).ready(function() {
 			$("div").not(".sidebar").css("opacity", "1"); // opacity code
 		})
 
-		$(document).on('click', '.options', function() { // Select one of the Sidebar Options
+		$(document).on('click', function(event){
+			if (!$(event.target).is($("ul")) && !$(event.target).is($("#sideBarOpen"))) {
+				if ($('#sideBarClose').length != 0) {
+					SideBarWidth.style.width = 0;
+					ULContent.innerHTML = "";
+					console.log("hey")
+				}
+			}
+		})
+
+		$(document).on('click', '.options', function() {
 			if (this.innerHTML == "Forum") {window.open("forum_homepage.html", "_self");}
 			else if (this.innerHTML == "Routes") { window.open("routes-index.html", "_self") }
 			else if (this.innerHTML == "Rate") {window.open("rates.html", "_self");}
