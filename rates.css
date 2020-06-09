@@ -136,3 +136,7 @@ h3 {
 .ui-autocomplete div {
     margin: 0px;
 }
+
+.wrapper {
+    margin-top: 5%!important;
+}
