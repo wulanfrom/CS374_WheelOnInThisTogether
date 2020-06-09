@@ -1,10 +1,10 @@
 function bindEvents() {
-	$(".icon-star").onclick {
+	$(".icon-star").onclick(function() {
 		//close sidebar
 		console.log("Closing sidebar");
-	}
+	})
 
-	$(".options").onclick {
+	$(".options").onclick(function() {
 		var chosenTask = $(".options").html();
 		if (chosenTask == "Forum") {
 			//go to Forum page
@@ -16,5 +16,5 @@ function bindEvents() {
 			//go to Rates page
 			console.log("Proceeding to Rates page");
 		}
-	}
+	})
 }

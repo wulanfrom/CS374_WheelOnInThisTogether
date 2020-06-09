@@ -35,7 +35,7 @@ $(document).ready(function() {
                 accessibility: access_input,
                 safety: safety_input,
                 comment: $("#comment").val(),
-                username: "anon"
+                username: "wheelie"
             }
             console.log(input_data)
             insert_new_comment(rest_key, input_data).then(function() {

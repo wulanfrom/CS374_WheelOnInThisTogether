@@ -67,9 +67,25 @@ function display_query_result(rest_db, query) {
     }
 }
 
+async function display_image(rest_name) {
+    try {
+        var img_ref = firebase.storage().ref('restaurants/'+rest_name+'/'+rest_name+'.jpg')
+        img_ref.getDownloadURL().then(function(url) {
+            //Display the image
+            var image_html = "<img class='rest-image' src='"+url+"'>"
+            $(".card-image").html(image_html)
+        })
+    }
+    finally {
+        $(".spinner").hide()
+    }
+}
+
 function display_rest_card(result) {
+    $(".spinner").show()
     const rest_name = "<h3 class='rest-name'>" + result.name + "</h3>"
     const rest_star = "<h3>" + generate_star( result.rating.overall) + "</h3>"
+    display_image(result.name)
     var card_html = "<div class='card rest-card'><div class='card-image'> </div><div class='card-content'><div  class='restaurant-name'>" + rest_name + rest_star + "</div></div></div>"
     $('#restaurant-cards').append(card_html)
 }
