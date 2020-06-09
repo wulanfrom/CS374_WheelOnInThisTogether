@@ -15,11 +15,13 @@ $( document ).ready(function() {
 		SideBarOpen.onclick = function() {
 			SideBarWidth.style.width = '20%';
 			ULContent.innerHTML = SideBarText;
+			$("div").not(".sidebar").css("opacity", "0.5");
 		}
 
 		$(document).on('click', '#sideBarClose', function () {
 			SideBarWidth.style.width = 0;
 			ULContent.innerHTML = "";
+			$("div").not(".sidebar").css("opacity", "1");
 		});
 
 		$(document).on('click', '.options', function() {
@@ -30,6 +32,6 @@ $( document ).ready(function() {
 	}
 
 	document.getElementsByClassName("sidebar")[0].style.width = 0;
-	document.getElementsByTagName("UL")[0].innerHTML = "";
+	// document.getElementsByTagName("UL")[0].innerHTML = "";
 	bindEvents();
 });
