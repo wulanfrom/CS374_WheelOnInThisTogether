@@ -1,0 +1,149 @@
+<html>
+	<head>
+	    <!-- <meta charset="UTF-8"> -->
+	    <title> Welcome to WheelOn! </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <script src="./homepage.js" type="text/javascript"></script>
+        <script src="./topbar.js" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="styleGuide.css" type="text/css">
+        <link rel="stylesheet" href="homepage.css" type="text/css">
+        <link rel="stylesheet" href="topbar.css" type="text/css">
+	    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	</head>  
+	<body>
+		<div class="outside_topbar">
+			<div class="topbar">
+				<div class="row">
+					<div class="col-md-1">
+						<span class="icon-menu" id='sideBarOpen'></span>
+					</div>
+					<div class="col-md-2" id="logo">
+						<b><center>WheelOn</center></b>
+					</div>
+					<div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
+						<span> USERNAME </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<ul>
+				<li>
+					<span class="col-md-2"><b> WheelOn </b></span>
+					<span class="icon-menu" id="sideBarClose"></span>
+				</li>
+				<br>
+				<li class="options">Forum</li>
+				<li class="options">Routes</li>
+				<li class="options">Rate</li>
+				<li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>
+			</ul>
+		</div>
+		<div id="overall">
+			<div class="row">
+        		<div class="col-md-7">
+					<h1><br>Top Questions</h1><br>
+		            <div class="cards">
+			            <div class="paddings">	
+			            	<label class="tag" style="cursor: pointer;">Advice</label>
+			            	<h3>What's the best way to get easy food around KAIST?</h3>
+			            	<h5>I'm having trouble with finding food around here.</h5>
+			            </div>
+		            	<div class="lowbar">
+		            		<span class="link"> LittleBird</span>
+		            		<span> &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 
+							<span class="link">10 Replies</span> &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span>
+		            		<span class="link">24 Likes</span>
+		            		<a class="links" href=""> READ MORE </a>
+		            	</div>
+		            </div>
+		            <br>
+		            <div class="cards">
+			            <div class="paddings">	
+			            	<label class="tag" style="cursor: pointer;">Advice</label>
+			            	<h3>Does Alibaba have spaces for people on wheelchairs?</h3>
+			            	<h5>I heard it's a good place, but I ain't sure whether I'd be comfortable there.</h5>
+			            </div>
+		            	<div class="lowbar">
+		            		<span class="link"> CutePet</span>
+		            		<span> &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 
+							<span class="link">5 Replies</span> &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span>
+		            		<span class="link">12 Likes</span>
+		            		<a class="links" href=""> READ MORE </a>
+		            	</div>
+		            </div>
+		            <br>
+		            <div class="cards">
+			            <div class="paddings">	
+			            	<label class="tag" style="cursor: pointer;">Advice</label>
+			            	<h3>How did you guys adjust to having to use crutches at first?</h3>
+			            	<h5>I got injured recently and need to use crutches for a while, but up to now everything is so hard :((</h5>
+			            </div>
+		            	<div class="lowbar">
+		            		<span class="link"> ByeolBit</span>
+		            		<span> &nbsp&nbsp&nbsp&nbsp || </span> &nbsp&nbsp&nbsp&nbsp
+							<span class="icon-comment"></span> 
+							<span class="link">12 Replies</span> &nbsp&nbsp&nbsp&nbsp
+		            		<span class="icon-like"></span>
+		            		<span class="link">20 Likes</span>
+		            		<a class="links" href=""> READ MORE </a>
+		            	</div>
+		            </div>
+		            <br><center><button class="default_primary"> VIEW MORE POSTS </button></center>
+				</div>
+				<div class="col-md">
+					<h1><br>Recommendations</h1><br>
+		            <div class="bluecards">
+		            	<h3> 
+		            		BUFF-EAT
+		            		<span class="icon-star-unselected" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            	</h3>
+		            </div>
+		            <br>
+		            <div class="bluecards">
+		            	<h3> 
+		            		JFC
+		            		<span class="icon-star-unselected" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            	</h3>
+		            </div>
+		            <br>
+		            <div class="bluecards">
+		            	<h3> 
+		            		PIZZY
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            		<span class="icon-star" style="float: right;"></span>
+		            	</h3>
+		            </div>
+		            <br><center><button class="default_primary"> VIEW MORE PLACES </button></center>
+		            <br><h1>Find Your Way!</h1><br>
+		            <div align="right" class="cards2">
+		                <input placeholder="From" id="fromPlace" class="input_default"><br>
+		                <input placeholder="To" id ="toPlace" class="input_default"><br>
+		                <button class="primary"> SEARCH ROUTE </button>
+		            </div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
