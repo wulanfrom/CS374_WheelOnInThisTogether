@@ -6,56 +6,17 @@
 	text-decoration: none;
 }
 
-.user-circle {
-	height: 30px;
-	width: 30px;
-	background-color: #bbb;
-	border-radius: 50%;
-	display: inline-block;
-}
-
-.sidebar{
-	display: flex;
-	position: fixed;
-	margin: 0;
-	z-index: 2;
-	width: 0;
-	height: 100%;
-	background: #ffffff;
+#logo {
+	cursor: pointer;
+	background-color: #eee;
+	margin-left: 0;
+	margin-top: 20px; 
+	font-size: 28; 
+	color: #1971C2;
 }
 
 .options:hover {
 	background: #A5D8FF;
-}
-
-.sidebar ul {
-	width: 100%;
-	margin-left: 20; 
-	margin-right: 20;
-}
-
-.sidebar ul li {
-	padding: 15px;
-	font-size: 20;
-	cursor: pointer;
-}
-
-#sideBarClose {
-	font-size: 20;
-	float: right;
-}
-
-.sidebar ul .copyright {
-	padding: 15px;
-	font-size: 16;
-	margin-top: 0;
-	position: absolute;
-	bottom: 0;
-	color: #6b6b6b;
-}
-
-.row {
-	margin: 0;
 }
 
 .outside_topbar {
@@ -73,16 +34,57 @@
 	margin: 0;
 }
 
-#logo {
+.row {
+	margin: 0;
+}
+
+.sidebar{
+	display: flex;
+	position: fixed;
+	margin: 0;
+	z-index: 2;
+	width: 0;
+	height: 100%;
+	background: #ffffff;
+}
+
+.sidebar ul {
+	width: 100%;
+	margin-left: 20; 
+	margin-right: 20;
+}
+
+.sidebar ul .copyright {
+	padding: 15px;
+	font-size: 16;
+	margin-top: 0;
+	position: absolute;
+	bottom: 0;
+	color: #6b6b6b;
+}
+
+.sidebar ul li {
+	padding: 15px;
+	font-size: 20;
 	cursor: pointer;
-	background-color: #eee;
-	margin-left: 0;
-	margin-top: 20px; 
-	font-size: 28; 
-	color: #1971C2;
+}
+
+#sideBarClose {
+	font-size: 20;
+	float: right;
 }
 
 #sideBarOpen {
 	font-size: 20;
 	cursor: pointer;
+}
+
+.user-circle {
+	height: 30px;
+	width: 30px;
+	background-color: #bbb;
+	border-radius: 50%;
+	vertical-align: middle;
+	display: inline-block;
+	margin-bottom: 5px;
 }
