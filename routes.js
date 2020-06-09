@@ -122,10 +122,10 @@ $( document ).ready(function() {
       for (var i=0; i<(dataList.length); i++){
         loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8]);
         if (i%2 == 0){
-          x = 38;
+          x = 40;
           y = y + 524;
         } else {
-          x = 66;
+          x = 68;
         }
         document.getElementById(dataList[i][0]).style.cssText = "left:" + x + "%; top:" + y + "px;";
       }
