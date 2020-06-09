@@ -78,6 +78,12 @@ $(document).ready(function(){
     }
   };
 
+  $('.redirect').on(getKey);
+
+  function getKey(){
+      console.log('getting key');
+  };
+
    function add_new_post(){
       var post_section = document.getElementById('post_container');
       // post_container.innerHTML = "";
@@ -165,9 +171,13 @@ $(document).ready(function(){
             like_number.innerHTML = post_likes + " Likes";
           }
 
-          var read_more = document.createElement("span");
-          read_more.setAttribute('class', 'go_more');
+          var span_read = document.createElement("span");
+          var read_more = document.createElement("a");
+          span_read.setAttribute('class', 'go_more');
+          read_more.classList.add('redirect');
+          // read_more.setAttribute('onclick', 'getKey()');
           read_more.innerHTML = "READ MORE";
+          span_read.append(read_more);
 
           lower_part.append(profile_pic);
           lower_part.append(poster_name);
@@ -176,7 +186,7 @@ $(document).ready(function(){
           lower_part.append(comment_number);
           lower_part.append(likes_icon);
           lower_part.append(like_number);
-          lower_part.append(read_more);
+          lower_part.append(span_read);
           
           post_card.append(upper_part);
           post_card.append(lower_part);

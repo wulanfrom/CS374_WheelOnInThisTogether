@@ -78,16 +78,18 @@ function OnInput(){
 
   			//Comment Data
   			var username_info = document.createElement("div");
-  			username_info.setAttribute('class',"username_info");
+  			username_info.setAttribute('class',"username_info row");
 
   			var user_circle = document.createElement("span");
   			user_circle.setAttribute("class","user-circle");
 
   			var username = document.createElement("span");
   			username.setAttribute("class","username");
+        // username.style.paddingBottom = '12px';
   			username.innerHTML = "Wheelie" + " (you)";
 
   			var user_write = document.createElement("p");
+        user_write.style.marginTop = '8px';
   			user_write.innerHTML = comment_content;
 
 			comment_section.append(comment_card);
