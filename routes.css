@@ -4,7 +4,7 @@ a{
 
 .addList{
   position: absolute;
-  top: 115px;
+  top: 169px;
   left: 70%;
 }
 
@@ -23,23 +23,28 @@ a{
 }
 
 .chevron-icon{
-  z-index: 1;
+  z-index: 9999;
   height: 24px;
   width: 24px;
   position: absolute;
   left: 88%;
   bottom: 12px;
   margin: 0;
-  fill: #4DABF7;
 }
 
 .container{
   margin: 0;
+  height: auto;
+  width: 100%;
 }
 
 .description-list{
   font-size: 16px;
-  margin-left: 20px;
+  margin: 0 0 5px 20px;
+  padding-left: 8px;
+  list-style-type: decimal;
+  list-style-position: outside;
+  display: list-item;
 }
 
 .from-place{
@@ -143,7 +148,7 @@ label{
   font-weight: bold;
 }
 
-li{
+.route-contents-list{
   margin: 0 0 5px 40px;
   font-size: 14px;
   padding-left: 8px;
@@ -162,6 +167,12 @@ li{
 
 #my-list-last{
   margin: 0;
+}
+
+#no_result{
+  position: absolute;
+  top: 340px;
+  left: 65%;
 }
 
 .number-of-likes{
@@ -198,7 +209,7 @@ p{
 .route-card{
   width: 24.167%;
   height: 480px;
-  z-index: -1;
+  z-index: -10;
   position: absolute;
   overflow: hidden;
 }
@@ -264,17 +275,19 @@ p{
 
 #routes-index-main{
   margin-top: 88px;
+  margin-left: 12px;
+  height: 0;
 }
 
 #routes-individual-main{
-  margin-top: 88px;
+  margin-top: 140px;
 }
 
 .route-list{
   position: absolute;
   width: 24.44%;
   height: auto;
-  top: 155px;
+  top: 206px;
   left: 70%;
 }
 
