@@ -35,21 +35,21 @@ function OnInput(){
       var input_content = document.getElementById("user_input");
       if (input_content.value.length != 0){
         //make a firebase database so that it can be editable in the future.
-        var key = firebase.database().ref().child("").push().key;
+        var key = firebase.database().ref("post_comment/"+post_key+"/").child("user_comments").push().key;
         var comment = {
           comment: input_content.value,
           key: key,
         };
 
         var updates= {};
-        updates["post_comment/"+ key+"/forum_post"] = comment;
+        updates["post_comment/"+ post_key +"/user_comments/"+key] = comment;
         firebase.database().ref().update(updates);
       }
 
       var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
 
     comment_array = [];
-    firebase.database().ref("forum_post").once('value', function(snapshot){
+    firebase.database().ref("post_comment/"+ post_key +"/user_comments/").once('value', function(snapshot){
       snapshot.forEach(function(childSnapshot){
         var childKey = childSnapshot.key;
         var childValue = childSnapshot.val(); //object
@@ -110,8 +110,8 @@ function OnInput(){
 
       }
     });
-
-  
+      //clear textarea after inputting
+      $('#user_input').val('');
     })
 
   var values = [];
@@ -142,6 +142,7 @@ function OnInput(){
         }
     })
 
+    // Initiaze comments on page
     function get_comment(){
     var input_content = document.getElementById("user_input");
     if (input_content.value.length != 0){
@@ -153,11 +154,12 @@ function OnInput(){
       };
 
       var updates= {};
-      updates["post_comment/"+ key+"/forum_post"] = comment;
+      updates["post_comment/"+"user_comments/"+key] = comment;
       firebase.database().ref().update(updates);
     }
   }
 
+  // Load all the pre-existing comments
   function create_comment(){
   	var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
 
