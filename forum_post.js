@@ -30,6 +30,23 @@ function OnInput(){
 
   firebase.initializeApp(firebaseConfig);
 
+  // $('.bi-trash-fill').on('click', function(){
+  //   console.log('trash obiz');
+  // })
+  function delete_comment(){
+    console.log('delete button is clicked!');
+    var key = $(this).attr('title');
+    console.log('key is: ', key);
+  }
+  document.getElementsByClassName("delete_comment_button")[0].addEventListener("click", delete_comment);
+
+
+  // $('button.delete_comment_button').click(function(){
+  //   console.log('delete button is clicked!');
+  //   var key = $(this).parent().parent().getAttribute('data-key');
+  //   console.log('key is: ', key);
+  // });
+
     $("#post_comment").on('click',function(){
       console.log('the button is clicked');
       var input_content = document.getElementById("user_input");
@@ -80,6 +97,10 @@ function OnInput(){
         var user_circle = document.createElement("span");
         user_circle.setAttribute("class","user-circle");
 
+        var delete_button = document.createElement("button");
+        delete_button.setAttribute("class","float-right delete_comment_button");
+        delete_button.innerHTML = "Delete";
+
         var username = document.createElement("span");
         username.setAttribute("class","username");
         // username.style.paddingBottom = '12px';
@@ -92,6 +113,7 @@ function OnInput(){
       comment_section.append(comment_card);
       username_info.append(user_circle);
       username_info.append(username);
+      username_info.append(delete_button);
       comment_card.append(username_info);
       comment_card.append(user_write);
 
@@ -127,14 +149,14 @@ function OnInput(){
           $('.content_post').html(childValue.content);
           $('.username').html(childValue.poster);
           $('.disc_topic').html(childValue.title);
-          if (childValue.title.total_replies == 1){
+          if (childValue.total_replies == 1){
             $('#total_likes').html(childValue.total_replies + " Reply");
             $('.number_replies').html(childValue.total_replies + " Reply");
           } else{
             $('#total_likes').html(childValue.total_replies + " Replies");
             $('.number_replies').html(childValue.total_replies + " Replies");
           }
-          if (childValue.title.total_likes == 1){
+          if (childValue.total_likes == 1){
             $('#total_replies').html(childValue.total_likes + " Like");
           } else{
             $('#total_replies').html(childValue.total_likes + " Likes");
@@ -164,7 +186,7 @@ function OnInput(){
   	var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
 
   	comment_array = [];
-  	firebase.database().ref("forum_post").once('value', function(snapshot){
+  	firebase.database().ref("post_comment/"+post_key+ "/user_comments/").once('value', function(snapshot){
   		snapshot.forEach(function(childSnapshot){
   			var childKey = childSnapshot.key;
   			var childValue = childSnapshot.val(); //object
@@ -192,6 +214,12 @@ function OnInput(){
   			var username_info = document.createElement("div");
   			username_info.setAttribute('class',"username_info row");
 
+        //icon for deleting
+        var delete_button = document.createElement("button");
+        delete_button.setAttribute("class","float-right delete_comment_button");
+        // delete_button.setAttribute('onclick',"delete_comment(this.parentElement.parentElement)");
+        delete_button.innerHTML = "Delete";
+
   			var user_circle = document.createElement("span");
   			user_circle.setAttribute("class","user-circle");
 
@@ -207,6 +235,7 @@ function OnInput(){
 			comment_section.append(comment_card);
 			username_info.append(user_circle);
 			username_info.append(username);
+      username_info.append(delete_button);
 			comment_card.append(username_info);
 			comment_card.append(user_write);
 
@@ -221,8 +250,32 @@ function OnInput(){
 				total_like.innerHTML = comment_array.length + " Replies";
 			}
   		}
+
+      var path = firebase.database().ref('post_comment/'+post_key+'/total_likes');
+      path.set(comment_array.length);
+      // Testing
+      // firebase.database().ref('post_comment/'+post_key).on('value',function(snapshot){
+      //   snapshot.val()[6] = comment_array.length;
+      //   // console.log(Object.values(snapshot.val()));
+      // });
   	});
   }
+
   create_comment();
 });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -28,17 +28,6 @@ $(document).ready(function(){
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    // firebase.analytics();
-    // 
-    // console.log("still js works 2!");
-
-   // $('.go_more').on('click', function(){
-   // 	go_to_post();
-   // })
-
-   function go_to_post(){
-   	  // console.log('going to post!');
-   }
 
    $('#post_button').on('click', function(e){
       e.preventDefault();
@@ -105,8 +94,14 @@ $(document).ready(function(){
 
         post_array = post_array.reverse(); //so most recent post is displayed at the top
         if (post_array.length > 0){
+          console.log('post array more than 0');
           post_container.innerHTML = "";
         }
+        // else if (post_array.length == 0){
+        //   post_container.innerHTML = "";
+        //   post_container.append("<h4 id="empty_posts">Be the first to Ask!</h4>");
+        // };
+
 
         for (var i=0; i<post_array.length;i++){
           var post_category = post_array[i][0];
@@ -115,8 +110,8 @@ $(document).ready(function(){
           // var post_poster = post_array[i][3];
           var post_poster = "Wheelie";
           var post_title = post_array[i][4];
-          var post_likes = post_array[i][5];
-          var post_replies = post_array[i][6];
+          var post_likes = post_array[i][6];
+          var post_replies = post_array[i][5];
 
           //Add to HTML
           //Make Container for each card
@@ -202,8 +197,6 @@ $(document).ready(function(){
           post_section.append(post_card);
           // post_section.append(post_card);
         }
-
-
       });
    }
    // getKey();
