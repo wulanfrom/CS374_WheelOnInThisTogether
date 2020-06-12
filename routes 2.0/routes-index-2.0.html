@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Find a route!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Search form -->
+    <div class="card" style="width: 24rem;">
+    <form>
+      <div class="form-group">
+        <label for="fromPlace">FROM</label><br>
+        <input placeholder="Search for your starting place" class="input_default" id="fromPlace">
+      </div>
+      <span class=icon-up-down aria-hidden="true" id="arrow-logo"></span>
+      <div class="form-group">
+        <label for="toPlace">TO</label><br>
+        <input placeholder="Search for your destination place" class="input_default" id="toPlace">
+      </div>
+      <button type="button" class="btn btn-primary">Add Route</button>
+      <button type="button" class="btn btn-primary">Search Route</button>
+    </form>
+  </div>
+
+    <!-- Google Maps -->
+    <!-- <iframe
+      id="gmaps"
+      width="36%"
+      height="500px"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY
+        &q=Space+Needle,Seattle+WA&maptype=roadmap&language=en" allowfullscreen>
+    </iframe> -->
+
+    <!-- First card -->
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="username-circle"></div>
+        <div class="username" id="username-index"><p>USERNAME</p></div>
+      </div>
+      <div class="card-body">
+        <ol>
+          <li>Go herezzzzzzz</li>
+          <li>And then herezzzzzzzzzzzzzzzz</li>
+          <li>And then therezzzzzzzzzzzz</li>
+        </ol>
+      </div>
+      <div class="card-body">
+        <span class=icon-ramp aria-hidden="true" id="icon-ramp"></span>
+        <span class=icon-elevator aria-hidden="true" id="icon-elevator"></span>
+        <span class=icon-wheelchair aria-hidden="true" id="icon-wheelchair"></span>
+      </div>
+      <div class="card-footer">
+        <img src="../icon-chevron.svg" class="chevron-icon" alt="more_information" width="24px">
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
