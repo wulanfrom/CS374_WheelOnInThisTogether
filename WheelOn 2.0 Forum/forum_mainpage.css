@@ -37,22 +37,31 @@
 	border-color:#D0EBFF;
 	padding: 12px 32px;
 	font-weight: 500;
+	border-bottom:none;
+	border-top:none;
+	border: none;
 }
-
+.list-group{
+	border-radius: 10px;
+}
 .list-group-item:first-child{
 	text-transform: uppercase;
 	color: #1971C2;
 	border-color:#D0EBFF;
+	/*padding: 32px 32px 12px 32px;*/
 	padding: 12px 32px;
-	border-radius: 12px 12px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	/*border-top: 1px solid #D0EBFF;*/
 }
 
 .list-group-item:nth-child(5){
 	text-transform: uppercase;
 	color: #1971C2;
 	border-color:#D0EBFF;
+	/*padding: 12px 32px 32px 32px;*/
 	padding: 12px 32px;
-	border-radius: 0px 0px 12px 12px;
+	border-radius: 0px 0px 10px 10px;
+	/*border-bottom: 1px solid #D0EBFF;*/
 }
 
 .list-group-item:hover{
