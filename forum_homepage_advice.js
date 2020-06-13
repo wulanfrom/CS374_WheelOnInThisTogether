@@ -71,6 +71,7 @@ $(document).ready(function(){
 			updates["post_comment/" + key] = post;
 			firebase.database().ref().update(updates);
 	    }
+	    add_new_post();
 	};
 
 	//When a user clicks a post, it adds changes the link to the forum post+ key of post
@@ -94,7 +95,8 @@ $(document).ready(function(){
 			var childKey = childSnapshot.key; //key of post
 			var childContent = childSnapshot.val(); //object
 			console.log('child content: '+ Object.values(childContent)[0]);
-			if (Object.values(childContent)[0].localeCompare('advice')){ //only if the item is equal to advice
+			if (Object.values(childContent)[0].toLowerCase().localeCompare('advice') == 0){ //only if the item is equal to advice
+				console.log('true');
 				post_array.push(Object.values(childContent)); //convert to array
 			}
 		});
@@ -204,8 +206,8 @@ $(document).ready(function(){
 			post_card.append(lower_part);
 			post_section.append(post_card);
 			// post_section.append(post_card);
-        };
-	});
+        	};
+		});
 	}
 	// getKey();
 	add_new_post();

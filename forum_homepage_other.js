@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 	//Takes user's new post and puts them into database
 	function get_post(){
-		console.log('getting post');
+		// console.log('getting post');
 	    var input_content = document.getElementById("user_input"); //content
 	    var title_content = document.getElementById("topic_input"); //topic
 	    var e = document.getElementById("select_category");
@@ -55,7 +55,7 @@ $(document).ready(function(){
 			// console.log('topic: ', title_content.value);
 			//make a firebase database so that it can be editable in the future.
 			var key = firebase.database().ref().child("post_comment").push().key;
-			console.log(key);
+			// console.log(key);
 			var post = {
 				key: key,
 				category: category,
@@ -71,12 +71,8 @@ $(document).ready(function(){
 			updates["post_comment/" + key] = post;
 			firebase.database().ref().update(updates);
 	    }
-	}
-
-	// var elements = document.getElementsByClassName('redirect');
-	// Array.from(elements).forEach(function(element) {
-	//     element.addEventListener('click', getKey);
-	// });
+	    add_new_post();
+	};
 
 	//When a user clicks a post, it adds changes the link to the forum post+ key of post
 	$(document).on('click','.whole_card',function(){
@@ -87,8 +83,10 @@ $(document).ready(function(){
 		var post_webpage = curr_webpage.replace(/\/[^\/]*$/, new_url);
 		window.location.href = post_webpage;
 	});
-	
+
+	//Reload all the posts
 	function add_new_post(){
+		console.log('function is called');
 		var post_section = document.getElementById('post_container');
 		// post_container.innerHTML = "";
 		post_array = []; 
@@ -96,12 +94,16 @@ $(document).ready(function(){
 			snapshot.forEach(function(childSnapshot){
 			var childKey = childSnapshot.key; //key of post
 			var childContent = childSnapshot.val(); //object
-			post_array.push(Object.values(childContent)); //convert to array
+			console.log('child content: '+ Object.values(childContent)[0]);
+			if (Object.values(childContent)[0].toLowerCase().localeCompare('other') == 0){ //only if the item is equal to advice
+				console.log('true');
+				post_array.push(Object.values(childContent)); //convert to array
+			}
 		});
-
+		console.log('console.log: ',post_array);
 		post_array = post_array.reverse(); //so most recent post is displayed at the top
 		if (post_array.length > 0){
-			console.log('post array more than 0');
+			// console.log('post array more than 0');
 			post_container.innerHTML = "";
         };
 
