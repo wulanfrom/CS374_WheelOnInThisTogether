@@ -46,6 +46,33 @@ function OnInput(){
   //   var key = $(this).parent().parent().getAttribute('data-key');
   //   console.log('key is: ', key);
   // });
+    $('.heart_button').on('click', function(){
+      console.log('you pressed like:D');
+      var path = firebase.database().ref('post_comment/'+post_key+'/total_likes');
+      var total_in_firebase = 0;
+      path.once('value', function(snapshot){
+        // console.log('snapshot: '+ snapshot.val());
+        total_in_firebase = snapshot.val() + 1;
+        // snapshot.val() = snapshot.val() + 1;
+        // console.log('snapshot: '+ snapshot.val());
+      })
+      // console.log('path: '+path);
+      var number_likes = document.getElementById('total_hearts');
+      // var total = path.val();
+      // console.log('total: ' + total);
+      // console.log(number_likes.innerHTML.split('')[1]);
+      // var number = parseFloat(number_likes.innerHTML.split('')[1]) + 1;
+      if (total_in_firebase == 1){
+        number_likes.innerHTML = total_in_firebase + " Like";
+      }
+      else{
+        number_likes.innerHTML = total_in_firebase + " Likes";
+      }
+      //increment value in firebase by 1.
+      var path = firebase.database().ref('post_comment/'+post_key+'/total_likes');
+      path.set(total_in_firebase);
+      console.log('added');
+    });
 
     $("#post_comment").on('click',function(){
       console.log('the button is clicked');
@@ -240,6 +267,7 @@ function OnInput(){
 			comment_card.append(user_write);
 
 			var number_replies = document.getElementsByClassName('number_replies')[0];
+      var number_comment = document.getElementsByClassName('number_replies')[1];
 			var total_like = document.getElementById('total_like');
 			if (comment_array.length == 1){
 				number_replies.innerHTML = comment_array.length + " Reply";
@@ -250,15 +278,14 @@ function OnInput(){
 				total_like.innerHTML = comment_array.length + " Replies";
 			}
   		}
-
-      var path = firebase.database().ref('post_comment/'+post_key+'/total_likes');
-      path.set(comment_array.length);
       // Testing
       // firebase.database().ref('post_comment/'+post_key).on('value',function(snapshot){
       //   snapshot.val()[6] = comment_array.length;
       //   // console.log(Object.values(snapshot.val()));
       // });
   	});
+    var path = firebase.database().ref('post_comment/'+post_key+'/total_replies');
+    path.set(comment_array.length);
   }
 
   create_comment();

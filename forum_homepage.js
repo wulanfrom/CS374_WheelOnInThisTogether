@@ -81,6 +81,10 @@ $(document).ready(function(){
     window.location.href = post_webpage;
   })
 
+  function sort_by_category(category){
+    
+  }
+
    function add_new_post(){
       var post_section = document.getElementById('post_container');
       // post_container.innerHTML = "";
@@ -104,14 +108,15 @@ $(document).ready(function(){
 
 
         for (var i=0; i<post_array.length;i++){
+          console.log('post array: '+post_array[i]);
           var post_category = post_array[i][0];
           var post_content = post_array[i][1];
           var post_key = post_array[i][2];
           // var post_poster = post_array[i][3];
           var post_poster = "Wheelie";
           var post_title = post_array[i][4];
-          var post_likes = post_array[i][6];
-          var post_replies = post_array[i][5];
+          var post_likes = post_array[i][5];
+          var post_replies = post_array[i][6];
 
           //Add to HTML
           //Make Container for each card
