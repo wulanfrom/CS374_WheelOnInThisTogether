@@ -18,16 +18,62 @@
 	margin-bottom:20px;
 }
 
+/*STYLING FOR SIDE BAR*/
+/*===================================================================*/
+
 .categories_card{
-	padding-top:32px;
+	width:100%;
+}
+
+.categories_card{
+	padding-top:32px; /*upper padding might need to be changed later*/
 	top:0;
 	position: sticky;
 }
-/*
-.topic_name{
-	margin: 12px;
+
+.list-group-item{
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	padding: 12px 32px;
+	font-weight: 500;
 }
-*/
+
+.list-group-item:first-child{
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	padding: 12px 32px;
+	border-radius: 12px 12px 0px 0px;
+}
+
+.list-group-item:nth-child(5){
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	padding: 12px 32px;
+	border-radius: 0px 0px 12px 12px;
+}
+
+.list-group-item:hover{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	border-color:#D0EBFF;
+}
+
+.list-group-item.active{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	/*border-color: none !important;*/
+}
+
+.list-group{
+	width: 12em;
+	border-radius: 10px
+	border-color:#D0EBFF;
+}
+/*===================================================================*/
 .badge{
 	padding: 8px;
 	color: #28a745;
