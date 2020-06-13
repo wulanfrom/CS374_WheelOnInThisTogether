@@ -164,6 +164,7 @@ function OnInput(){
     })
 
   var values = [];
+  
   //Read the Data from Firebase
   firebase.database().ref('post_comment').once('value',function(snapshot){
     snapshot.forEach(function(childSnapshot){
