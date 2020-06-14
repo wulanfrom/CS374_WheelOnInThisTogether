@@ -12,12 +12,17 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 $(document).ready(function(){
-    // display_autofill()
-    var rest_db = null;
+    // var rest_db = null;
     get_restaurants().then((res) => {
-        $(".spinner").hide()
+        console.log("test")
         console.log(res)
-        rest_db = res
+        $(".spinner").hide()
+        rest_names = []
+        console.log(res[0])
+        for (idx in res) {
+            console.log()
+        }
+        display_autofill(res)
         $("#search-input").keypress(function(event) {
             if (event.which == "13") {
                 event.preventDefault()
@@ -26,6 +31,15 @@ $(document).ready(function(){
                 $("#search-input").val('')
             }
         })
+
+        $("#search-btn").click(function() {
+            event.preventDefault()
+            console.log($("#search-input").val())
+            display_query_result(res, $("#search-input").val())
+            $("#search-input").val('')
+        })
+
+
     })
 
     $(document).on("click", ".rest-card", function(){
@@ -38,13 +52,34 @@ $(document).ready(function(){
     })
 })
 
-async function display_autofill() {
+async function display_autofill(rest_db) {
     get_rest_names().then((res) => {
         console.log(res)
         $("#search-input").autocomplete({
-            source: res
+            source: res,
+            select: function(event, ui) {
+                $("#search-input").val(ui.item.value)
+                display_query_result(rest_db, $("#search-input").val())
+                $("#search-input").val('')
+                event.preventDefault()
+            }
           });
     })
+}
+
+async function get_rest_names() {
+    try {
+        var rest_names = []
+        var rest 
+        firebase.database().ref('restaurant/').once('value', function(snapshot) {
+            snapshot.forEach(function(data) {
+                rest_names.push(data.val().name)
+            })
+        })
+    }
+    finally {
+        return rest_names
+    }
 }
 
 function display_query_result(rest_db, query) {
@@ -106,6 +141,9 @@ async function get_restaurants() {
                 rest_names.push(data.val())
             })
         })
+    }
+    catch(error) {
+        console.log(error)
     }
     finally {
         console.log('hey')
