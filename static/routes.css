@@ -1,5 +1,11 @@
+.arrow-up-down{
+  position: absolute;
+  right: 32px;
+  top: 108px;
+}
+
 .routes-card{
-  width: 30%;
+  width: 35%;
   padding: 32px;
 }
 
