@@ -6,27 +6,28 @@
   <title>Find a route!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="routes.css" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container">
     <!-- Search form -->
-    <div class="card" style="width: 24rem;">
+    <div class="card routes-card">
     <form>
-      <div class="form-group">
+      <div class="form-group routes-form">
         <label for="fromPlace">FROM</label><br>
-        <input placeholder="Search for your starting place" class="input_default" id="fromPlace">
+        <input placeholder="Search for your starting place" class="input_default routes-input" id="fromPlace">
       </div>
       <span class=icon-up-down aria-hidden="true" id="arrow-logo"></span>
       <div class="form-group">
         <label for="toPlace">TO</label><br>
-        <input placeholder="Search for your destination place" class="input_default" id="toPlace">
+        <input placeholder="Search for your destination place" class="input_default routes-input" id="toPlace">
       </div>
       <button type="button" class="btn btn-primary">Add Route</button>
-      <button type="button" class="btn btn-primary">Search Route</button>
+      <button type="button" class="btn btn-primary float-right">Search Route</button>
     </form>
-  </div>
+    </div>
 
     <!-- Google Maps -->
     <!-- <iframe
