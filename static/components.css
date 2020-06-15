@@ -71,7 +71,9 @@
 }
 
 .card-footer {
-    background-color: #D0EBFF;
+	background-color: #D0EBFF;
+	color: #1971C2;
+	font-weight: bold;
 }
 .username {
     text-transform: uppercase;
