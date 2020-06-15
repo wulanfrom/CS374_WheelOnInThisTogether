@@ -90,6 +90,15 @@
 	color: #868E96;
 }
 
+/*For post category tags*/
+.category-tags{
+	text-transform: uppercase;
+	/*background-color: rgba(40,167,69,0.3);*/
+	/*color:#28a745;*/
+	background-color: #D0EBFF;
+	color:#1971C2;
+}
+
 /*===========================================*/
 /*===================================================================*/
 
