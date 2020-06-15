@@ -2,7 +2,9 @@
 <html>
     <head>
         <title> Restaurant rating </title>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="  crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -38,7 +40,7 @@
                                 <div class="card-body">
                                     <img src='https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg' class='rstrnt-img'>
                                     <div class='text-center my-4'>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ratingModal">
+                                        <button type="button" class="btn btn-primary py-2" data-toggle="modal" data-target="#ratingModal">
                                            Rate your experience
                                         </button>
                                     </div>
@@ -90,8 +92,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="alert alert-primary mt-4" role="alert" id='success-msg'>
+                        <img src='../icons/check2.svg' width='24' height='24' class='mr-2'>
+                        Your comment has been successfully added!
+                    </div>
                     <div id='comment-list'>
-                        <div class='card my-4 shadow border-0'>
+                        <div class='card my-4 shadow-sm border-0'>
                             <div class="card-body">
                                 <div class='row'>
                                     <div class='col-lg-6 col-md-7 col-sm-12 col-12'>
@@ -152,21 +158,21 @@
                                         <p>Recommend this place! Although I went here for lunch so there were many people, which was hard. It’s very close to school but it’s in a very narrow street so it’s hard to go there with parked cars. It also has a few elevated steps, but not so steep so it’s still quite safe to go there. Overall it’s great, would definitely go back!</p>
                                     </div>
                                 </div>
-                              </div>
-                              <div class="card-footer">
+                            </div>
+                            <div class="card-footer">
                                 <div class='row'>
                                     <div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'>
                                         <img src='../icons/person-circle.svg' width='24' height='24'>
                                     </div>
-                                    <div class='col-lg-2 col-md-2 col-sm-4 col-4 username align-middle'>
+                                    <div class='col-lg-2 col-md-2 col-sm-4 col-4 username align-middle pl-0'>
                                         Pooja
                                     </div>
                                     <div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'>
                                         <img src='../icons/heart.svg' width='18' height='18'>
-                                        <span class='mx-2'> 24 Likes </span>
+                                        <span class='mx-2 likes-and-comment'> 24 Likes </span>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -231,13 +237,19 @@
                             <img src='../icons/star.svg' width='24' height='24' class='icon-star' data-value='5'>
                         </div>
                     </div>
-                    <div class="form-group mt-3">
+                    <div class="alert alert-danger my-3" role="alert" id='error-msg'>
+                        Please fill all the rating first
+                    </div>
+                    <div class="form-group">
                         <label for="#review-comment">COMMENT</label>
                         <textarea class="form-control" id="review-comment" rows="3"></textarea>
                     </div>
+                    <div class="alert alert-danger my-1" role="alert" id='error-comment'>
+                        Please write down a comment
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Post</button>
+                    <button type="button" class="btn btn-primary mx-auto"id='post-btn'>Post</button>
                 </div>
             </div>
             </div>

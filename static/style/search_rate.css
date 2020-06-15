@@ -2,6 +2,12 @@
     color: black;
 }
 
+.btn {
+    text-transform: uppercase;
+    background-color: #4DABF7;
+    border: #4DABF7;
+}
+
 .category-title {
     font-weight: 400;
     text-transform: uppercase;
@@ -17,6 +23,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.likes-and-comment {
+    color: #1971C2;
+}
 .page {
     background-color: #F1F3F5;
 }
@@ -58,6 +67,9 @@ body {
     opacity: 100%;
 }
 
+#success-msg {
+    /* background-color: #1971C2; */
+}
 .username {
     text-transform: uppercase;
 }
