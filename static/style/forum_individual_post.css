@@ -1,13 +1,29 @@
-.all-items{
-	margin-top: 32px;
+/*For Post Card (Nabila)*/
+/*===========================================*/
+.post_card{
+	border-radius: 10px;
+	border: none;
 }
 
-.post_main_title{
-	margin-top:16px;
-	margin-bottom: 12px;
+#user_comment_fill{
+	border-radius: 10px;
 }
 
-.total_replies_text{
-	margin-top: 24px;
-	margin-bottom: 16px;
+.reply_amount{
+	color: #74C0FC;
 }
+
+.like_amount{
+	color: #74C0FC;
+}
+
+.poster_name{
+	text-transform: uppercase;
+	color: #343A40;
+}
+
+.asks{
+	color: #868E96;
+}
+
+/*===========================================*/

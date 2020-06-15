@@ -1,6 +1,5 @@
+/*============================= Nabila =================================*/
 /*Tags and “add to my list” cards → Nabila*/
-/*===================================================================*/
-
 .categories_card{
 	width:100%;
 }
@@ -8,7 +7,7 @@
 .categories_card{
 	padding-top:32px; /*upper padding might need to be changed later*/
 	top:0;
-	position: sticky;
+	/*position: sticky;*/ /*Uncomment if you want it to follow the screen*/
 }
 
 .list-group-item{
@@ -62,6 +61,36 @@
 	border-radius: 10px;
 	border-color: #D0EBFF;
 }
+
+/*For Individual Post Card*/
+/*===========================================*/
+.post_card{
+	border-radius: 10px;
+	border: none;
+}
+
+#user_comment_fill{
+	border-radius: 10px;
+}
+
+.reply_amount{
+	color: #74C0FC;
+}
+
+.like_amount{
+	color: #74C0FC;
+}
+
+.poster_name{
+	text-transform: uppercase;
+	color: #343A40;
+}
+
+.asks{
+	color: #868E96;
+}
+
+/*===========================================*/
 /*===================================================================*/
 
 /*===============================Umar ===============================*/
