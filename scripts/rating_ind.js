@@ -199,9 +199,6 @@ function display_comment(restaurant_db) {
     for (var key of Object.keys(user_ratings)) {
         $("#comment-list").prepend(comment_format(user_ratings[key]))
     }
-    // user_ratings.forEach(function(user_rating) {
-    //     $("#comment-list").append(comment_format(user_rating))
-    // })
 }
 
 function comment_format(user_rating) {
