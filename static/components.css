@@ -75,6 +75,9 @@
 	color: #1971C2;
 	font-weight: bold;
 }
+.likes-and-comment {
+    color: #1971C2;
+}
 .username {
     text-transform: uppercase;
 }
