@@ -59,7 +59,20 @@
 
 .list-group{
 	width: 12em;
-	border-radius: 10px
-	border-color:#D0EBFF;
+	border-radius: 10px;
+	border-color: #D0EBFF;
 }
 /*===================================================================*/
+
+/*===============================Umar ===============================*/
+.category-title {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.card-footer {
+    background-color: #D0EBFF;
+}
+.username {
+    text-transform: uppercase;
+}
