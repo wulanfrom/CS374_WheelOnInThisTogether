@@ -200,7 +200,7 @@ body{
 
 .alert{
 	position: fixed;
-    top: 45%;
+    bottom: 10%;
 	text-align: center;
 	background-color: yellow;
 	border-radius: 10px;
