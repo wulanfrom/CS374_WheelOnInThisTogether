@@ -4,7 +4,7 @@
 }
 
 .categories_card{
-	padding-top:32px; /*upper padding might need to be changed later*/
+	/*padding-top:32px; upper padding might need to be changed later*/
 	top:0;
 	position: sticky; /*Uncomment if you want it to follow the screen*/
 }
@@ -96,5 +96,9 @@
 	/*background-color: rgba(40,167,69,0.3);*/
 	/*color:#28a745;*/
 	background-color: #D0EBFF;
+	color:#1971C2;
+}
+
+.link_color{
 	color:#1971C2;
 }
