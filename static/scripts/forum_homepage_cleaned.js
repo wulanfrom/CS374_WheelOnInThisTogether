@@ -83,7 +83,7 @@ $(document).ready(function(){
 	$(document).on('click','.whole_card',function(){
 		console.log($(this).find('div').context.getAttribute('data-key'));
 		var post_dataKey = $(this).find('div').context.getAttribute('data-key');
-		var new_url = "/forum_post.html" + "?data-key=" + post_dataKey;
+		var new_url = "/forum_individual_post.html" + "?data-key=" + post_dataKey;
 		var curr_webpage = window.location.href;
 		var post_webpage = curr_webpage.replace(/\/[^\/]*$/, new_url);
 		window.location.href = post_webpage;
