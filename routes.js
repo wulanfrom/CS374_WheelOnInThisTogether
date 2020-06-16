@@ -1,3 +1,4 @@
+//Firebase official documentation
 const dbRef = firebase.database().ref();
 const routesRef = dbRef.child('routes');
 
@@ -5,6 +6,8 @@ function fillContent(id, content) {
   document.getElementById(id).innerHTML = content;
 }
 
+//Firebase official documentation
+//Thank you StackOverflow (https://stackoverflow.com/questions/40471284/firebase-search-by-child-value, accessed on May 28) for equalTo
 function fillPage(id){
   var contentList = [];
   var query = routesRef.orderByKey().equalTo(id);
@@ -49,8 +52,10 @@ function fillPage(id){
 
 $( document ).ready(function() {
 
+  //Thank you StackOverflow (stackoverflow.com/questions/29364121/passing-variable-when-opening-another-html-page-using-javascript,
+  //accessed on June 9) for using hash to transfer variables between pages
+  //https://stackoverflow.com/questions/5096103/jquery-closest-div-that-has-an-id, accessed on June 8, for closest div ID
   function movePage(element){
-    console.log("move move");
     var id = $(element).closest("div").attr("id");
     var more_info = window.open("routes-individual.html"+"#"+id);
   }
@@ -61,7 +66,7 @@ $( document ).ready(function() {
                 + "<div class='username-circle'></div><div class='username' id='username-index'><p>"
                 + username + "</p></div><div class='route-likes'><span class=icon-like aria-hidden='true' id='heart-number'></span>"
                 + "<small class='number-of-likes' id='route-number-likes'>" + likes + " Likes</small></div></div><div class='route-card-contents'>"
-                + "<ol><li>" + descl[0] + "</li><li>" + descl[1] + "</li><li>" + descl[2] + "</li></ol></div>"
+                + "<ol><li class='route-contents-list'>" + descl[0] + "</li><li class='route-contents-list'>" + descl[1] + "</li><li class='route-contents-list'>" + descl[2] + "</li></ol></div>"
                 + "<div class='route-card-icons'>";
     if (ramp == true){
       card = card + "<span class=icon-ramp aria-hidden='true' id='icon-ramp'></span>";
@@ -79,6 +84,7 @@ $( document ).ready(function() {
     $('#routes-index-main').append(card);
   }
 
+//Thank you StackOverflow (https://stackoverflow.com/questions/332872/encode-url-in-javascript, accessed around May 28) for encodeURI
   function searchRoute(){
     $('.route-card').remove();
 
@@ -90,7 +96,7 @@ $( document ).ready(function() {
       snapshot.forEach(function(childSnapshot){
         var from_db = childSnapshot.val().from;
         var to_db = childSnapshot.val().to;
-        if ((encodeURIComponent(from_value) == encodeURIComponent(from_db)) && (encodeURIComponent(to_value) == encodeURIComponent(to_db))){
+        if ((encodeURIComponent(from_value.toLowerCase()) == encodeURIComponent(from_db.toLowerCase())) && (encodeURIComponent(to_value.toLowerCase()) == encodeURIComponent(to_db.toLowerCase()))){
           var pushid = childSnapshot.key;
           var likes_db = childSnapshot.val().likes;
           var title_db = childSnapshot.val().title;
@@ -122,10 +128,10 @@ $( document ).ready(function() {
       for (var i=0; i<(dataList.length); i++){
         loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8]);
         if (i%2 == 0){
-          x = 38;
+          x = 40;
           y = y + 524;
         } else {
-          x = 66;
+          x = 68;
         }
         document.getElementById(dataList[i][0]).style.cssText = "left:" + x + "%; top:" + y + "px;";
       }
@@ -134,6 +140,10 @@ $( document ).ready(function() {
     }
     })
   }
+
+  // function addRoute(){
+  //   routesRef.push(new_route)
+  // }
 
   function changeMapPlace(location){
     var beginlink = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY&q=";
@@ -144,14 +154,16 @@ $( document ).ready(function() {
   }
 
   $("#searchRouteButton").click(function(){
-    console.log("search button clicked");
     changeMapPlace(document.getElementById("toPlace").value);
     searchRoute();
   })
 
+  // $("#addRouteButton").click(function(){
+  //   addRoute();
+  // })
+
   $( document ).ready(function() {
-    $( document ).on("click", ".chevron-icon", function(){
-      console.log("arrow clicked!");
+    $( document ).on("click", ".route-card", function(){
       movePage($(this));
     })
   })

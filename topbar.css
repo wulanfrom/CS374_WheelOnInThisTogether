@@ -36,6 +36,7 @@
 
 .row {
 	margin: 0;
+	height: 100%;
 }
 
 .sidebar{
@@ -72,6 +73,7 @@
 #sideBarClose {
 	font-size: 20;
 	float: right;
+}
 #logo {
 	cursor: pointer;
 	background-color: #eee;
@@ -79,11 +81,23 @@
 	margin-top: 20px; 
 	font-size: 28px; 
 	color: #1971C2;
+	height: auto;
 }
 
 #sideBarOpen {
-	font-size: 20;
+	font-size: 20px;
 	cursor: pointer;
+	margin-top: 10px;
+	display: block;
+}
+
+.sideBarOpen {
+	display: inline-block;
+	text-align: center;
+}
+
+.topbar div {
+	margin-top: 20px;
 }
 
 .user-circle {

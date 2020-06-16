@@ -21,35 +21,24 @@
 <body>
 
   <div class="outside_topbar">
-    <div class="topbar">
-      <div class="row">
-        <div class="col-md-1">
-          <span class="icon-menu" id='sideBarOpen'></span>
-        </div>
-        <div class="col-md-2" id="logo">
-          <b><center>WheelOn</center></b>
-        </div>
-        <div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
-          <span> Wheelie </span>
-        </div>
+    <div class="topbar row">
+      <div class="col-md-1 sideBarOpen">
+        <span class="icon-menu" id='sideBarOpen'></span>
+      </div>
+      <div class="col-md-2" id="logo">
+        <b><center>WheelOn</center></b>
+      </div>
+      <div class="col-md" style="font-size: 16; color: #1971C2;" align="right">
+        <span class="user-circle" style="cursor: pointer;"></span>
+        <span style="cursor: pointer;"> WHEELIE </span>
       </div>
     </div>
   </div>
   <div class="sidebar">
-    <ul>
-      <li>
-        <span class="col-md-2"><b> WheelOn </b></span>
-        <span class="icon-menu" id="sideBarClose"></span>
-      </li>
-      <br>
-      <li class="options">Forum</li>
-      <li class="options">Routes</li>
-      <li class="options">Rate</li>
-      <li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>
-    </ul>
+    <ul></ul>
   </div>
 
-  <div class="container" id="routes-index-main">
+  <div id="routes-index-main">
     <!-- Search form -->
     <div class="card route-form">
       <form class="form">
@@ -85,7 +74,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Firebase -->
+    <!-- Firebase Realtime Database -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
