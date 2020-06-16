@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Route #1</title>
+  <title>More information on routes!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="style/styleGuide.css" rel="stylesheet">
@@ -17,30 +17,23 @@
   <div class="container" id="routes-individual-main">
     <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
     <div class="row">
-      <div class="col-md-9">
-        <h2 id="card-individual-title"></h2>
-      </div>
-      <div class="col-md-3">
-        <h4>Add to My List</h4>
-      </div>
+      <h2 id="card-individual-title"></h2>
     </div>
 
     <div class="row">
       <div class="col-md-9">
         <div class="card">
           <div class="card-body">
-            <span class=icon-like aria-hidden="true" id="heart-this"></span>
+            <img src="icons/heart.svg" class="float-right" id="heart-number" width='32'>
             <div class="individual-created-by">
               <p class="username-created">Created by</p>
-              <div class="username-circle"></div>
-              <div class="username" id="username-individual">
-                <p id="card-individual-username"></p>
-              </div>
+              <img src="icons/person-circle.svg">
+              <p id="card-individual-username"></p>
             </div>
           </div>
           <div class="card-body">
-            <span class=icon-like aria-hidden="true" id="heart-number"></span>
-            <small class="number-of-likes" id="card-individual-likes"></small>
+            <img src="icons/heart.svg" id="heart-number">
+            <p class="number-of-likes" id="card-individual-likes"></p>
           </div>
           <div class="card-body">
             <h3>DESCRIPTION</h3>
@@ -111,8 +104,9 @@
 
       <div class="col-md-3">
         <!-- Lists -->
-        <div class="categories_card" id="addToMyListCard">
-          <div class="list-group shadow">
+        <h4>Add to My List</h4>
+        <div class="categories_card">
+          <div class="list-group shadow addToMyListCard">
             <button type="button" class="list-group-item list-group-item-action">MY FAVORITE PLACE</button>
             <button type="button" class="list-group-item list-group-item-action">HANGOUT</button>
             <button type="button" class="list-group-item list-group-item-action">STUDY</button>
