@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style/forum_mainpage.css" type="text/css">
     <link rel="stylesheet" href="style/navbar.css" type="text/css">
+    <link rel="stylesheet" href="style/styleGuide.css" type="text/css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -83,35 +84,33 @@
 	<div class="container mt-4">
 		<div class="row">
 			<div class="col-10 all-items">
-				<!-- <h1>Forum Page</h1> -->
-				<!-- <h3>Make Post Card</h3> -->
-				<div class="card">
-				  <!-- <h5 class="card-header">Create Post</h5> -->
-				  <div class="card-body make_post_card">
-				    <!-- <h5 class="card-title"></h5>
-				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-				    <form>
-						<div class="form-group">
-						    <label for="exampleFormControlInput1">Post Title</label>
-						    <input id="topic_input" class="form-control input_default" placeholder="Enter topic here"id="exampleFormControlInput1">
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleFormControlTextarea1">Post Content</label>
-					    <textarea id="user_input" placeholder="What's on your mind?" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-					  </div>
+
+				<div class="card shadow border-0 p-4 routes-card">
+					<form>
+					    <div class="form-group routes-form">
+					      <label for="fromPlace">POST TITLE</label><br>
+					      <input placeholder="Enter topic here" class=" form-control input_default routes-input" id="fromPlace">
+					    </div>
+					    <!-- <img src="../icons/arrow-down-up.svg" class="arrow-up-down float-right" alt="arrow-up-down-logo"> -->
+					    <div class="form-group">
+					      <label for="toPlace">POST CONTENT</label><br>
+					      <textarea id="user_input" placeholder="What's on your mind?" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					    </div>
+					    <!-- <button type="button" class="btn btn-primary">Add Route</button> -->
+					    <div class="dropdown">
+							<button id="select_category" class="btn btn-secondary dropdown-toggle pl-3 pr-3 pt-2 pb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Category
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">All</a>
+								<a class="dropdown-item" href="#">Advice</a>
+								<a class="dropdown-item" href="#">Exercise</a>
+								<a class="dropdown-item" href="#">Health</a>
+								<a class="dropdown-item" href="#">Other</a>
+							</div>
+							<a href="#" id="post_button" class="float-right default_primary our_buttons pl-3 pr-3 pt-2 pb-2">Create Post</a>
+						</div>
 					</form>
-					<div class="dropdown">
-					  <button id="select_category" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Category
-					  </button>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					    <a class="dropdown-item" href="#">Action</a>
-					    <a class="dropdown-item" href="#">Another action</a>
-					    <a class="dropdown-item" href="#">Something else here</a>
-					  </div>
-					  <a href="#" id="post_button" class="btn btn-primary float-right default_primary">Create Post</a>
-					</div>
-				  </div>
 				</div>
 
 				<div id="post_container">

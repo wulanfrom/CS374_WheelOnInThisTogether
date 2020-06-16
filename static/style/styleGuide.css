@@ -74,3 +74,13 @@
   .icon-menu:before {
 	content: "\e9bd";
   }  
+
+/*For the buttons*/
+/*Dont forget to add class pl-3 pr-3 pt-2 pb-2*/
+.our_buttons{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	border: none;
+	border-radius: 10px;
+	text-transform: uppercase;
+}
