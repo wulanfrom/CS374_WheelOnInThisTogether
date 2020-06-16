@@ -78,6 +78,11 @@
 .likes-and-comment {
     color: #1971C2;
 }
+
+.routes-input{
+  width: 100%;
+}
+
 .username {
     text-transform: uppercase;
 }
