@@ -119,3 +119,18 @@
 .dropdown-item{
 	text-transform: uppercase;
 }
+
+.dropdown-menu{
+	border-radius: 10px;
+}
+
+.read_post{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	/*border: none;*/
+	border-radius: 10px;
+	text-transform: uppercase;
+	border-color: #1971C2;
+}
+
+drop
