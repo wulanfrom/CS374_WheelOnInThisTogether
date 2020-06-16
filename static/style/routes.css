@@ -1,5 +1,18 @@
-.addToMyListCard{
+#addToMyListCard{
+  padding-top:8px;
+}
+
+#addToMyListCardLists{
   width: 100%;
+}
+
+#card-individual-likes{
+  display: inline-block;
+  color: #1971C2;
+}
+
+#card-individual-username{
+  display: inline-block;
 }
 
 .chevron-icon{
@@ -26,6 +39,10 @@
   padding-right: 8px;
   display:table-cell;
   vertical-align:top;
+}
+
+#individual-pictures{
+  margin-top: 16px;
 }
 
 #no_result{
@@ -84,4 +101,8 @@
 
 .routes-input{
   width: 100%;
+}
+
+.username-created{
+  display: inline-block;
 }
