@@ -9,7 +9,9 @@ $(document).ready(function () {
     });
     $('.nav-link').on('click', function () {
     	if (this.innerHTML == "Forum") { window.open('forum_mainpage.html', '_self'); }
-    	else if (this.innerHTML == "Routes") { window.open('routes-index.html', '_self'); }
+    	else if (this.innerHTML == "Routes") { 
+            console.log("yesy")
+            window.open('routes-index.html', '_self'); }
     	else if (this.innerHTML == "Rating") { window.open('search_rate.html', '_self'); }
     });
     $('.navbar-brand').on('click', function () {
