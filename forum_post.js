@@ -161,6 +161,15 @@ function OnInput(){
     });
       //clear textarea after inputting
       $('#user_input').val('');
+
+      var comment_card = document.createElement("div");
+      comment_card.setAttribute('class','alert');
+      var writing = document.createElement('p');
+      writing.innerHTML = "you succesfully made a comment!";
+      comment_card.append(writing);
+      // comment_card.append(comment_card);
+      document.body.appendChild(comment_card);
+      console.log('it should appear');
     })
 
   var values = [];
