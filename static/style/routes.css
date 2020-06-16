@@ -1,3 +1,28 @@
+.chevron-icon{
+  fill: #1971C2;
+}
+
+#icon-ramp{
+  font-size: 30px;
+  padding-right: 8px;
+  display:table-cell;
+  vertical-align:top;
+}
+
+#icon-elevator{
+  font-size: 24px;
+  padding-right: 4px;
+  display:table-cell;
+  vertical-align:top;
+}
+
+#icon-wheelchair{
+  font-size: 32px;
+  padding-right: 8px;
+  display:table-cell;
+  vertical-align:top;
+}
+
 #no_result{
   position: absolute;
   top: 260px;
@@ -5,14 +30,20 @@
 }
 
 .route-card{
-  width: 24.167%;
-  height: 480px;
-  position: absolute;
+  width: 96%;
+  max-height: 480px;
   overflow: hidden;
 }
 
-.routes-card{
-  width: 35%;
+.route-card-icons{
+  width: auto;
+  height: auto;
+  display: table;
+  padding-left: 24px;
+}
+
+#route-card-username, #route-number-likes{
+  display: inline-block;
 }
 
 .routes-input{
