@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('.row').css("position", "");
     });
     $('.nav-link').on('click', function () {
-    	if (this.innerHTML == "Forum") { window.open('forum_homepage_cleaned.html', '_self'); }
+    	if (this.innerHTML == "Forum") { window.open('forum_mainpage.html', '_self'); }
     	else if (this.innerHTML == "Routes") { window.open('routes-index.html', '_self'); }
     	else if (this.innerHTML == "Rating") { window.open('search_rate.html', '_self'); }
     });
@@ -16,7 +16,7 @@ $(document).ready(function () {
     	window.open('homepage.html','_self');
     });
     $('.options h4').on('click', function () {
-    	if (this.innerHTML == "FORUM") { window.open('forum_homepage_cleaned.html', '_self'); }
+    	if (this.innerHTML == "FORUM") { window.open('forum_mainpage.html', '_self'); }
     	else if (this.innerHTML == "ROUTES") { window.open('routes-index.html', '_self'); }
     	else if (this.innerHTML == "RATING") { window.open('search_rate.html', '_self'); }
     });

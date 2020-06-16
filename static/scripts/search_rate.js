@@ -62,12 +62,12 @@ function display_query_result(rest_db, query) {
         }
     }
     if (!result) {
-        
         $(".no-result").show()
         $('.result-cards').empty()
     }
     else {
         $(".no-result").hide()
+        $('.result-cards').empty()
         console.log(result)
         display_rest_card(result)
     }
