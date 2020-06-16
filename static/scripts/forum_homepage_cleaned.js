@@ -179,7 +179,7 @@ $(document).ready(function(){
 			likes_comments.setAttribute("class", "col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
 			var comment_icon = document.createElement("img");
 			comment_icon.setAttribute("class", "comment_icon");
-			comment_icon.setAttribute("src", "../icons/chat.svg");
+			comment_icon.setAttribute("src", "icons/chat.svg");
 			comment_icon.setAttribute("width", "18em");
 			comment_icon.setAttribute("height", "18em");
 			likes_comments.append(comment_icon);
@@ -194,7 +194,7 @@ $(document).ready(function(){
 			likes_comments.append(comment_total);
 
 			var likes_icon = document.createElement("img");
-			likes_icon.setAttribute("src", "../icons/heart.svg");
+			likes_icon.setAttribute("src", "icons/heart.svg");
 			likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
