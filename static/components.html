@@ -24,7 +24,7 @@
 		  <button type="button" class="list-group-item list-group-item-action active">Events</button>
 		  <button type="button" class="list-group-item list-group-item-action">Lifestyle</button>
 		  <button type="button" class="list-group-item list-group-item-action">Others</button>
-		</div>	
+		</div>
 	</div>
 
 	<h3>Individual Forum Post Card</h3>
@@ -96,7 +96,7 @@
 		<div class="card-body">
 			<div class='row'>
 				<div class='col-lg-6 col-md-7 col-sm-12 col-12'>
-					<div class='row mb-1'> 
+					<div class='row mb-1'>
 						<div class='col-lg-5 col-md-6 col-sm-6 col-6'>
 							<h3 class='category-title'> Overall</h3>
 						</div>
@@ -169,8 +169,26 @@
 			</div>
 		  </div>
 	</div>
+
+	<!-- Place rating search box, forum page search box, routes search box -->
+	<div class="card shadow border-0 p-4 routes-card">
+  <form>
+    <div class="form-group routes-form">
+      <label for="fromPlace">FROM</label><br>
+      <input placeholder="Search for your starting place" class="input_default routes-input" id="fromPlace">
+    </div>
+    <img src="../icons/arrow-down-up.svg" class="arrow-up-down float-right" alt="arrow-up-down-logo">
+    <div class="form-group">
+      <label for="toPlace">TO</label><br>
+      <input placeholder="Search for your destination place" class="input_default routes-input" id="toPlace">
+    </div>
+    <button type="button" class="btn btn-primary">Add Route</button>
+    <button type="button" class="btn btn-primary float-right">Search Route</button>
+  </form>
+  </div>
+
 	<!-- ----------------------------------------------- -->
 	</div>
-	
+
 </body>
 </html>

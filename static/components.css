@@ -116,10 +116,14 @@
 .likes-and-comment {
     color: #1971C2;
 }
+
+.routes-input{
+  width: 100%;
+}
+
 .username {
     text-transform: uppercase;
 }
-
 .heart_button{
 	border-
 	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
