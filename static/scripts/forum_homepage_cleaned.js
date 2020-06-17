@@ -41,6 +41,10 @@ $(document).ready(function(){
 		user_input.innerHTML = "";
 	});
 
+	// $('.heart_button').hover(function(){
+	// 	console.log('it\'s hovering.');
+	// });
+
 	//Takes user's new post and puts them into database
 	function get_post(){
 		console.log('getting post');
@@ -138,13 +142,17 @@ $(document).ready(function(){
 
 			//title and tag
 			var post_tag_title = document.createElement("h5");
-			post_tag_title.setAttribute("class", "text-left post_main_title mb-2");
-			post_tag_title.innerHTML = post_title;
+			post_tag_title.setAttribute("class", "text-left post_main_title mb-2 d-inline");
+			// post_tag_title.innerHTML = post_title;
 			var post_tag = document.createElement("span");
 			post_tag.innerHTML = post_category;
 			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2 ml-2");
+			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2");
 			card_body.append(post_tag_title);
+			var post_main_title = document.createElement("h5");
+			post_main_title.innerHTML = post_title;
+			post_main_title.setAttribute('class','d-inline');
+			card_body.append(post_main_title);
 
 			//paragraph
 			var post_paragraph = document.createElement("p");
@@ -214,10 +222,6 @@ $(document).ready(function(){
 			read_post.setAttribute("class", "btn btn-primary float-right btn-sm read_post");
 			read_post.innerHTML = "Read Post";
 			likes_comments.append(read_post);
-
-
-
-
 
 			footer_row.append(likes_comments);
 

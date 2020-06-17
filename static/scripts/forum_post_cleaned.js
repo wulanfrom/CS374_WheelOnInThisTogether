@@ -106,6 +106,13 @@ $(document).ready(function(){
 				$('#total_hearts').html(items_content[5] + 1 + " Likes");
 			}
 		});
+		var like_button = document.getElementsByClassName('heart_button')[0];
+		like_button.setAttribute('src','icon/heart-fill.svg');
+	});
+
+	$('.heart_button').hover(function(e){
+		e.preventDefault();
+		console.log('it\'s hovering.');
 	});
 
 	//If you press post_comment, the comments will appear and added to the bottom

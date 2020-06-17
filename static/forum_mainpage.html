@@ -119,13 +119,13 @@
 							    </select>
 						 	</div> -->
 						 	<label for="topic" class="topic_names d-inline">Topic: </label>
-						 	<div class="form-group d-inline pl-3 pr-3 pt-2 pb-2" id="drop_category">
-								<select name="topic" id="select_category">
+						 	<div class="form-group d-inline" id="drop_category">
+								<select name="topic" id="select_category" class="pl-3 pr-3 pt-2 pb-2">
 									<!-- <option value="1">All</option> -->
 									<option value="2">Advice</option>
-									<option value="3">Health</option>
-									<option value="4">Exercise</option>
-									<option value="5">Other</option>
+									<option value="3">Event</option>
+									<option value="4">Health</option>
+									<option value="5">Random</option>
 								</select>
 							</div>
 							<a href="#" id="post_button" class="float-right default_primary our_buttons pl-3 pr-3 pt-2 pb-2 d-inline">Create Post</a>
@@ -134,15 +134,15 @@
 				</div>
 
 				<div id="post_container">
-					<h6 class="text-center mt-5">Be the first to ask!</h6>
+					<!-- <h6 class="text-center mt-5">Be the first to ask!</h6> -->
 					<!-- Forum Post Cards -->
-					<!-- <div class='card my-4 shadow border-0 whole_card'> -->
-						<!-- <div class="card-body">
+					<!-- <div class='card my-4 shadow border-0 whole_card'>
+						<div class="card-body">
 							<h5 class="card-title text-left"></h5>
-			    			<h5 class="text-left post_main_title mb-2"><span class="badge badge badge-primary category-tags p-2 mr-2">Advice</span>How can I go to N1 From Areumgwan?</h5>
+			    			<h5 class="text-left post_main_title mb-2 d-inline"><span class="badge badge badge-primary category-tags p-2 mr-2">Advice</span></h5><h5 class="d-inline">How can i Go?</h5>
 					   		<p class="d-block card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
-						  </div> -->
-						  <!-- <div class="card-footer">
+						  </div>
+						  <div class="card-footer">
 							<div class='row'>
 								<div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'>
 									<img src='duck.jpg' width="24em" height="24em" class="rounded-circle user-circle">
@@ -184,13 +184,11 @@
 				<div class="categories_card">
 					<h3 class="">Category</h3>
 					<div class="list-group shadow">
-					  <button type="button" class="list-group-item list-group-item-action active">
-					    <a class="link_color" href="forum_mainpage.html">All</a>
-					  </button>
-					  <button type="button" class="list-group-item list-group-item-action"><a class="link_color" href="forum_homepage_advice.html">Advice</a></button>
-					  <button type="button" class="list-group-item list-group-item-action"><a href="forum_homepage_exercise.html" class="link_color">Exercise</a></button>
-					  <button type="button" class="list-group-item list-group-item-action"><a href="forum_homepage_health.html" class="link_color">Health</a></button>
-					  <button type="button" class="list-group-item list-group-item-action"><a href="forum_homepage_other.html" class="link_color">Others</a></button>
+					  <a href="#" class="list-group-item list-group-item-action active">All</a>
+					  <a class="link_color" href="forum_homepage_advice.html"><button type="button" class="list-group-item list-group-item-action">Advice</button></a>
+					  <a class="link_color" href="forum_homepage_advice.html"><button type="button" class="list-group-item list-group-item-action">Event</button></a>
+					  <a class="link_color" href="forum_homepage_advice.html"><button type="button" class="list-group-item list-group-item-action">Health</button></a>
+					  <a class="link_color" href="forum_homepage_advice.html"><button type="button" class="list-group-item list-group-item-action">Random</button></a>
 					</div>
 				</div>
 			</div>
