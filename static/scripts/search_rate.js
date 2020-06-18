@@ -14,14 +14,11 @@ firebase.initializeApp(firebaseConfig);
 $(document).ready(function(){
     // var rest_db = null;
     $('[data-toggle="tooltip"]').tooltip()
+    
+    $(".spinner").show()
     get_restaurants().then((res) => {
         console.log(res)
-        // $(".spinner").hide()
-        // rest_names = []
-        // console.log(res[0])
-        // for (idx in res) {
-        //     console.log()
-        // }
+        display_explore(res)
         display_autofill(res)
         $("#search-input").keypress(function(event) {
             if (event.which == "13") {
@@ -53,10 +50,11 @@ $(document).ready(function(){
 })
 
 function display_query_result(rest_db, query) {
+    $('#rec-text').hide()
     console.log(rest_db)
     var result = null
     for (idx in rest_db) {
-        if (rest_db[idx].name.toLowerCase() == query) {
+        if (rest_db[idx].name.toLowerCase() == query.toLowerCase()) {
             result = rest_db[idx]
             break;
         }
@@ -159,5 +157,11 @@ async function get_rest_names() {
     }
     finally {
         return rest_names
+    }
+}
+
+function display_explore(rest_db) {
+    for (i = 0; i < 3; i++)  {
+        display_rest_card(rest_db[i])
     }
 }
