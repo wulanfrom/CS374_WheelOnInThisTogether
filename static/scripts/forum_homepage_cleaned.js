@@ -70,6 +70,7 @@ $(document).ready(function(){
 				total_replies: 0,
 				poster: 'Wheelie', //Changed later to username when login is implemented!
 				user_comments: null,
+				liked: false,
 			};
 
 			var updates = {};
@@ -121,11 +122,13 @@ $(document).ready(function(){
 			var post_category = post_array[i][0];
 			var post_content = post_array[i][1];
 			var post_key = post_array[i][2];
-			// var post_poster = post_array[i][3];
+			var liked = post_array[i][3];
 			var post_poster = "Wheelie";
-			var post_title = post_array[i][4];
-			var post_likes = post_array[i][5];
-			var post_replies = post_array[i][6];
+			// var post_poster = post_array[i][4];
+			var post_title = post_array[i][5];
+			var post_likes = post_array[i][6];
+			var post_replies = post_array[i][7];
+			// var liked = 
 
 			//Add to HTML
 			//Make Container for each card
