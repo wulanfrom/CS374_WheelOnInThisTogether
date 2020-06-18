@@ -63,3 +63,8 @@ body{
 	color: #868E96;
 	text-
 }
+
+.heart_button{
+	border-
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}
