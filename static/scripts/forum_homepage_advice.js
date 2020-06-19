@@ -1,5 +1,9 @@
 // Makes sure the codes run when we open the page
 $(document).ready(function(){
+	$("#post-msg").hide();
+	$("#content-msg").hide();
+	$("#title-msg").hide();
+	$("#title-content-msg").hide();
 	// Make textarea height automatically grow with content
 	// console.log("js works!");
 	const tx = document.getElementsByTagName('textarea');
@@ -66,11 +70,30 @@ $(document).ready(function(){
 				total_replies: 0,
 				poster: 'Wheelie', //Changed later to username when login is implemented!
 				user_comments: null,
+				liked: false,
 			};
 
 			var updates = {};
 			updates["post_comment/" + key] = post;
 			firebase.database().ref().update(updates);
+	    }
+	    else if (input_content.value.length == 0 && title_content.value.length == 0){
+	    	$("#title-content-msg").slideDown();
+	        setTimeout(function() {
+	            $("#title-content-msg").slideUp();
+	        }, 5000);
+	    }
+	    else if (title_content.value.length == 0){
+	    	$("#title-msg").slideDown();
+	        setTimeout(function() {
+	            $("#title-msg").slideUp();
+	        }, 5000);
+	    }
+	    else{
+	    	$("#content-msg").slideDown();
+	        setTimeout(function() {
+	            $("#content-msg").slideUp();
+	        }, 5000);
 	    }
 	}
 
