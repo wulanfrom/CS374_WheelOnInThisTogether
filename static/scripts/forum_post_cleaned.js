@@ -30,6 +30,9 @@ $(document).ready(function(){
 	};
 
 	firebase.initializeApp(firebaseConfig);
+	$("#like-msg").hide();
+	$("#post-msg").hide();
+	$("#empty-msg").hide()
 
 	//Replace the writings at the post with data from Firebase key
 	firebase.database().ref('post_comment').once('value',function(snapshot){
@@ -44,6 +47,12 @@ $(document).ready(function(){
 				$('.content_post').html(childValue.content);
 				$('.username').html(childValue.poster);
 				$('.disc_topic').html(childValue.title);
+
+				//If it's liked before, then initialize as liked
+				if (childValue.liked){
+					var like_button = document.getElementsByClassName('heart_button')[0];
+					like_button.setAttribute('src','icons/heart-fill.svg');
+				}
 
 				if (childValue.total_replies == 1){
 					$('#total_replies').html(childValue.total_replies + " Reply");
@@ -61,6 +70,11 @@ $(document).ready(function(){
 				else{
 					$('#total_hearts').html(childValue.total_likes + " Likes");
 				}
+
+				if (childValue.liked){
+					var like_heart = document.getElementsByClassName('heart_button')[0];
+					like_button.setAttribute('src','icons/heart-fill.svg');
+				}
 			};
 		});
 	});
@@ -75,41 +89,91 @@ $(document).ready(function(){
 	}
 
 	$('.heart_button').on('click', function(){
-		//Update number of comments in Firebase
 		var path = firebase.database().ref('post_comment/' + post_key);
 		path.once('value').then(function(snapshot){
+			// var liked = false;
 			var items = snapshot.val();
 			var items_content = Object.values(items);
 			// console.log('items: '+ Object.values(items));
-
-			var updatedData = {
-				category: items_content[0],
-				content: items_content[1],
-				key: items_content[2],
-				poster: items_content[3],
-				title: items_content[4],
-				total_likes: items_content[5] + 1,
-				total_replies: items_content[6],
-				user_comments: items_content[7],
+			var liked = items_content[3];
+			// console.log('liked: '+ !liked);
+			console.log('liked: '+ liked);
+			//If liked, popup comes up
+			if (liked){
+				console.log("you already liked it!");
+				// var like_message = document.getElementById('like-msg');
+				$("#like-msg").slideDown()
+	            setTimeout(function() {
+	                $("#like-msg").slideUp()
+	            }, 5000);
+				// like_message.setAttribute('style', 'display:')
 			}
-
-			//Update the number of likes on the page
-			var updates = {};
-			updates['post_comment/' + post_key] = updatedData;
-			firebase.database().ref().update(updates);
-
-			var changedLikes = items_content[5] + 1;
-			if (changedLikes == 1){
-				$('#total_hearts').html(items_content[5] + 1 + " Like");
-			}
+			//If the post is not liked yet, it can like.
 			else{
-				$('#total_hearts').html(items_content[5] + 1 + " Likes");
-			}
+				console.log('tis ');
+				//Change heart to colored
+				var like_button = document.getElementsByClassName('heart_button')[0];
+				like_button.setAttribute('src','icons/heart-fill.svg');
+				var path = firebase.database().ref('post_comment/' + post_key);
+
+				//Update number of likes in Firebase
+				path.once('value').then(function(snapshot){
+					var items = snapshot.val();
+					var items_content = Object.values(items);
+					// console.log('items: '+ Object.values(items));
+					var updated_userComments = null;
+					if (items.length >8){
+						updated_userComments = items_content[8]
+					}
+
+					var updatedData = {
+						category: items_content[0],
+						content: items_content[1],
+						key: items_content[2],
+						liked: true,
+						poster: items_content[4],
+						title: items_content[5],
+						total_likes: items_content[6] + 1,
+						total_replies: items_content[7],
+						user_comments: updated_userComments,
+						// if (items.length == 8){
+						// 	user_comments: null,
+						// }
+						// else{
+						// 	user_comments: items_content[8],
+						// }
+					}
+
+					//Update the number of likes on the page
+					var updates = {};
+					updates['post_comment/' + post_key] = updatedData;
+					firebase.database().ref().update(updates);
+
+					var changedLikes = items_content[6] + 1;
+					if (changedLikes == 1){
+						$('#total_hearts').html(items_content[6] + 1 + " Like");
+					}
+					else{
+						$('#total_hearts').html(items_content[6] + 1 + " Likes");
+					}
+				});
+			};
 		});
 	});
 
+	// $('.heart_button').hover(function(e){
+	// 	e.preventDefault();
+	// 	// console.log('it\'s hovering.');
+	// });
+
 	//If you press post_comment, the comments will appear and added to the bottom
 	$("#post_comment").on('click',function(){
+		// if the text is empty, then make error popup
+		// if ($(#post_commet'))
+		// setTimeout(function() {
+  //                   $("#success-msg").slideUp()
+  //               }, 2000);
+  		// if not you then post it
 		console.log('the button is clicked');
 		var input_content = document.getElementById("user_input");
 		if (input_content.value.length != 0){
@@ -199,28 +263,32 @@ $(document).ready(function(){
 				category: items_content[0],
 				content: items_content[1],
 				key: items_content[2],
-				poster: items_content[3],
-				title: items_content[4],
-				total_likes: items_content[5],
-				total_replies: items_content[6] + 1,
-				user_comments: items_content[7],
+				liked: items_content[3],
+				poster: items_content[4],
+				title: items_content[5],
+				total_likes: items_content[6],
+				total_replies: items_content[7] + 1,
+				user_comments: items_content[8],
 			}
 
 			var updates = {};
 			updates['post_comment/' + post_key] = updatedData;
 			firebase.database().ref().update(updates);
 
-			var changedReply = items_content[6] + 1;
+			var changedReply = items_content[7] + 1;
 			if (changedReply == 1){
-				$('#total_replies').html(items_content[6] + 1 + " Reply");
-				$('.number_replies').html(items_content[6] + 1 + " Reply");
+				$('#total_replies').html(items_content[7] + 1 + " Reply");
+				$('.number_replies').html(items_content[7] + 1 + " Reply");
 			}
 			else{
-				$('#total_replies').html(items_content[6] + 1 + " Replies");
-				$('.number_replies').html(items_content[6] + 1 + " Replies");
+				$('#total_replies').html(items_content[7] + 1 + " Replies");
+				$('.number_replies').html(items_content[7] + 1 + " Replies");
 			}
 		});
-
+        $("#post-msg").slideDown()
+        setTimeout(function() {
+            $("#post-msg").slideUp()
+        }, 5000);
 	});
 
 	// Initialize comments on page

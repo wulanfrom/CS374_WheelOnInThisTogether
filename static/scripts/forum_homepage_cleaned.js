@@ -41,6 +41,10 @@ $(document).ready(function(){
 		user_input.innerHTML = "";
 	});
 
+	// $('.heart_button').hover(function(){
+	// 	console.log('it\'s hovering.');
+	// });
+
 	//Takes user's new post and puts them into database
 	function get_post(){
 		console.log('getting post');
@@ -66,6 +70,7 @@ $(document).ready(function(){
 				total_replies: 0,
 				poster: 'Wheelie', //Changed later to username when login is implemented!
 				user_comments: null,
+				liked: false,
 			};
 
 			var updates = {};
@@ -117,11 +122,13 @@ $(document).ready(function(){
 			var post_category = post_array[i][0];
 			var post_content = post_array[i][1];
 			var post_key = post_array[i][2];
-			// var post_poster = post_array[i][3];
+			var liked = post_array[i][3];
 			var post_poster = "Wheelie";
-			var post_title = post_array[i][4];
-			var post_likes = post_array[i][5];
-			var post_replies = post_array[i][6];
+			// var post_poster = post_array[i][4];
+			var post_title = post_array[i][5];
+			var post_likes = post_array[i][6];
+			var post_replies = post_array[i][7];
+			// var liked = 
 
 			//Add to HTML
 			//Make Container for each card
@@ -138,13 +145,17 @@ $(document).ready(function(){
 
 			//title and tag
 			var post_tag_title = document.createElement("h5");
-			post_tag_title.setAttribute("class", "text-left post_main_title mb-2");
-			post_tag_title.innerHTML = post_title;
+			post_tag_title.setAttribute("class", "text-left post_main_title mb-2 d-inline");
+			// post_tag_title.innerHTML = post_title;
 			var post_tag = document.createElement("span");
 			post_tag.innerHTML = post_category;
 			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2 ml-2");
+			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2");
 			card_body.append(post_tag_title);
+			var post_main_title = document.createElement("h5");
+			post_main_title.innerHTML = post_title;
+			post_main_title.setAttribute('class','d-inline');
+			card_body.append(post_main_title);
 
 			//paragraph
 			var post_paragraph = document.createElement("p");
@@ -214,10 +225,6 @@ $(document).ready(function(){
 			read_post.setAttribute("class", "btn btn-primary float-right btn-sm read_post");
 			read_post.innerHTML = "Read Post";
 			likes_comments.append(read_post);
-
-
-
-
 
 			footer_row.append(likes_comments);
 
