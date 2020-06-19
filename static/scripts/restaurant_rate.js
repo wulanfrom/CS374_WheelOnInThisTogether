@@ -102,6 +102,26 @@ $(document).ready(function() {
         }
     })
 
+    //Likes system
+    $(document).on("mouseenter", ".heart-unfilled", function(){
+        $(this).attr("src", "icons/heart-fill.svg")
+        // $(this).removeClass("heart-unfilled").addClass("heart-filled")
+    })
+    $(document).on("mouseleave", ".heart-unfilled", function(){
+        $(this).attr("src", "icons/heart.svg")
+    })
+    $(document).on("click", ".heart-unfilled", function(){
+        var like_dom = $(this).siblings('.likes-and-comment').children('.likes')
+        var like_num = parseInt(like_dom.text()) + 1
+        var updates = {}
+        like_dom.text(like_num)
+        var comment_key = $(this).parent().parent().parent().parent().data('key')
+        console.log()
+        updates['restaurant/'+rest_key+'/user_ratings/'+ comment_key+'/likes'] = like_num
+        firebase.database().ref().update(updates)
+        $(this).attr("src", "icons/heart-fill.svg")
+        $(this).removeClass("heart-unfilled").addClass("heart-filled")
+    })
 
     function turn_rating_on() {
         $(".icon-star").hover(function() {
@@ -203,7 +223,8 @@ async function display_image(rest_name) {
 }
 
 function comment_format(rating_entry) {
-    const user_rating = rating_entry
+    var comment_key = rating_entry[0]
+    const user_rating = rating_entry[1]
     //Comment star
     var facility_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(user_rating.facility) +"</h5></div>"
     var facility_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title'> Facility </h5></div>"
@@ -230,20 +251,21 @@ function comment_format(rating_entry) {
 
     var user_pics = "<div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'><img src='icons/person-circle.svg' width='24' height='24'></div>"
     var user_name = "<div class='col-lg-2 col-md-2 col-sm-4 col-4 username align-middle pl-0'>" + user_rating.username + "</div>"
-    var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='icons/heart.svg' width='18' height='18'><span class='mx-2 likes-and-comment'>" + user_rating.likes + " Likes </span></div>"
+
+    var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='icons/heart.svg' width='18' height='18' class='heart-unfilled'><span class='mx-2 likes-and-comment'><span class='likes'>" + user_rating.likes + "</span> Likes </span></div>"
 
     var card_footer = "<div class='card-footer'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
 
-    var comment_card = "<div class='card my-4 shadow-sm border-0'>" + card_body + card_footer + "</div>"
+    var comment_card = "<div class='card my-4 shadow-sm border-0' data-key='" + comment_key +"'>" + card_body + card_footer + "</div>"
     return comment_card
 }
 
 function display_comment(restaurant_db) {
     const user_ratings = restaurant_db.user_ratings
     console.log(user_ratings)
-    for (var key of Object.keys(user_ratings)) {
-        $("#comment-list").prepend(comment_format(user_ratings[key]))
-    }
+    Object.entries(user_ratings).forEach(entry => {
+        $("#comment-list").prepend(comment_format(entry))
+    })
 }
 
 function display_rating_page(rest_db) {
@@ -253,7 +275,8 @@ function display_rating_page(rest_db) {
     const rating = rest_db.rating
     const size = Object.keys(rest_db.user_ratings).length
     console.log(rating.overall/size)
-    $(".rstrnt-overall").html(generate_star(Math.round(rating.overall/size), 36))
+    var overall = (rating.facility+rating.accessibility + rating.safety)/3
+    $(".rstrnt-overall").html(generate_star(Math.round(overall/size), 36))
     $(".rstrnt-facility").html(generate_star(Math.round(rating.facility/size), 24))
     $(".rstrnt-access").html(generate_star(Math.round(rating.accessibility/size), 24))
     $(".rstrnt-safety").html(generate_star(Math.round(rating.safety/size), 24))
