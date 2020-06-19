@@ -30,3 +30,12 @@
 .stars{
 	filter: invert(34%) sepia(83%) saturate(3821%) hue-rotate(200deg) brightness(103%) contrast(104%);
 }
+
+#homepage-route-search{
+	width: 90%;
+}
+
+#new-search-route{
+	width: fit-content;
+	margin-right: auto;
+}
