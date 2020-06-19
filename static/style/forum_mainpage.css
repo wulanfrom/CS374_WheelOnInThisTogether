@@ -11,9 +11,17 @@ body{
 	/*padding-top:32px; upper padding might need to be changed later*/
 	top:0;
 	position: sticky; /*Uncomment if you want it to follow the screen*/
+};
+
+.float_footer{
+	/*padding-top:32px; upper padding might need to be changed later*/
+	top:0;
+	position: sticky; /*Uncomment if you want it to follow the screen*/	
 }
 
-.list-group-item{
+
+
+/*.list-group-item{
 	text-transform: uppercase;
 	color: #1971C2;
 	border-color:#D0EBFF;
@@ -25,46 +33,46 @@ body{
 }
 .list-group{
 	border-radius: 10px;
-}
-.list-group-item:first-child{
+}*/
+/*.list-group-item:first-child{
 	text-transform: uppercase;
 	color: #1971C2;
-	border-color:#D0EBFF;
+	border-color:#D0EBFF;*/
 	/*padding: 32px 32px 12px 32px;*/
-	padding: 12px 32px;
-	border-radius: 10px 10px 0px 0px;
+	/*padding: 12px 32px;
+	border-radius: 10px 10px 0px 0px;*/
 	/*border-top: 1px solid #D0EBFF;*/
 }
 
-.list-group-item:nth-child(5){
+/*.list-group-item:nth-child(5){
 	text-transform: uppercase;
 	color: #1971C2;
-	border-color:#D0EBFF;
+	border-color:#D0EBFF;*/
 	/*padding: 12px 32px 32px 32px;*/
-	padding: 12px 32px;
-	border-radius: 0px 0px 10px 10px;
+	/*padding: 12px 32px;
+	border-radius: 0px 0px 10px 10px;*/
 	/*border-bottom: 1px solid #D0EBFF;*/
-}
+/*}
 
 .list-group-item:hover{
 	background-color: #D0EBFF;
 	color: #1971C2;
 	border-color:#D0EBFF;
-}
+}*/
 
-.list-group-item.active{
+/*.list-group-item.active{
 	background-color: #D0EBFF;
 	color: #1971C2;
-	border-color:#D0EBFF;
+	border-color:#D0EBFF;*/
 	/*border-color: none !important;*/
-}
+/*}*/
 
-.list-group{
+/*.list-group{
 	width: 12em;
 	border-radius: 10px;
 	border-color: #D0EBFF;
 }
-
+*/
 /*For post card*/
 .category-title {
     font-weight: 400;
