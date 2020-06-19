@@ -97,7 +97,7 @@ $(document).ready(function(){
 			snapshot.forEach(function(childSnapshot){
 			var childKey = childSnapshot.key; //key of post
 			var childContent = childSnapshot.val(); //object
-			if (Object.values(childContent)[0].toLowerCase().localeCompare('other') == 0){ //only if the item is equal to advice
+			if (Object.values(childContent)[0].toLowerCase().localeCompare('random') == 0){ //only if the item is equal to advice
 				console.log('true');
 				post_array.push(Object.values(childContent)); //convert to array
 			}
@@ -144,13 +144,17 @@ $(document).ready(function(){
 
 			//title and tag
 			var post_tag_title = document.createElement("h5");
-			post_tag_title.setAttribute("class", "text-left post_main_title mb-2");
-			post_tag_title.innerHTML = post_title;
+			post_tag_title.setAttribute("class", "text-left post_main_title mb-2 d-inline");
+			// post_tag_title.innerHTML = post_title;
 			var post_tag = document.createElement("span");
 			post_tag.innerHTML = post_category;
 			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2 ml-2");
+			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2");
 			card_body.append(post_tag_title);
+			var post_main_title = document.createElement("h5");
+			post_main_title.innerHTML = post_title;
+			post_main_title.setAttribute('class','d-inline');
+			card_body.append(post_main_title);
 
 			//paragraph
 			var post_paragraph = document.createElement("p");
@@ -185,7 +189,7 @@ $(document).ready(function(){
 			likes_comments.setAttribute("class", "col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
 			var comment_icon = document.createElement("img");
 			comment_icon.setAttribute("class", "comment_icon");
-			comment_icon.setAttribute("src", "../icons/chat.svg");
+			comment_icon.setAttribute("src", "icons/chat.svg");
 			comment_icon.setAttribute("width", "18em");
 			comment_icon.setAttribute("height", "18em");
 			likes_comments.append(comment_icon);
@@ -200,7 +204,7 @@ $(document).ready(function(){
 			likes_comments.append(comment_total);
 
 			var likes_icon = document.createElement("img");
-			likes_icon.setAttribute("src", "../icons/heart.svg");
+			likes_icon.setAttribute("src", "icons/heart.svg");
 			likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
@@ -220,10 +224,6 @@ $(document).ready(function(){
 			read_post.setAttribute("class", "btn btn-primary float-right btn-sm read_post");
 			read_post.innerHTML = "Read Post";
 			likes_comments.append(read_post);
-
-
-
-
 
 			footer_row.append(likes_comments);
 
