@@ -121,11 +121,13 @@ $(document).ready(function(){
 			var post_category = post_array[i][0];
 			var post_content = post_array[i][1];
 			var post_key = post_array[i][2];
-			// var post_poster = post_array[i][3];
+			var liked = post_array[i][3];
 			var post_poster = "Wheelie";
-			var post_title = post_array[i][4];
-			var post_likes = post_array[i][5];
-			var post_replies = post_array[i][6];
+			// var post_poster = post_array[i][4];
+			var post_title = post_array[i][5];
+			var post_likes = post_array[i][6];
+			var post_replies = post_array[i][7];
+			// var liked = 
 
 			//Add to HTML
 			//Make Container for each card
@@ -305,6 +307,14 @@ $(document).ready(function(){
         	};
 		});
 	}
+	$('.categories').on('click', function() {
+        console.log(this.innerHTML);
+        if (this.innerHTML == "All") { window.open('forum_mainpage.html', '_self'); }
+        else if (this.innerHTML == "Advice") { window.open('forum_homepage_advice.html', '_self'); }
+        else if (this.innerHTML == "Event") { window.open('forum_homepage_exercise.html', '_self'); }
+        else if (this.innerHTML == "Health") { window.open('forum_homepage_health.html', '_self'); }
+        else if (this.innerHTML == "Random") { window.open('forum_homepage_other.html', '_self'); }
+    });
 	// getKey();
 	add_new_post();
 });
