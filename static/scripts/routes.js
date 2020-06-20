@@ -153,15 +153,15 @@ function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, like
 
 
   if (liked) {
-    card = card + "</div></div></div><div class='card-footer pb-0'>" +
-      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+    card = card + "</div></div></div><div class='card-footer color-yellow pb-0'>" +
+      "<img src='homepagePictures/duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username text-black'>" +
       username + "</p><div class='float-right'><img src='icons/heart-fill.svg' width='18' height='18'>" +
-      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment text-black'>" + likes + " Likes </span></div></div></div>";
   } else {
-    card = card + "</div></div></div><div class='card-footer pb-0'>" +
-      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+    card = card + "</div></div></div><div class='card-footer color-yellow pb-0'>" +
+      "<img src='homepagePictures/duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username text-black'>" +
       username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>" +
-      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment text-black'>" + likes + " Likes </span></div></div></div>";
   }
 
   //$('#routes-index-main').append(card);
