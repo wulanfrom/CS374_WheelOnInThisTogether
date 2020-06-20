@@ -10,6 +10,7 @@ function fillContent(id, content) {
 //Thank you StackOverflow (https://stackoverflow.com/questions/40471284/firebase-search-by-child-value, accessed on May 28) for equalTo
 function fillPage(id) {
   $(".spinner").show();
+  fillContent("hidID", id);
   var contentList = [];
   var query = routesRef.orderByKey().equalTo(id);
   query.once('value').then(function(snapshot) {
@@ -29,6 +30,7 @@ function fillPage(id) {
       var desc_db = childSnapshot.val().desc;
       var description_db = childSnapshot.val().description;
       var images_db = childSnapshot.val().images;
+      var liked_db = childSnapshot.val().z_liked;
 
       var descriptionList = [];
       var imagesList = [];
@@ -41,7 +43,7 @@ function fillPage(id) {
         imagesList.push(images_db[i]);
       }
 
-      contentList = [title_db, username_db, likes_db, descriptionList, landmarks_db, imagesList, ramp_db, elevator_db, wheelchair_db, rampdesc_db, eledesc_db, wheeldesc_db, desc_db, from_db, to_db];
+      contentList = [title_db, username_db, likes_db, descriptionList, landmarks_db, imagesList, ramp_db, elevator_db, wheelchair_db, rampdesc_db, eledesc_db, wheeldesc_db, desc_db, from_db, to_db, liked_db];
     });
     fillContent("card-individual-title", contentList[0]);
     fillContent("card-individual-username", contentList[1]);
@@ -83,6 +85,10 @@ function fillPage(id) {
       document.getElementById("individual-pictures").appendChild(image);
     }
 
+    if (contentList[15]) {
+      $('.like_icon').attr('src', 'icons/heart-fill.svg');
+    }
+
     initMapindiv();
     $(".spinner").hide();
   })
@@ -95,14 +101,14 @@ function movePage(element) {
   var id = $(element).closest("div").attr("id");
   console.log(id);
   console.log($(element).attr("class"));
-  if ($(element).hasClass("fromIndex")){
+  if ($(element).hasClass("fromIndex")) {
     window.location.href = "routes-individual.html" + "#" + id + "/fromindex";
-  } else{
+  } else {
     window.location.href = "routes-individual.html" + "#" + id + "/fromsearch";
   }
 }
 
-function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, i) {
+function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, liked, i) {
   var card = "<div class='card mb-5 ml-3 shadow border-0 route-card' id='" + id + "'><div class='card-body route-card-image'>" +
     "<img class='route-card-img' src='" + imgl[0] + "' width='102%'></div>" +
     "<div class='card-body'><div class='route-card-title'><h5>" + title + "</h5></div><div class='route-card-contents my-3'>" +
@@ -117,10 +123,17 @@ function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, i) {
     card = card + "<span class=icon-wheelchair aria-hidden='true' id='icon-wheelchair'></span>";
   }
 
-  card = card + "</div></div></div><div class='card-footer pb-0'>"
-              + "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>"
-              + username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>"
-      				+	"<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+  if (liked) {
+    card = card + "</div></div></div><div class='card-footer pb-0'>" +
+      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+      username + "</p><div class='float-right'><img src='icons/heart-fill.svg' width='18' height='18'>" +
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+  } else {
+    card = card + "</div></div></div><div class='card-footer pb-0'>" +
+      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+      username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>" +
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+  }
 
   //$('#routes-index-main').append(card);
   if (i % 2 == 0) {
@@ -154,6 +167,7 @@ function searchRoute() {
         var wheelchair_db = childSnapshot.val().wheelchair;
         var description_db = childSnapshot.val().desc;
         var images_db = childSnapshot.val().images;
+        var liked = childSnapshot.val().z_liked;
 
         var imagesList = [];
 
@@ -161,14 +175,14 @@ function searchRoute() {
           imagesList.push(images_db[i]);
         }
 
-        dataList.push([pushid, imagesList, title_db, username_db, likes_db, description_db, ramp_db, elevator_db, wheelchair_db]);
+        dataList.push([pushid, imagesList, title_db, username_db, likes_db, description_db, ramp_db, elevator_db, wheelchair_db, liked]);
       }
     });
 
     if (dataList.length != 0) {
       $("#no_result").hide();
       for (var i = 0; i < (dataList.length); i++) {
-        loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8], i);
+        loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8], dataList[i][9], i);
       }
     } else {
       $("#no_result").show();
@@ -207,7 +221,7 @@ function initMapindiv() {
   var map = new google.maps.Map(document.getElementById('gmaps-indiv'), mapOptions);
   directionsRenderer.setMap(map);
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     calculateAndDisplayRouteindiv(directionsService, directionsRenderer);
   })
 }
@@ -258,17 +272,17 @@ function calculateAndDisplayRouteindiv(directionsService, directionsRenderer) {
 // }
 
 $("#individual-backto").click(function() {
-  if ($(this).closest("div").hasClass("fromindex")){
+  if ($(this).closest("div").hasClass("fromindex")) {
     window.location.href = "routes-index.html";
-  } else{
+  } else {
     var id = $(this).closest("div").attr("id");
     window.location.href = "routes-index.html" + "#" + id;
   }
 })
 
 $("#searchRouteButton").click(function() {
-//  changeMapPlace(document.getElementById("toPlace").value);
-    searchRoute();
+  //  changeMapPlace(document.getElementById("toPlace").value);
+  searchRoute();
 })
 
 $("#addRouteButton").click(function() {
@@ -282,3 +296,48 @@ $("#addToMyListCard").click(function() {
 $(document).on("click", ".route-card", function() {
   movePage($(this));
 })
+
+//Thank youhttps: stackoverflow.com/questions/40589397/firebase-db-how-to-update-particular-value-of-child-in-firebase-database
+function click_heart(id) {
+    var query = routesRef.orderByKey().equalTo(id);
+    query.once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var liked = childSnapshot.val().z_liked;
+        var total_likes = childSnapshot.val().likes;
+        if (!liked) {
+          console.log('liked is false: ', liked);
+          firebase.database().ref('routes/' + id + '/z_liked').set(true);
+          firebase.database().ref('routes/' + id + '/likes').set(total_likes + 1);
+          $('#card-individual-likes').html(total_likes + 1 + ' Likes');
+          $('.like_icon').attr('src', 'icons/heart-fill.svg');
+        } else{
+          firebase.database().ref('routes/' + id + '/z_liked').set(false);
+          firebase.database().ref('routes/' + id + '/likes').set(total_likes - 1);
+          $('#card-individual-likes').html(total_likes - 1 + ' Likes');
+          $('.like_icon').attr('src', 'icons/heart.svg');
+        }
+      });
+    });
+}
+
+$('.like_icon').on('click', function() {
+  console.log("clicked");
+  var this_id = document.getElementById("hidID");
+  var id = this_id.innerHTML;
+  click_heart(id);
+})
+
+async function get_from_names() {
+    try {
+        var place_names = []
+        var rest
+        firebase.database().ref('routes/').once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                place_names.push(data.val().name)
+            })
+        })
+    }
+    finally {
+        return rest_names
+    }
+}
