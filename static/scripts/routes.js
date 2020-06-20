@@ -6,6 +6,33 @@ function fillContent(id, content) {
   document.getElementById(id).innerHTML = content;
 }
 
+var from_places = [];
+var to_places = [];
+var query = routesRef.orderByKey();
+query.once('value').then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    var from_db = childSnapshot.val().from;
+    var to_db = childSnapshot.val().to;
+    from_places.push(from_db);
+    to_places.push(to_db);
+  });
+  //Thank you https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
+  var from_set = [...new Set(from_places)];
+  var to_set = [...new Set(to_places)];
+  $("#fromPlace").autocomplete({
+    source: from_set,
+    autoFocus: true,
+    delay: 0,
+    minLength: 0
+  });
+  $("#toPlace").autocomplete({
+    source: to_set,
+    autoFocus: true,
+    delay: 0,
+    minLength: 0
+  });
+})
+
 //Firebase official documentation
 //Thank you StackOverflow (https://stackoverflow.com/questions/40471284/firebase-search-by-child-value, accessed on May 28) for equalTo
 function fillPage(id) {
@@ -301,25 +328,25 @@ $(document).on("click", ".route-card", function() {
 
 //Thank youhttps: stackoverflow.com/questions/40589397/firebase-db-how-to-update-particular-value-of-child-in-firebase-database
 function click_heart(id) {
-    var query = routesRef.orderByKey().equalTo(id);
-    query.once('value').then(function(snapshot) {
-      snapshot.forEach(function(childSnapshot) {
-        var liked = childSnapshot.val().z_liked;
-        var total_likes = childSnapshot.val().likes;
-        if (!liked) {
-          console.log('liked is false: ', liked);
-          firebase.database().ref('routes/' + id + '/z_liked').set(true);
-          firebase.database().ref('routes/' + id + '/likes').set(total_likes + 1);
-          $('#card-individual-likes').html(total_likes + 1 + ' Likes');
-          $('.like_icon').attr('src', 'icons/heart-fill.svg');
-        } else{
-          firebase.database().ref('routes/' + id + '/z_liked').set(false);
-          firebase.database().ref('routes/' + id + '/likes').set(total_likes - 1);
-          $('#card-individual-likes').html(total_likes - 1 + ' Likes');
-          $('.like_icon').attr('src', 'icons/heart.svg');
-        }
-      });
+  var query = routesRef.orderByKey().equalTo(id);
+  query.once('value').then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var liked = childSnapshot.val().z_liked;
+      var total_likes = childSnapshot.val().likes;
+      if (!liked) {
+        console.log('liked is false: ', liked);
+        firebase.database().ref('routes/' + id + '/z_liked').set(true);
+        firebase.database().ref('routes/' + id + '/likes').set(total_likes + 1);
+        $('#card-individual-likes').html(total_likes + 1 + ' Likes');
+        $('.like_icon').attr('src', 'icons/heart-fill.svg');
+      } else {
+        firebase.database().ref('routes/' + id + '/z_liked').set(false);
+        firebase.database().ref('routes/' + id + '/likes').set(total_likes - 1);
+        $('#card-individual-likes').html(total_likes - 1 + ' Likes');
+        $('.like_icon').attr('src', 'icons/heart.svg');
+      }
     });
+  });
 }
 
 $('.like_icon').on('click', function() {
@@ -328,18 +355,3 @@ $('.like_icon').on('click', function() {
   var id = this_id.innerHTML;
   click_heart(id);
 })
-
-async function get_from_names() {
-    try {
-        var place_names = []
-        var rest
-        firebase.database().ref('routes/').once('value', function(snapshot) {
-            snapshot.forEach(function(childSnapshot) {
-                place_names.push(data.val().name)
-            })
-        })
-    }
-    finally {
-        return rest_names
-    }
-}
