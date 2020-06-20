@@ -123,14 +123,17 @@ $(document).ready(function(){
 	function add_new_post(){
 		$(".spinner").show();
 		var post_section = document.getElementById('post_container');
+		$(".spinner").show()
 		// post_container.innerHTML = "";
 		post_array = []; 
 		firebase.database().ref('post_comment').once('value', function(snapshot){
+			var post_comments = []
 			snapshot.forEach(function(childSnapshot){
 			var childKey = childSnapshot.key; //key of post
 			var childContent = childSnapshot.val(); //object
 			post_array.push(Object.values(childContent)); //convert to array
 		});
+		$(".spinner").hide()
 
 		post_array = post_array.reverse(); //so most recent post is displayed at the top
 		if (post_array.length > 0){
