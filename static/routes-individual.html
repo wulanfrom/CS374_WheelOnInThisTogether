@@ -221,8 +221,14 @@
       if (window.location.hash) {
         var location = window.location.hash;
         var splithash = location.split('#');
-        var card_id = splithash[1];
+        var afterhash = splithash[1];
+        var afterslash = afterhash.split('/');
+        var card_id = afterslash[0];
+        var origin = afterslash[1];
         fillPage(card_id);
+        if (afterslash[1] == "fromindex"){
+          $(".container").addClass('fromindex');
+        }
         $("#routes-individual-main").attr('id', card_id);
       }
     })

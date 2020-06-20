@@ -93,7 +93,13 @@ function fillPage(id) {
 //https://stackoverflow.com/questions/5096103/jquery-closest-div-that-has-an-id, accessed on June 8, for closest div ID
 function movePage(element) {
   var id = $(element).closest("div").attr("id");
-  window.location.href = "routes-individual.html" + "#" + id;
+  console.log(id);
+  console.log($(element).attr("class"));
+  if ($(element).hasClass("fromIndex")){
+    window.location.href = "routes-individual.html" + "#" + id + "/fromindex";
+  } else{
+    window.location.href = "routes-individual.html" + "#" + id + "/fromsearch";
+  }
 }
 
 function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, i) {
@@ -177,7 +183,7 @@ function initMap() {
   var directionsRenderer = new google.maps.DirectionsRenderer();
   var daejeon = new google.maps.LatLng(36.3501, 127.3849);
   var mapOptions = {
-    zoom: 10,
+    zoom: 13,
     center: daejeon
   }
   var map = new google.maps.Map(document.getElementById('gmaps'), mapOptions);
@@ -195,7 +201,7 @@ function initMapindiv() {
   var directionsRenderer = new google.maps.DirectionsRenderer();
   var daejeon = new google.maps.LatLng(36.3501, 127.3849);
   var mapOptions = {
-    zoom: 10,
+    zoom: 13,
     center: daejeon
   }
   var map = new google.maps.Map(document.getElementById('gmaps-indiv'), mapOptions);
@@ -252,8 +258,12 @@ function calculateAndDisplayRouteindiv(directionsService, directionsRenderer) {
 // }
 
 $("#individual-backto").click(function() {
-  var id = $(this).closest("div").attr("id");
-  window.location.href = "routes-index.html" + "#" + id;
+  if ($(this).closest("div").hasClass("fromindex")){
+    window.location.href = "routes-index.html";
+  } else{
+    var id = $(this).closest("div").attr("id");
+    window.location.href = "routes-index.html" + "#" + id;
+  }
 })
 
 $("#searchRouteButton").click(function() {
