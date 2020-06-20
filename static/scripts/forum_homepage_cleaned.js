@@ -1,5 +1,9 @@
 // Makes sure the codes run when we open the page
 $(document).ready(function(){
+	$("#post-msg").hide();
+	$("#content-msg").hide();
+	$("#title-msg").hide();
+	$("#title-content-msg").hide();
 	// Make textarea height automatically grow with content
 	// console.log("js works!");
 	const tx = document.getElementsByTagName('textarea');
@@ -76,8 +80,30 @@ $(document).ready(function(){
 			var updates = {};
 			updates["post_comment/" + key] = post;
 			firebase.database().ref().update(updates);
+				$("#post-msg").slideDown();
+	        setTimeout(function() {
+	            $("#post-msg").slideUp();
+	        }, 5000);
 	    }
-	}
+	    else if (input_content.value.length == 0 && title_content.value.length == 0){
+	    	$("#title-content-msg").slideDown();
+	        setTimeout(function() {
+	            $("#title-content-msg").slideUp();
+	        }, 5000);
+	    }
+	    else if (title_content.value.length == 0){
+	    	$("#title-msg").slideDown();
+	        setTimeout(function() {
+	            $("#title-msg").slideUp();
+	        }, 5000);
+	    }
+	    else{
+	    	$("#content-msg").slideDown();
+	        setTimeout(function() {
+	            $("#content-msg").slideUp();
+	        }, 5000);
+	    }
+	};
 
 	// var elements = document.getElementsByClassName('redirect');
 	// Array.from(elements).forEach(function(element) {
@@ -95,6 +121,7 @@ $(document).ready(function(){
 	});
 	
 	function add_new_post(){
+		$(".spinner").show();
 		var post_section = document.getElementById('post_container');
 		$(".spinner").show()
 		// post_container.innerHTML = "";
@@ -208,7 +235,13 @@ $(document).ready(function(){
 			likes_comments.append(comment_total);
 
 			var likes_icon = document.createElement("img");
-			likes_icon.setAttribute("src", "icons/heart.svg");
+			if (liked){
+				likes_icon.setAttribute("src", "icons/heart-fill.svg");
+			}
+			else{
+				likes_icon.setAttribute("src", "icons/heart.svg");
+			}
+			// likes_icon.setAttribute("src", "icons/heart.svg");
 			likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
@@ -310,7 +343,17 @@ $(document).ready(function(){
 
         	};
 		});
+		$(".spinner").hide();
 	}
+
+	$('.categories').on('click', function() {
+        console.log(this.innerHTML);
+        if (this.innerHTML == "All") { window.open('forum_mainpage.html', '_self'); }
+        else if (this.innerHTML == "Advice") { window.open('forum_homepage_advice.html', '_self'); }
+        else if (this.innerHTML == "Event") { window.open('forum_homepage_exercise.html', '_self'); }
+        else if (this.innerHTML == "Health") { window.open('forum_homepage_health.html', '_self'); }
+        else if (this.innerHTML == "Random") { window.open('forum_homepage_other.html', '_self'); }
+    });
 	// getKey();
 	add_new_post();
 });

@@ -85,6 +85,7 @@ function fillPage(id) {
       document.getElementById("individual-pictures").appendChild(image);
     }
 
+
     if (contentList[15]) {
       $('.like_icon').attr('src', 'icons/heart-fill.svg');
     }
@@ -122,6 +123,7 @@ function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, like
   if (wheel) {
     card = card + "<span class=icon-wheelchair aria-hidden='true' id='icon-wheelchair'></span>";
   }
+
 
   if (liked) {
     card = card + "</div></div></div><div class='card-footer pb-0'>" +

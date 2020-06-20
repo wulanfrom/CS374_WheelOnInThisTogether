@@ -213,6 +213,7 @@
         var afterslash = afterhash.split('/');
         var card_id = afterslash[0];
         var origin = afterslash[1];
+        click_heart(card_id);
         fillPage(card_id);
         if (afterslash[1] == "fromindex"){
           $(".container").addClass('fromindex');
