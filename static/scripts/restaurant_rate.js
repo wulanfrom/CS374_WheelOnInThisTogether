@@ -36,13 +36,13 @@ $(document).ready(function() {
         display_rating_page(res.val())
     })
 
-    $(document).on("mouseenter", "#comment-list .card", function(){
-        $(this).removeClass("shadow-sm").addClass("shadow")
-    })
+    // $(document).on("mouseenter", "#comment-list .card", function(){
+    //     $(this).removeClass("shadow-sm").addClass("shadow")
+    // })
 
-    $(document).on("mouseleave", "#comment-list .card", function(){
-        $(this).removeClass("shadow").addClass("shadow-sm")
-    })
+    // $(document).on("mouseleave", "#comment-list .card", function(){
+    //     $(this).removeClass("shadow").addClass("shadow-sm")
+    // })
 
     $("#post-btn").click(function() {
         if (facility_input == null || access_input == null || safety_input == null) {
@@ -254,9 +254,9 @@ function comment_format(rating_entry) {
 
     var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='icons/heart.svg' width='18' height='18' class='heart-unfilled'><span class='mx-2 likes-and-comment'><span class='likes'>" + user_rating.likes + "</span> Likes </span></div>"
 
-    var card_footer = "<div class='card-footer'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
+    var card_footer = "<div class='card-footer bg-secondary'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
 
-    var comment_card = "<div class='card my-4 shadow-sm border-0' data-key='" + comment_key +"'>" + card_body + card_footer + "</div>"
+    var comment_card = "<div class='card my-4 shadow border-0' data-key='" + comment_key +"'>" + card_body + card_footer + "</div>"
     return comment_card
 }
 
@@ -280,6 +280,7 @@ function display_rating_page(rest_db) {
     $(".rstrnt-facility").html(generate_star(Math.round(rating.facility/size), 24))
     $(".rstrnt-access").html(generate_star(Math.round(rating.accessibility/size), 24))
     $(".rstrnt-safety").html(generate_star(Math.round(rating.safety/size), 24))
+    $(".overall-avg").text(Math.round(overall*100/size)/100)
 
     //Display restaurant info
     $("#phone").text(rest_db.phone)
