@@ -2,6 +2,10 @@ body{
 	background-color: #F1F3F5;
 }
 
+.categories {
+	text-decoration-color: blue;
+}
+
 /*Tags and “add to my list” cards → Nabila*/
 .categories_card{
 	width:100%;

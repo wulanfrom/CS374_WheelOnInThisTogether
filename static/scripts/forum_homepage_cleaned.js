@@ -310,4 +310,11 @@ $(document).ready(function(){
 	}
 	// getKey();
 	add_new_post();
+
+    $('.categories').on('click', function() {
+        console.log(this.innerHTML);
+        if (categoryName == "Advice") { console.log("Advice"); }
+        else if (categoryName == "Health") { console.log("Health"); }
+        else if (categoryName == "Events") { console.log("Events"); }
+    }) 
 });
