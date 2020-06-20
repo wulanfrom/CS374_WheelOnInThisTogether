@@ -232,7 +232,13 @@ $(document).ready(function(){
 			likes_comments.append(comment_total);
 
 			var likes_icon = document.createElement("img");
-			likes_icon.setAttribute("src", "icons/heart.svg");
+			if (liked){
+				likes_icon.setAttribute("src", "icons/heart-fill.svg");
+			}
+			else{
+				likes_icon.setAttribute("src", "icons/heart.svg");
+			}
+			// likes_icon.setAttribute("src", "icons/heart.svg");
 			likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
