@@ -10,6 +10,7 @@ function fillContent(id, content) {
 //Thank you StackOverflow (https://stackoverflow.com/questions/40471284/firebase-search-by-child-value, accessed on May 28) for equalTo
 function fillPage(id) {
   $(".spinner").show();
+  fillContent("hidID", id);
   var contentList = [];
   var query = routesRef.orderByKey().equalTo(id);
   query.once('value').then(function(snapshot) {
@@ -84,7 +85,8 @@ function fillPage(id) {
       document.getElementById("individual-pictures").appendChild(image);
     }
 
-    if (contentList[15]){
+
+    if (contentList[15]) {
       $('.like_icon').attr('src', 'icons/heart-fill.svg');
     }
 
@@ -100,9 +102,9 @@ function movePage(element) {
   var id = $(element).closest("div").attr("id");
   console.log(id);
   console.log($(element).attr("class"));
-  if ($(element).hasClass("fromIndex")){
+  if ($(element).hasClass("fromIndex")) {
     window.location.href = "routes-individual.html" + "#" + id + "/fromindex";
-  } else{
+  } else {
     window.location.href = "routes-individual.html" + "#" + id + "/fromsearch";
   }
 }
@@ -122,19 +124,18 @@ function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, like
     card = card + "<span class=icon-wheelchair aria-hidden='true' id='icon-wheelchair'></span>";
   }
 
-  if (liked){
-    card = card + "</div></div></div><div class='card-footer pb-0'>"
-              + "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>"
-              + username + "</p><div class='float-right'><img src='icons/heart-fill.svg' width='18' height='18'>"
-              + "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+
+  if (liked) {
+    card = card + "</div></div></div><div class='card-footer pb-0'>" +
+      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+      username + "</p><div class='float-right'><img src='icons/heart-fill.svg' width='18' height='18'>" +
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+  } else {
+    card = card + "</div></div></div><div class='card-footer pb-0'>" +
+      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+      username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>" +
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
   }
-  else{
-    card = card + "</div></div></div><div class='card-footer pb-0'>"
-              + "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>"
-              + username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>"
-              + "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
-  }
-  
 
   //$('#routes-index-main').append(card);
   if (i % 2 == 0) {
@@ -222,7 +223,7 @@ function initMapindiv() {
   var map = new google.maps.Map(document.getElementById('gmaps-indiv'), mapOptions);
   directionsRenderer.setMap(map);
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     calculateAndDisplayRouteindiv(directionsService, directionsRenderer);
   })
 }
@@ -273,17 +274,17 @@ function calculateAndDisplayRouteindiv(directionsService, directionsRenderer) {
 // }
 
 $("#individual-backto").click(function() {
-  if ($(this).closest("div").hasClass("fromindex")){
+  if ($(this).closest("div").hasClass("fromindex")) {
     window.location.href = "routes-index.html";
-  } else{
+  } else {
     var id = $(this).closest("div").attr("id");
     window.location.href = "routes-index.html" + "#" + id;
   }
 })
 
 $("#searchRouteButton").click(function() {
-//  changeMapPlace(document.getElementById("toPlace").value);
-    searchRoute();
+  //  changeMapPlace(document.getElementById("toPlace").value);
+  searchRoute();
 })
 
 $("#addRouteButton").click(function() {
@@ -299,20 +300,46 @@ $(document).on("click", ".route-card", function() {
 })
 
 //Thank youhttps: stackoverflow.com/questions/40589397/firebase-db-how-to-update-particular-value-of-child-in-firebase-database
-function click_heart(id){
-    $('.like_icon').on('click', function(){
-      var query = routesRef.orderByKey().equalTo(id);
-      query.once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-          var liked = childSnapshot.val().z_liked;
-          var total_likes = childSnapshot.val().likes;
-          if (!liked){
-            console.log('liked is false: ', liked);
-          firebase.database().ref('routes/'+id+'/z_liked').set(true);
-          firebase.database().ref('routes/'+id+'/likes').set(total_likes+1);
+function click_heart(id) {
+    var query = routesRef.orderByKey().equalTo(id);
+    query.once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var liked = childSnapshot.val().z_liked;
+        var total_likes = childSnapshot.val().likes;
+        if (!liked) {
+          console.log('liked is false: ', liked);
+          firebase.database().ref('routes/' + id + '/z_liked').set(true);
+          firebase.database().ref('routes/' + id + '/likes').set(total_likes + 1);
           $('#card-individual-likes').html(total_likes + 1 + ' Likes');
-          }
-        });
+          $('.like_icon').attr('src', 'icons/heart-fill.svg');
+        } else{
+          firebase.database().ref('routes/' + id + '/z_liked').set(false);
+          firebase.database().ref('routes/' + id + '/likes').set(total_likes - 1);
+          $('#card-individual-likes').html(total_likes - 1 + ' Likes');
+          $('.like_icon').attr('src', 'icons/heart.svg');
+        }
+      });
     });
-  });
+}
+
+$('.like_icon').on('click', function() {
+  console.log("clicked");
+  var this_id = document.getElementById("hidID");
+  var id = this_id.innerHTML;
+  click_heart(id);
+})
+
+async function get_from_names() {
+    try {
+        var place_names = []
+        var rest
+        firebase.database().ref('routes/').once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                place_names.push(data.val().name)
+            })
+        })
+    }
+    finally {
+        return rest_names
+    }
 }

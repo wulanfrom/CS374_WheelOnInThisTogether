@@ -1,7 +1,3 @@
-.all_items{
-	/*background-color: orange;*/
-}
-
 .rest-card{
 	border-radius: 10px;
 }
@@ -20,12 +16,11 @@
 }
 
 .advice_card{
-	border-radius: 10px;
+	border-radius: 50px;
 }
 
 .our_buttons{
 	border-radius: 10px;
-	float: right;
 }
 
 .stars{
