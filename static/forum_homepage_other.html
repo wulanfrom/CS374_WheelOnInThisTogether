@@ -123,9 +123,9 @@
 								<select name="topic" id="select_category">
 									<!-- <option value="1">All</option> -->
 									<option value="2">Advice</option>
-									<option value="3">Health</option>
-									<option value="4">Exercise</option>
-									<option value="5">Other</option>
+									<option value="3">Event</option>
+									<option value="4">Health</option>
+									<option value="5">Random</option>
 								</select>
 							</div>
 							<a href="#" id="post_button" class="float-right default_primary our_buttons pl-3 pr-3 pt-2 pb-2 d-inline">Create Post</a>
@@ -162,6 +162,13 @@
 					<!-- </div> -->
 				</div>
 
+				<div class="popups">
+	    			<div class="alert alert-success mt-3 text-center" role="alert" id="post-msg"> Post made succesfully!</div>
+	    			<div class="alert alert-danger mt-3 text-center" role="alert" id="content-msg">Please fill in your post content.</div>
+	    			<div class="alert alert-danger mt-3 text-center" role="alert" id="title-content-msg">Please fill in your post title and content.</div>
+	    			<div class="alert alert-danger mt-3 text-center" role="alert" id="title-msg">Please fill in your post title.</div>
+	    		</div>
+
 
 				<!-- <h3>Pagination</h3> -->
 				<!-- <nav aria-label="current_page">
@@ -181,17 +188,20 @@
 				</nav> -->
 			</div>
 			<div class="col-2">
-				<div class="categories_card">
-					<h3 class="">Category</h3>
-					<div class="list-group shadow">
-					  <button type="button" class="list-group-item list-group-item-action">
-					    <a class="link_color" href="forum_mainpage.html">All</a>
-					  </button>
-					  <button type="button" class="list-group-item list-group-item-action"><a class="link_color" href="forum_homepage_advice.html">Advice</a></button>
-					  <button type="button" class="list-group-item list-group-item-action"><a href="forum_homepage_exercise.html" class="link_color">Exercise</a></button>
-					  <button type="button" class="list-group-item list-group-item-action"><a href="forum_homepage_health.html" class="link_color">Health</a></button>
-					  <button type="button" class="list-group-item list-group-item-action active"><a href="forum_homepage_other.html" class="link_color">Others</a></button>
-					</div>	
+				<div class="categories_card btn-group-vertical">
+					<h3 class="pt-5 mt-2">Category</h3>
+					<div class="list-group shadow" style="width: 12em">
+						<button type="button" class="list-group-item list-group-item-action categories">All</button>
+						<button type="button" class="list-group-item list-group-item-action categories">Advice</button>
+						<button type="button" class="list-group-item list-group-item-action categories">Event</button>
+						<button type="button" class="list-group-item list-group-item-action categories">Health</button>
+						<button type="button" class="active list-group-item list-group-item-action categories">Random</button>
+					</div>
+					<div class="float_footer">
+						<footer class="pl-1 mt-3">
+							<small class="text-muted">CS374: Intro to HCI Final Design Project WheelOnChairInThisTogether &copy; 2020</small>
+						</footer>
+					</div>
 				</div>
 			</div>
 		</div>
