@@ -127,10 +127,10 @@ function display_rest_card(result) {
         const rest_name = "<h5 class='card-title rstrnt-name'>" + result.name + "</h5>"
         const overall =  (rating.facility+rating.accessibility + rating.safety)/3
         const rest_star = "<p class='card-text'>" + generate_star(Math.round(overall/size)) + "</p>"
-        const rest_body = "<div class='card-body rstrnt-card'>" + rest_name + rest_star + "</div>"
+        const rest_body = "<div class='card-body rstrnt-card color-yellow'>" + rest_name + rest_star + "</div>"
         
         // display_image(result.name)
-        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card shadow-sm'>" + rest_img + rest_body + "</div></div>"
+        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card shadow-sm color-yellow border-0'>" + rest_img + rest_body + "</div></div>"
         $('.result-cards').append(card_html)
         $(".spinner").hide()
     })

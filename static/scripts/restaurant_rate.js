@@ -227,20 +227,20 @@ function comment_format(rating_entry) {
     const user_rating = rating_entry[1]
     //Comment star
     var facility_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(user_rating.facility) +"</h5></div>"
-    var facility_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title'> Facility </h5></div>"
+    var facility_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title py-1'> Facility </h5></div>"
     var facility_combined = "<div class='row'>" + facility_title + facility_star + "</div>"
 
     var access_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(user_rating.accessibility) +"</h5></div>"
-    var access_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title'> Accessibility </h5></div>"
+    var access_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title py-1'> Accessibility </h5></div>"
     var access_combined = "<div class='row'>" + access_title + access_star + "</div>"
 
     var safety_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(user_rating.safety) +"</h5></div>"
-    var safety_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title'> Safety </h5></div>"
+    var safety_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title py-1'> Safety </h5></div>"
     var safety_combined = "<div class='row'>" + safety_title + safety_star + "</div>"
 
     var overall = Math.round((user_rating.facility + user_rating.accessibility + user_rating.safety)/3)
-    var overall_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(overall, 30) + "</h5></div>"
-    var overall_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h3 class='category-title'> Overall</h3></div>"
+    var overall_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(overall, 28) + "</h5></div>"
+    var overall_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h3 class='category-title py-2 font-weight-bold'> Overall</h3></div>"
     var overall_combined = "<div class='row mb-1'>" + overall_title + overall_star + "</div>"
 
     var stars = "<div class='col-lg-6 col-md-7 col-sm-12 col-12'>" + overall_combined + facility_combined + access_combined + safety_combined + "</div>"
@@ -254,7 +254,7 @@ function comment_format(rating_entry) {
 
     var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='icons/heart.svg' width='18' height='18' class='heart-unfilled'><span class='mx-2 likes-and-comment'><span class='likes'>" + user_rating.likes + "</span> Likes </span></div>"
 
-    var card_footer = "<div class='card-footer bg-secondary'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
+    var card_footer = "<div class='card-footer bg-secondary color-yellow'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
 
     var comment_card = "<div class='card my-4 shadow border-0' data-key='" + comment_key +"'>" + card_body + card_footer + "</div>"
     return comment_card

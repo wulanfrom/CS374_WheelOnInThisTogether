@@ -16,6 +16,7 @@
 
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/search_rate.css" type="text/css">
         <link rel="stylesheet" href="style/navbar.css" type="text/css">
         <!-- specialized CSS for navigation bar -->
@@ -34,53 +35,28 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="wrapper"> <!-- navigation bar code (it will push your whole code down) -->
-            <nav class="navbar-fixed-top navbar-light bg-light"> <!-- topbar code -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> &nbsp&nbsp&nbsp&nbsp
-                    <a class="navbar-brand" href="#" style="color: #1971C2;">
-                        <img src="duck.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-                        <b>WheelOn The New Era 2.0</b>
+        <nav class="navbar sticky-top shadow color-black">
+            <nav class="navbar navbar-expand-lg container pr-0 pl-0">
+                <a class="navbar-brand ml-3" href="new_homepage.html">
+                    <img src="homepagePictures/WheelOn.png" width="120" height="30" class="d-inline-block align-top pr-2" alt="">
+                </a>
+    
+                <div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-grey" href="routes-index.html">Look for Routes</a></li>
+                        <li class="nav-item pl-2"><a class="nav-link text-grey" href="restaurant_rate.html">Rate a Place</a></li>
+                        <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_homepage_advice.html">Ask a Question</a></li>
+                    </ul>
+                </div>
+    
+                <div class="dropdown">
+                    <a class="navbar-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="new_homepage.html">
+                        <img src="homepagePictures/duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
                     </a>
-
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Routes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Rating</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Forum</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a class="navbar-brand" href="#" style="color: #1971C2;">
-                        <img src="duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
-                        <h6 class="d-inline">WHEELIE WONKA</h6>
-                    </a>
-                </nav>
-            </nav>
-
-            <nav id="sidebar"> <!-- sidebar code -->
-                <div class="sidebar-header">
-                    <h1>WheelOn</h1>
-                    <div class="sidebar-content">
-                        <ul class="list-unstyled components">
-                            <li class="options"><h4>Routes</h4></li>
-                            <li class="options"><h4>Rating</h4></li>
-                            <li class="options"><h4>Forum</h4></li>
-                        </ul>
-                        <h6 class="sidebarClose"> Close Sidebar </h6>
-                        <h6 style="color: rgba(0,0,0,0.5);"> WheelOnInThisTogether Copyright 2020</h6>
-                    </div>
+                    <div class="dropdown-menu text-center">Wheelie Wonka</div>
                 </div>
             </nav>
-        </div>
+        </nav>
         <div class='container'>
             <!-- <a class='mt-4' href="search_rate.html">BACK TO RATING PAGE</a> -->
             <div class='row my-md-4 mt-sm-4'>
@@ -91,7 +67,7 @@
                                 <div class="card-body">
                                     <img src='https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg' class='rstrnt-img'>
                                     <div class='text-center my-4'>
-                                        <button type="button" class="btn btn-primary py-2" data-toggle="modal" data-target="#ratingModal">
+                                        <button type="button" class="btn color-yellow py-2" data-toggle="modal" data-target="#ratingModal">
                                            Rate your experience
                                         </button>
                                     </div>
@@ -108,7 +84,7 @@
                                                 <img src='icons/star-fill.svg' width='36' height='36'>
                                                 <img src='icons/star-fill.svg' width='36' height='36'>
                                             </h5>
-                                            <h2 class='mx-3'> <span class='overall-avg'> </span>/5</h2>
+                                            <h2 class='mx-3 text-muted'> <span class='overall-avg'> </span>/5</h2>
                                         </div>
                                     </div>
                                     <hr class=''/>
@@ -173,9 +149,9 @@
         <div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title w-100 text-center category-title" id="exampleModalLongTitle">Rate your experience</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header py-0">
+                    <h3 class="modal-title w-100 text-center my-auto" id="exampleModalLongTitle">Rate your experience</h3>
+                    <button type="button" class="close my-auto" data-dismiss="modal" aria-label="Close" >
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -229,7 +205,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary mx-auto"id='post-btn'>Post</button>
+                    <button type="button" class="btn color-yellow mx-auto"id='post-btn'>Post</button>
                 </div>
             </div>
             </div>
