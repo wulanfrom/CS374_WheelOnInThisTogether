@@ -39,6 +39,19 @@ $(document).ready(function(){
 
     })
 
+    $(document).on("mouseenter", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "-=3%"
+        }, 250)
+        $(this).removeClass("shadow-sm").addClass("shadow")
+    })
+    $(document).on("mouseleave", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "0"
+        }, 250)
+        $(this).removeClass("shadow").addClass("shadow-sm")
+    })
+
     $(document).on("click", ".rest-card", function(){
         // console.log($(this).find(".rstrnt-name").text())
         var rest_name = $(this).find(".rstrnt-name").text().toLowerCase()
@@ -117,7 +130,7 @@ function display_rest_card(result) {
         const rest_body = "<div class='card-body rstrnt-card'>" + rest_name + rest_star + "</div>"
         
         // display_image(result.name)
-        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card'>" + rest_img + rest_body + "</div></div>"
+        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card shadow-sm'>" + rest_img + rest_body + "</div></div>"
         $('.result-cards').append(card_html)
         $(".spinner").hide()
     })
