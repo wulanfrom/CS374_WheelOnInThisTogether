@@ -14,6 +14,12 @@
 
 <body>
 
+  <div class="spinner">
+      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+
   <div class="wrapper"> <!-- navigation bar code (it will push your whole code down) -->
       <nav class="navbar-fixed-top navbar-light bg-light"> <!-- topbar code -->
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,47 +70,50 @@
 
   <!-- Main card -->
   <div class="container" id="routes-individual-main">
-    <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
+    <a href="#" id="individual-backto">BACK TO ROUTE SEARCH PAGE</a>
     <h2 id="card-individual-title"></h2>
 
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
         <div class="card post_card shadow bg-white p-4 m-0">
-          <div class="card-body p-0">
-            <svg class="bi bi-heart float-right" width="2em" height="2em" viewBox="0 0 16 16" fill="#74C0FC" xmlns="http://www.w3.org/2000/svg">
-      				<path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-      		  </svg>
+          <div class="card-body p-0 mb-2">
+            <div class="p-0 float-right" id="individual-likes-div">
+              <p class="number-of-likes mb-0 mr-3" id="card-individual-likes"></p>
+              <svg class="bi bi-heart float-right" width="2em" height="2em" viewBox="0 0 16 16" fill="#74C0FC" xmlns="http://www.w3.org/2000/svg">
+        				<path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+        		  </svg>
+            </div>
             <div class="individual-created-by">
-              <p class="username-created mb-1">Created by</p>
-              <img src="icons/person-circle.svg" class="ml-2" width='24' height='24'>
+              <img src="icons/person-circle.svg" width='24' height='24'>
               <p class="mb-1" id="card-individual-username"></p>
+              <p class="username-created mb-1 ml-1 text-secondary">recommends</p>
             </div>
           </div>
-          <div class="card-body p-0">
-            <img src="icons/heart.svg" id="heart-number">
-            <p class="number-of-likes" id="card-individual-likes"></p>
+          <div class="card-body p-0 mt-2">
+            <h4>DESCRIPTION</h4>
+            <p id="card-individual-description"></p>
           </div>
           <div class="card-body p-0 mt-2">
-            <h3>DESCRIPTION</h3>
-            <ol class="pl-3">
-              <li class="description-list" id="card-individual-list-1"></li>
+            <h4>HOW TO GET THERE</h4>
+            <ol class="pl-3" id="card-individual-how">
+              <!-- <li class="description-list" id="card-individual-list-1"></li>
               <li class="description-list" id="card-individual-list-2"></li>
-              <li class="description-list" id="card-individual-list-3"></li>
+              <li class="description-list" id="card-individual-list-3"></li> -->
             </ol>
           </div>
           <div class="card-body p-0 mt-2">
-            <h3>LANDMARKS</h3>
+            <h4>LANDMARKS</h4>
             <p id="card-individual-landmarks"></p>
           </div>
           <div class="card-body p-0 mt-2" id="individualFacilities">
-            <h3>FACILITIES</h3>
+            <h4>FACILITIES</h4>
             <!-- Bootstrap Collapse - Accordion -->
             <div class="accordion" id="accordionFacilities">
 
               <div class="card" id="facilitiesRamp">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button class="btn btn-link collapsed" id="rampAccordion" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                       Ramp
                     </button>
                   </h2>
@@ -119,7 +128,7 @@
               <div class="card" id="facilitiesElevator">
                 <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="btn btn-link collapsed" id="eleAccordion" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Elevator
                     </button>
                   </h2>
@@ -133,7 +142,7 @@
               <div class="card" id="facilitiesWheelchair">
                 <div class="card-header" id="headingThree">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link collapsed" id="wheelAccordion" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       Wheelchair
                     </button>
                   </h2>
@@ -146,22 +155,26 @@
             </div>
           </div>
           <div class="card-body p-0 mt-4" id="individual-pictures">
-            <h3>PICTURES</h3>
+            <h4>PICTURES</h4>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <!-- Lists -->
         <h4>Add to My List</h4>
-        <div class="categories_card" id="addToMyListCard">
+        <div class="categories_card mb-4" id="addToMyListCard">
           <div class="list-group shadow" id="addToMyListCardLists">
             <button type="button" class="list-group-item list-group-item-action">MY FAVORITE PLACE</button>
             <button type="button" class="list-group-item list-group-item-action">HANGOUT</button>
             <button type="button" class="list-group-item list-group-item-action">STUDY</button>
           </div>
         </div>
+        <div class="card shadow border-0 p-4 mb-4" id="gmaps-indiv"></div>
       </div>
+
+      <div style="display: none;" id="hidfromPlace"></div>
+      <div style="display: none;" id="hidtoPlace"></div>
 
     </div>
 
@@ -205,11 +218,23 @@
     //Thank you StackOverflow (stackoverflow.com/questions/29364121/passing-variable-when-opening-another-html-page-using-javascript,
     //accessed on June 9) for using hash to transfer variables between pages
     $(document).ready(function() {
-      var location = window.location.hash;
-      var splithash = location.split('#');
-      var card_id = splithash[1];
-      fillPage(card_id);
+      if (window.location.hash) {
+        var location = window.location.hash;
+        var splithash = location.split('#');
+        var afterhash = splithash[1];
+        var afterslash = afterhash.split('/');
+        var card_id = afterslash[0];
+        var origin = afterslash[1];
+        fillPage(card_id);
+        if (afterslash[1] == "fromindex"){
+          $(".container").addClass('fromindex');
+        }
+        $("#routes-individual-main").attr('id', card_id);
+      }
     })
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY">
   </script>
 
 </body>
