@@ -124,7 +124,7 @@ function display_rest_card(result) {
         else {
             rest_img = "<img src='" + img_url + "' class='card-img-top'></img>"
         }
-        const rest_name = "<h3 class='card-title rstrnt-name'>" + result.name + "</h3>"
+        const rest_name = "<h5 class='card-title rstrnt-name'>" + result.name + "</h5>"
         const overall =  (rating.facility+rating.accessibility + rating.safety)/3
         const rest_star = "<p class='card-text'>" + generate_star(Math.round(overall/size)) + "</p>"
         const rest_body = "<div class='card-body rstrnt-card'>" + rest_name + rest_star + "</div>"
