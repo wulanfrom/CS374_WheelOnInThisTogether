@@ -4,8 +4,8 @@
 
 .btn {
     text-transform: uppercase;
-    background-color: #4DABF7;
-    border: #4DABF7;
+    /* background-color: #4DABF7;
+    border: #4DABF7; */
 }
 
 .category-title {
@@ -14,8 +14,8 @@
 }
 
 .card-footer {
-	background-color: #D0EBFF;
-	color: #1971C2;
+	/* background-color: #D0EBFF;
+	color: #1971C2; */
 	font-weight: bold;
 }
 
@@ -28,8 +28,13 @@ body {
 }
 
 .likes-and-comment {
-    color: #1971C2;
+    /* color: #1971C2; */
 }
+
+.overall-text {
+    font-size: 28px;
+}
+
 .page {
     background-color: #F1F3F5;
 }
@@ -74,6 +79,13 @@ body {
     color: #1971C2;
     opacity: 100%;
 }
+
+.sticky {
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+  }
+  
 
 .username {
     text-transform: uppercase;
