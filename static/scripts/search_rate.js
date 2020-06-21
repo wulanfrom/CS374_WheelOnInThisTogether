@@ -60,6 +60,10 @@ $(document).ready(function(){
         var new_url = curr_html.replace(/\/[^\/]*$/, new_pathname)
         window.location.href = new_url
     })
+
+    $("#add-new-place").click(function(){
+        alert("Sorry, this feature is not available yet")
+    })
 })
 
 function display_query_result(rest_db, query) {
