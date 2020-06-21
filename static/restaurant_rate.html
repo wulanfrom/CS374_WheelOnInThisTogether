@@ -85,7 +85,7 @@
             <!-- <a class='mt-4' href="search_rate.html">BACK TO RATING PAGE</a> -->
             <div class='row my-md-4 mt-sm-4'>
                 <div class='col-lg-10 col-md-12 col-sm-12'>
-                    <div class="card rstrnt-detail">
+                    <div class="card rstrnt-detail shadow">
                         <div class='row'>
                             <div class="col-md-4">
                                 <div class="card-body">
@@ -99,13 +99,18 @@
                             </div>
                             <div class='col-md-8'>
                                 <div class="card-body text-center text-md-left">
-                                    <h1 class="card-title rstrnt-name">Buff-eat</h1>
-                                    <h5 class="card-text rstrnt-overall">
-                                        <img src='icons/star-fill.svg' width='36' height='36'>
-                                        <img src='icons/star-fill.svg' width='36' height='36'>
-                                        <img src='icons/star-fill.svg' width='36' height='36'>
-                                        <img src='icons/star-fill.svg' width='36' height='36'>
-                                    </h5>
+                                    <div class='card-be-navbar'>
+                                        <h1 class="card-title rstrnt-name font-weight-bold">Buff-eat</h1>
+                                        <div class='row px-3'>
+                                            <h5 class="card-text rstrnt-overall">
+                                                <img src='icons/star-fill.svg' width='36' height='36'>
+                                                <img src='icons/star-fill.svg' width='36' height='36'>
+                                                <img src='icons/star-fill.svg' width='36' height='36'>
+                                                <img src='icons/star-fill.svg' width='36' height='36'>
+                                            </h5>
+                                            <h2 class='mx-3'> <span class='overall-avg'> </span>/5</h2>
+                                        </div>
+                                    </div>
                                     <hr class=''/>
                                     <div class='row'>
                                         <h5 class='col-lg-5 col-md-6 col-6 category-title text-left'>Facility</h5>
@@ -135,9 +140,9 @@
                                         </h5>
                                     </div>
                                     <div class='rstrnt-info my-3'>
-                                        <div> Phone: <span id='phone'>010-1234-5678 </span></div>
-                                        <div> Tel: <span  id='tel'>1234-5678</span> </div>
-                                        <div> Website: <span id='website'>www.buffeat.com</span> </div>
+                                        <div> <span class='font-weight-bold'> Phone: </span><span id='phone'>010-1234-5678 </span></div>
+                                        <div> <span class='font-weight-bold'> Tel: </span><span  id='tel'>1234-5678</span> </div>
+                                        <div> <span class='font-weight-bold'> Website: </span><span id='website'>www.buffeat.com</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +179,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-4">
                     <h3 class='mb-3 rstrnt-name'> Restaurant Name </h3>
                     <div class='row mt-2'>
                         <div class='col-md-4 col-sm-4 category-title'>
@@ -215,8 +220,8 @@
                     <div class="alert alert-danger my-3" role="alert" id='error-msg'>
                         Please fill all the rating first
                     </div>
-                    <div class="form-group">
-                        <label for="#review-comment">COMMENT</label>
+                    <div class="form-group mt-3">
+                        <label for="#review-comment" class='font-weight-bold'>COMMENT</label>
                         <textarea class="form-control" id="review-comment" rows="3"></textarea>
                     </div>
                     <div class="alert alert-danger my-1" role="alert" id='error-comment'>

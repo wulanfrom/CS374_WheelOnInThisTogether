@@ -17,7 +17,7 @@ $(document).ready(function(){
     
     $(".spinner").show()
     get_restaurants().then((res) => {
-        console.log(res)
+        //console.log(res)
         display_explore(res)
         display_autofill(res)
         $("#search-input").keypress(function(event) {
@@ -39,6 +39,19 @@ $(document).ready(function(){
 
     })
 
+    $(document).on("mouseenter", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "-=3%"
+        }, 250)
+        $(this).removeClass("shadow-sm").addClass("shadow")
+    })
+    $(document).on("mouseleave", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "0"
+        }, 250)
+        $(this).removeClass("shadow").addClass("shadow-sm")
+    })
+
     $(document).on("click", ".rest-card", function(){
         // console.log($(this).find(".rstrnt-name").text())
         var rest_name = $(this).find(".rstrnt-name").text().toLowerCase()
@@ -51,7 +64,7 @@ $(document).ready(function(){
 
 function display_query_result(rest_db, query) {
     $('#rec-text').hide()
-    console.log(rest_db)
+    // console.log(rest_db)
     var result = null
     for (idx in rest_db) {
         if (rest_db[idx].name.toLowerCase() == query.toLowerCase()) {
@@ -66,14 +79,14 @@ function display_query_result(rest_db, query) {
     else {
         $(".no-result").hide()
         $('.result-cards').empty()
-        console.log(result)
+        // console.log(result)
         display_rest_card(result)
     }
 }
 
 async function display_autofill(rest_db) {
     get_rest_names().then((res) => {
-        console.log(res)
+        // console.log(res)
         $("#search-input").autocomplete({
             source: res,
             select: function(event, ui) {
@@ -99,6 +112,9 @@ async function display_image(rest_name) {
 
 function display_rest_card(result) {
     $(".spinner").show()
+    console.log(result)
+    var size = Object.keys(result.user_ratings).length
+    var rating = result.rating
     display_image(result.name).then((img_url) => {
         var rest_img = ''
         console.log(result.name)
@@ -108,12 +124,13 @@ function display_rest_card(result) {
         else {
             rest_img = "<img src='" + img_url + "' class='card-img-top'></img>"
         }
-        const rest_name = "<h3 class='card-title rstrnt-name'>" + result.name + "</h3>"
-        const rest_star = "<p class='card-text'>" + generate_star(result.rating.overall) + "</p>"
+        const rest_name = "<h5 class='card-title rstrnt-name'>" + result.name + "</h5>"
+        const overall =  (rating.facility+rating.accessibility + rating.safety)/3
+        const rest_star = "<p class='card-text'>" + generate_star(Math.round(overall/size)) + "</p>"
         const rest_body = "<div class='card-body rstrnt-card'>" + rest_name + rest_star + "</div>"
         
         // display_image(result.name)
-        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card'>" + rest_img + rest_body + "</div></div>"
+        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card shadow-sm'>" + rest_img + rest_body + "</div></div>"
         $('.result-cards').append(card_html)
         $(".spinner").hide()
     })
@@ -140,7 +157,6 @@ async function get_restaurants() {
         console.log(error)
     }
     finally {
-        console.log('hey')
         console.log(rest_names)
         return rest_names
     }
