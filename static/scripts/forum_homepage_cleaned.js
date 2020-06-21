@@ -180,7 +180,7 @@ $(document).ready(function(){
 			var post_tag = document.createElement("span");
 			post_tag.innerHTML = post_category;
 			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2");
+			post_tag.setAttribute("class", "badge color-blue category-tags p-2 mr-2");
 			card_body.append(post_tag_title);
 			var post_main_title = document.createElement("h5");
 			post_main_title.innerHTML = post_title;
@@ -195,14 +195,14 @@ $(document).ready(function(){
 
 			//card footer
 			var card_footer= document.createElement("div");
-			card_footer.setAttribute("class", "card-footer");
+			card_footer.setAttribute("class", "pb-0 pt-1 align-middle color-yellow card-footer");
 			post_card.append(card_footer);
 			var footer_row= document.createElement("div");
 			footer_row.setAttribute("class", "row");
 			var username= document.createElement("div");
-			username.setAttribute("class", "col-lg-1 col-md-1 col-sm-3 col-1 text-right");
+			username.setAttribute("class", "align-middle col-lg-1 col-md-1 col-sm-3 col-1 text-right");
 			var profile_pic= document.createElement("img");
-			profile_pic.setAttribute("class", "rounded-circle user-circle");
+			profile_pic.setAttribute("class", "pt-1 rounded-circle user-circle");
 			profile_pic.setAttribute("width", "24em");
 			profile_pic.setAttribute("src", "duck.jpg");
 			profile_pic.setAttribute("height", "24em");
@@ -212,27 +212,33 @@ $(document).ready(function(){
 
 			//poster name
 			var poster_name= document.createElement("div");
-			poster_name.setAttribute("class", "col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
+			poster_name.setAttribute("class", "pt-1 col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
 			poster_name.innerHTML = post_poster;
 			footer_row.append(poster_name);
 
 			var likes_comments = document.createElement("div");
-			likes_comments.setAttribute("class", "col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
+			likes_comments.setAttribute("class", "mb-1 col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
 			var comment_icon = document.createElement("img");
-			comment_icon.setAttribute("class", "comment_icon");
+			// comment_icon.setAttribute("class", "comment_icon");
 			comment_icon.setAttribute("src", "icons/chat.svg");
 			comment_icon.setAttribute("width", "18em");
 			comment_icon.setAttribute("height", "18em");
-			likes_comments.append(comment_icon);
+			comment_icon.setAttribute('class', 'mt-2');
+			// likes_comments.append(comment_icon);
+			var comment_total_div = document.createElement('div');
+			comment_total_div.setAttribute('class', 'pt-1 d-inline');
 			var comment_total = document.createElement("span");
-			comment_total.setAttribute('class', 'ml-2 mr-3');
+			comment_total.setAttribute('class', 'align-bottom my-1 ml-2 mr-3');
+			comment_total.setAttribute('height', '32em');
 			if (post_replies == 1){
 				comment_total.innerHTML = post_replies + " Reply";
 			}
 			else{
 				comment_total.innerHTML = post_replies + " Replies";
 			}
-			likes_comments.append(comment_total);
+			comment_total_div.append(comment_icon);
+			comment_total_div.append(comment_total);
+			likes_comments.append(comment_total_div);
 
 			var likes_icon = document.createElement("img");
 			if (liked){
@@ -242,13 +248,14 @@ $(document).ready(function(){
 				likes_icon.setAttribute("src", "icons/heart.svg");
 			}
 			// likes_icon.setAttribute("src", "icons/heart.svg");
-			likes_icon.setAttribute("class", "comment_icon");
+			// likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
+			likes_icon.setAttribute('class', 'mt-2');
 			likes_comments.append(likes_icon);
 			var likes_total = document.createElement("span");
-			likes_total.setAttribute('class', 'mx-2 likes-and-comment');
-			likes_total.setAttribute('class', 'ml-2 mr-3');
+			likes_total.setAttribute('class', 'align-bottom ml-2 mr-3 mt-1 likes-and-comment');
+			// likes_total.setAttribute('class', 'ml-2 mr-3');
 			if (post_likes == 1){
 				likes_total.innerHTML = post_likes + " Like";
 			}
@@ -257,9 +264,9 @@ $(document).ready(function(){
 			}
 			likes_comments.append(likes_total);
 
-			var read_post = document.createElement("a");
-			read_post.setAttribute("class", "btn btn-primary float-right btn-sm read_post");
-			read_post.innerHTML = "Read Post";
+			var read_post = document.createElement("button");
+			read_post.setAttribute("class", "mb-1 btn float-right color-yellow text-black read_post");
+			read_post.innerHTML = "READ POST";
 			likes_comments.append(read_post);
 
 			footer_row.append(likes_comments);

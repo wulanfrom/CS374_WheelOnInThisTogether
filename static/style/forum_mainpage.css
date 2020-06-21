@@ -1,5 +1,5 @@
 body{
-	/*background-color: #F1F3F5;*/
+	background-color: #F1F4F7;
 }
 
 /*Tags and “add to my list” cards → Nabila*/
@@ -18,7 +18,6 @@ body{
 	top:0;
 	position: sticky; /*Uncomment if you want it to follow the screen*/	
 }
-
 /*.list-group-item{
 	text-transform: uppercase;
 	color: #1971C2;
@@ -50,13 +49,13 @@ body{
 	/*padding: 12px 32px;
 	border-radius: 0px 0px 10px 10px;*/
 	/*border-bottom: 1px solid #D0EBFF;*/
-/*}
+}
 
-.list-group-item:hover{
-	background-color: #D0EBFF;
-	color: #1971C2;
-	border-color:#D0EBFF;
-}*/
+.list-group-item-action:active{
+	background-color: #fcba04 !important;
+	color: #1b1b1e !important;
+	/*border-color:#D0EBFF;*/
+}
 
 /*.list-group-item.active{
 	background-color: #D0EBFF;
@@ -121,7 +120,7 @@ body{
 	/*background-color: white;*/
 	/*color: #495057;*/
 	/*border-color: #495057;*/
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	text-transform: uppercase;
 }
 
@@ -137,7 +136,8 @@ body{
 	/*background-color: #D0EBFF;*/
 	/*color: #1971C2;*/
 	/*border: none;*/
-	border-radius: 10px;
+	/*border-radius: 10px;*/
+	border-color: 1px solid #1b1b1e;
 	text-transform: uppercase;
 	/*border-color: #1971C2;*/
 }
@@ -158,4 +158,41 @@ body{
     margin: 0px;
     color: #1971C2;
     opacity: 100%;
+}
+
+
+
+.categories{
+	background-color: white;
+}
+
+.categories: nth-child(5){
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.categories: first-child{
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.active{
+	background-color: #fcba04;
+}
+
+#post_button:hover{
+	background-color: #1b1b1e;
+	color: yellow;
+}
+
+.read_post:hover{
+	background-color: #1b1b1e;
+	color: yellow;
+}
+
+.categories:hover{
+	background-color: #fcba04;
+	/*text-weight: bold;*/
 }
