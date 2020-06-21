@@ -354,6 +354,19 @@ $(document).ready(function(){
         else if (this.innerHTML == "Health") { window.open('forum_homepage_health.html', '_self'); }
         else if (this.innerHTML == "Random") { window.open('forum_homepage_other.html', '_self'); }
     });
+
+    $(document).on("mouseenter", ".whole_card", function() {
+        $(this).animate({
+            marginTop: "-=3%"
+        }, 250)
+        $(this).removeClass("shadow-sm").addClass("shadow")
+    })
+    $(document).on("mouseleave", ".whole_card", function() {
+        $(this).animate({
+            marginTop: "0"
+        }, 250)
+        $(this).removeClass("shadow").addClass("shadow-sm")
+    });
 	// getKey();
 	add_new_post();
 });
