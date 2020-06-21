@@ -37,12 +37,8 @@ $(document).ready(function(){
 		console.log('button is pushed');
 		get_post();
 		add_new_post();
-
-		//Clear Input box
-		const topic_input = document.getElementById("topic_input");
-		const user_input = document.getElementById("user_input");
-		topic_input.innerHTML = "";
-		user_input.innerHTML = "";
+		document.getElementById("input_default").value = "";
+		document.getElementById("user_input").value = "";
 	});
 
 	// $('.heart_button').hover(function(){
@@ -153,8 +149,8 @@ $(document).ready(function(){
 			var post_content = post_array[i][1];
 			var post_key = post_array[i][2];
 			var liked = post_array[i][3];
-			var post_poster = "Wheelie";
-			// var post_poster = post_array[i][4];
+			// var post_poster = "Wheelie";
+			var post_poster = post_array[i][4];
 			var post_title = post_array[i][5];
 			var post_likes = post_array[i][6];
 			var post_replies = post_array[i][7];
@@ -180,7 +176,7 @@ $(document).ready(function(){
 			var post_tag = document.createElement("span");
 			post_tag.innerHTML = post_category;
 			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge badge badge-primary category-tags p-2 mr-2");
+			post_tag.setAttribute("class", "badge color-blue category-tags p-2 mr-2");
 			card_body.append(post_tag_title);
 			var post_main_title = document.createElement("h5");
 			post_main_title.innerHTML = post_title;
@@ -195,14 +191,14 @@ $(document).ready(function(){
 
 			//card footer
 			var card_footer= document.createElement("div");
-			card_footer.setAttribute("class", "card-footer");
+			card_footer.setAttribute("class", "pb-0 pt-1 align-middle color-yellow card-footer");
 			post_card.append(card_footer);
 			var footer_row= document.createElement("div");
 			footer_row.setAttribute("class", "row");
 			var username= document.createElement("div");
-			username.setAttribute("class", "col-lg-1 col-md-1 col-sm-3 col-1 text-right");
+			username.setAttribute("class", "align-middle col-lg-1 col-md-1 col-sm-3 col-1 text-right");
 			var profile_pic= document.createElement("img");
-			profile_pic.setAttribute("class", "rounded-circle user-circle");
+			profile_pic.setAttribute("class", "mt-2 rounded-circle user-circle");
 			profile_pic.setAttribute("width", "24em");
 			profile_pic.setAttribute("src", "duck.jpg");
 			profile_pic.setAttribute("height", "24em");
@@ -212,27 +208,33 @@ $(document).ready(function(){
 
 			//poster name
 			var poster_name= document.createElement("div");
-			poster_name.setAttribute("class", "col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
+			poster_name.setAttribute("class", "pt-2 col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
 			poster_name.innerHTML = post_poster;
 			footer_row.append(poster_name);
 
 			var likes_comments = document.createElement("div");
-			likes_comments.setAttribute("class", "col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
+			likes_comments.setAttribute("class", "mb-1 col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary");
 			var comment_icon = document.createElement("img");
-			comment_icon.setAttribute("class", "comment_icon");
+			// comment_icon.setAttribute("class", "comment_icon");
 			comment_icon.setAttribute("src", "icons/chat.svg");
 			comment_icon.setAttribute("width", "18em");
 			comment_icon.setAttribute("height", "18em");
-			likes_comments.append(comment_icon);
+			comment_icon.setAttribute('class', 'mt-2');
+			// likes_comments.append(comment_icon);
+			var comment_total_div = document.createElement('div');
+			comment_total_div.setAttribute('class', 'pt-1 d-inline');
 			var comment_total = document.createElement("span");
-			comment_total.setAttribute('class', 'ml-2 mr-3');
+			comment_total.setAttribute('class', 'align-bottom mt-2 ml-2 mr-3');
+			comment_total.setAttribute('height', '32em');
 			if (post_replies == 1){
 				comment_total.innerHTML = post_replies + " Reply";
 			}
 			else{
 				comment_total.innerHTML = post_replies + " Replies";
 			}
-			likes_comments.append(comment_total);
+			comment_total_div.append(comment_icon);
+			comment_total_div.append(comment_total);
+			likes_comments.append(comment_total_div);
 
 			var likes_icon = document.createElement("img");
 			if (liked){
@@ -242,13 +244,14 @@ $(document).ready(function(){
 				likes_icon.setAttribute("src", "icons/heart.svg");
 			}
 			// likes_icon.setAttribute("src", "icons/heart.svg");
-			likes_icon.setAttribute("class", "comment_icon");
+			// likes_icon.setAttribute("class", "comment_icon");
 			likes_icon.setAttribute("width", "18em");
 			likes_icon.setAttribute("height", "18em");
+			likes_icon.setAttribute('class', 'mt-2');
 			likes_comments.append(likes_icon);
 			var likes_total = document.createElement("span");
-			likes_total.setAttribute('class', 'mx-2 likes-and-comment');
-			likes_total.setAttribute('class', 'ml-2 mr-3');
+			likes_total.setAttribute('class', 'align-bottom ml-2 mr-3 mt-1 likes-and-comment');
+			// likes_total.setAttribute('class', 'ml-2 mr-3');
 			if (post_likes == 1){
 				likes_total.innerHTML = post_likes + " Like";
 			}
@@ -257,9 +260,9 @@ $(document).ready(function(){
 			}
 			likes_comments.append(likes_total);
 
-			var read_post = document.createElement("a");
-			read_post.setAttribute("class", "btn btn-primary float-right btn-sm read_post");
-			read_post.innerHTML = "Read Post";
+			var read_post = document.createElement("button");
+			read_post.setAttribute("class", "mb-1 btn float-right color-yellow text-black read_post");
+			read_post.innerHTML = "READ POST";
 			likes_comments.append(read_post);
 
 			footer_row.append(likes_comments);
@@ -343,7 +346,8 @@ $(document).ready(function(){
 
         	};
 		});
-		$(".spinner").hide();
+		// $(".spinner").hide();
+
 	}
 
 	$('.categories').on('click', function() {
@@ -354,7 +358,29 @@ $(document).ready(function(){
         else if (this.innerHTML == "Health") { window.open('forum_homepage_health.html', '_self'); }
         else if (this.innerHTML == "Random") { window.open('forum_homepage_other.html', '_self'); }
     });
+
+    // $(document).on('mouseenter', '.whole_card', function(){
+    //     $(this).animate({marginTop: "-=3%"}, 150);
+    // });   
+
+    $(document).on("mouseenter", ".whole_card", function() {
+        $(this).animate({
+            marginTop: "-=3%"
+        }, 250)
+        $(this).removeClass("shadow-sm").addClass("shadow")
+    })
+    $(document).on("mouseleave", ".whole_card", function() {
+        $(this).animate({
+            marginTop: "0"
+        }, 250)
+        $(this).removeClass("shadow").addClass("shadow-sm")
+    });
+
+    // $(document).on('mouseleave', '.whole_card', function(){
+    //     $(this).animate({marginTop: "0"}, 150);
+    // });
 	// getKey();
+
 	add_new_post();
 
     $('.categories').on('click', function() {
