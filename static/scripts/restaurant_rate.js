@@ -39,7 +39,7 @@ $(document).ready(function() {
     })
 
    $("#search-route-btn").click(function() {
-       console.log("Search button")
+        window.open('routes-index.html','_self')
    })
 
     $("#post-btn").click(function() {

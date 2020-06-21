@@ -93,6 +93,7 @@ async function display_autofill(rest_db) {
         // console.log(res)
         $("#search-input").autocomplete({
             source: res,
+            minLength: 1,
             select: function(event, ui) {
                 $("#search-input").val(ui.item.value)
                 display_query_result(rest_db, $("#search-input").val())
