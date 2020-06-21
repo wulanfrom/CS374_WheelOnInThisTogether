@@ -184,15 +184,16 @@ body{
 
 #post_button:hover{
 	background-color: #1b1b1e;
-	color: yellow;
+	color: white;
 }
 
 .read_post:hover{
 	background-color: #1b1b1e;
-	color: yellow;
+	color: white;
 }
 
 .categories:hover{
 	background-color: #fcba04;
 	/*text-weight: bold;*/
 }
+

@@ -426,7 +426,7 @@ $(document).ready(function(){
 		        var childValue = childSnapshot.val(); //object
 		        comment_array.push(Object.values(childValue)); //convert object to array
 		    });
-		    $(".spinner").hide();
+		    // $(".spinner").hide();
 
 			comment_array = comment_array.reverse(); //so that most recent comment comes at the top
 			if (comment_array.length > 0){
@@ -527,6 +527,7 @@ $(document).ready(function(){
 				// 	total_like.innerHTML = comment_array.length + " Replies";
 				// }
 			}
+			$(".spinner").hide();
 		});
 
 		//Update number of comments in Firebase

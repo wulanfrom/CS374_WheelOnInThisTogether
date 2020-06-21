@@ -149,8 +149,8 @@ $(document).ready(function(){
 			var post_content = post_array[i][1];
 			var post_key = post_array[i][2];
 			var liked = post_array[i][3];
-			var post_poster = "Wheelie";
-			// var post_poster = post_array[i][4];
+			// var post_poster = "Wheelie";
+			var post_poster = post_array[i][4];
 			var post_title = post_array[i][5];
 			var post_likes = post_array[i][6];
 			var post_replies = post_array[i][7];
@@ -198,7 +198,7 @@ $(document).ready(function(){
 			var username= document.createElement("div");
 			username.setAttribute("class", "align-middle col-lg-1 col-md-1 col-sm-3 col-1 text-right");
 			var profile_pic= document.createElement("img");
-			profile_pic.setAttribute("class", "pt-1 rounded-circle user-circle");
+			profile_pic.setAttribute("class", "mt-2 rounded-circle user-circle");
 			profile_pic.setAttribute("width", "24em");
 			profile_pic.setAttribute("src", "duck.jpg");
 			profile_pic.setAttribute("height", "24em");
@@ -208,7 +208,7 @@ $(document).ready(function(){
 
 			//poster name
 			var poster_name= document.createElement("div");
-			poster_name.setAttribute("class", "pt-1 col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
+			poster_name.setAttribute("class", "pt-2 col-lg-2 col-md-2 col-sm-4 col-4 username align-middle");
 			poster_name.innerHTML = post_poster;
 			footer_row.append(poster_name);
 
@@ -224,7 +224,7 @@ $(document).ready(function(){
 			var comment_total_div = document.createElement('div');
 			comment_total_div.setAttribute('class', 'pt-1 d-inline');
 			var comment_total = document.createElement("span");
-			comment_total.setAttribute('class', 'align-bottom my-1 ml-2 mr-3');
+			comment_total.setAttribute('class', 'align-bottom mt-2 ml-2 mr-3');
 			comment_total.setAttribute('height', '32em');
 			if (post_replies == 1){
 				comment_total.innerHTML = post_replies + " Reply";
