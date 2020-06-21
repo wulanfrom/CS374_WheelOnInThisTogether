@@ -6,9 +6,17 @@
   width: 100%;
 }
 
+.arrow-up-down:hover, .like_icon:hover{
+  cursor: pointer;
+}
+
+body{
+  background-color: #f1f4f7;
+}
+
 #card-individual-likes{
   display: inline-block;
-  color: #1971C2;
+  /* color: #1971C2; */
 }
 
 #card-individual-username{
@@ -31,27 +39,27 @@
 }
 
 #icon-ramp{
-  font-size: 30px;
+  font-size: 60px;
   padding-right: 8px;
   display:table-cell;
   vertical-align:top;
 }
 
 #icon-elevator{
-  font-size: 24px;
+  font-size: 48px;
   padding-right: 4px;
   display:table-cell;
   vertical-align:top;
 }
 
 #icon-wheelchair{
-  font-size: 32px;
+  font-size: 64px;
   padding-right: 8px;
   display:table-cell;
   vertical-align:top;
 }
 
-#individual-pictures{
+#individual-pictures-div{
   margin-top: 16px;
 }
 
@@ -78,13 +86,14 @@
 }
 
 /* Thank you https://stackoverflow.com/questions/5449031/move-link-image-5px-up-on-hover */
-.route-card:hover {
-    -moz-transform: translate(-5px, -5px);
-    -ms-transform: translate(-5px, -5px);
-    -o-transform: translate(-5px, -5px);
-    -webkit-transform: translate(-5px, -5px);
-    transform: translate(-5px, -5px)
-}
+/* .route-card:hover {
+    -moz-transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
+    cursor: pointer;
+} */
 
 .route-card-contents{
   max-height: 120px;
@@ -140,8 +149,12 @@
     left: 45%;
     top: 35%;
     margin: 0px;
-    color: #1971C2;
+    /* color: #fcba04; */
     opacity: 100%;
+}
+
+.underline{
+  border-bottom: 4px solid #fcba04;
 }
 
 .username-created{
@@ -190,7 +203,7 @@
 .ui-state-focus {
   text-decoration: none;
   color: #262626;
-  background: #D0EBFF;
+  background-color: #D0EBFF;
   cursor: pointer;
 }
 

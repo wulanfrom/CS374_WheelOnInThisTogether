@@ -153,15 +153,15 @@ function loadCard(id, imgl, title, username, likes, desc, ramp, ele, wheel, like
 
 
   if (liked) {
-    card = card + "</div></div></div><div class='card-footer pb-0'>" +
-      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+    card = card + "</div></div></div><div class='card-footer color-yellow pb-0'>" +
+      "<img src='homepagePictures/duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username text-black'>" +
       username + "</p><div class='float-right'><img src='icons/heart-fill.svg' width='18' height='18'>" +
-      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment text-black'>" + likes + " Likes </span></div></div></div>";
   } else {
-    card = card + "</div></div></div><div class='card-footer pb-0'>" +
-      "<img src='duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username'>" +
+    card = card + "</div></div></div><div class='card-footer color-yellow pb-0'>" +
+      "<img src='homepagePictures/duck.jpg' width='24em' height='24em' class='rounded-circle profile-pic'><p class='route-card-username text-black'>" +
       username + "</p><div class='float-right'><img src='icons/heart.svg' width='18' height='18'>" +
-      "<span class='mx-2 pl-0 route-number-likes likes-and-comment'>" + likes + " Likes </span></div></div></div>";
+      "<span class='mx-2 pl-0 route-number-likes likes-and-comment text-black'>" + likes + " Likes </span></div></div></div>";
   }
 
   //$('#routes-index-main').append(card);
@@ -322,6 +322,12 @@ $("#addToMyListCard").click(function() {
   alert("Sorry, 'Add to My List' is not implemented yet.");
 })
 
+$(".arrow-up-down").click(function() {
+  var temp = document.getElementById("fromPlace").value;
+  document.getElementById("fromPlace").value = document.getElementById("toPlace").value;
+  document.getElementById("toPlace").value = temp;
+})
+
 $(document).on("click", ".route-card", function() {
   movePage($(this));
 })
@@ -354,4 +360,17 @@ $('.like_icon').on('click', function() {
   var this_id = document.getElementById("hidID");
   var id = this_id.innerHTML;
   click_heart(id);
+})
+
+$(document).on("mouseenter", ".route-card", function() {
+    $(this).animate({
+        marginTop: "-=3%"
+    }, 250)
+    $(this).removeClass("shadow").addClass("shadow-lg")
+})
+$(document).on("mouseleave", ".route-card", function() {
+    $(this).animate({
+        marginTop: "0"
+    }, 250)
+    $(this).removeClass("shadow-lg").addClass("shadow")
 })
