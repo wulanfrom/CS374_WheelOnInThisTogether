@@ -2,6 +2,10 @@ h1 h2 h3 h4 h5 h6 p{
 	color:#1B1B1E;
 }
 
+.all_items {
+	background-color: #f1f4f7;
+}
+
 .rest-card{
 	border-radius: 10px;
 }
@@ -11,24 +15,12 @@ h1 h2 h3 h4 h5 h6 p{
 	border-top-right-radius:10px;
 }
 
-.forum_section{
-	background-color: lightgray;
-}
-
-.quote{
-	background-color: red;
-}
-
 .advice_card{
-	border-radius: 50px;
+	border-radius:10px;
 }
 
 .our_buttons{
 	border-radius: 10px;
-}
-
-.nav-link:hover{
-	color: #a9bcd0;
 }
 
 .advice_card:hover {
@@ -37,6 +29,42 @@ h1 h2 h3 h4 h5 h6 p{
 
 .rest-card:hover {
 	cursor: pointer;
+}
+
+.ui-autocomplete.ui-widget {
+ 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  	font-size: 1rem;
+}
+
+.ui-autocomplete {
+  	position: absolute;
+  	top: 100%;
+  	left: 0;
+  	z-index: 1000;
+  	overflow-x: hidden;
+  	display: none;
+  	float: left;
+  	min-width: 160px;
+  	padding: 5px 0;
+  	margin: 2px 0 0;
+  	list-style: none;
+  	text-align: left;
+  	background-color: #ffffff;
+  	border: 1px solid rgba(0, 0, 0, 0.15);
+  	border-radius: 4px;
+  	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  	background-clip: padding-box;
+}
+
+.ui-autocomplete > li > div {
+	display: block;
+  	padding: 3px 20px;
+  	clear: both;
+  	font-weight: normal;
+  	line-height: 1.42857143;
+  	color: #333333;
+  	white-space: nowrap;
 }
 
 .text-black{
@@ -64,7 +92,7 @@ h1 h2 h3 h4 h5 h6 p{
 }
 
 .color-coal{
-	background-color: #373F51;
+	background-color: #373F51!important;
 }
 
 .color-yellow{
@@ -76,5 +104,5 @@ h1 h2 h3 h4 h5 h6 p{
 }
 
 .color-grey{
-	background-color: #d8dbe2;
+	background-color: #d8dbe2!important;
 }
