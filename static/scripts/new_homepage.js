@@ -112,6 +112,5 @@ $(document).ready(function () {
         else if (restaurantRates == "Museum of Fine Arts") { window.open('restaurant_rate.html?name=museum%20of%20fine%20arts','_self'); }
         else if (restaurantRates == "Haeundae Beach") { window.open('restaurant_rate.html?name=haeundae%20beach','_self'); }
         else if (restaurantRates == "Robinsons Otis") { window.open('restaurant_rate.html?name=robinsons%20otis','_self'); }
-        window.open('restaurant_rate.html?name='+restaurantRates.toLowerCase(), '_self')
     }) 
 });
