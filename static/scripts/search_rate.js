@@ -177,7 +177,9 @@ async function get_rest_names() {
 }
 
 function display_explore(rest_db) {
-    for (i = 0; i < 3; i++)  {
-        display_rest_card(rest_db[i])
+    console.log("hey")
+    console.log(rest_db.length)
+    for (i = 1; i < 4; i++)  {
+        display_rest_card(rest_db[rest_db.length-i])
     }
 }

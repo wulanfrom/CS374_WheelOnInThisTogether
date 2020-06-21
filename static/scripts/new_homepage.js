@@ -42,9 +42,6 @@ $(document).ready(function () {
     //RATES CLICK PLACES
     $('.rest-card').on('click', function() {
         let restaurantRates = $(this).find('.card-title').html();
-        if (restaurantRates == "BUFF-EAT") { console.log("Buff-Eat"); }
-        else if (restaurantRates == "JFC") { console.log("JFC"); }
-        else if (restaurantRates == "PIZZY") { console.log("Pizzy"); }
-        else if (restaurantRates == "MCDONALDS") { console.log("McDonalds"); }
+        window.open('restaurant_rate.html?name='+restaurantRates.toLowerCase(), '_self')
     }) 
 });
