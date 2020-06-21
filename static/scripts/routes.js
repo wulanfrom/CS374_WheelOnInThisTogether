@@ -361,3 +361,16 @@ $('.like_icon').on('click', function() {
   var id = this_id.innerHTML;
   click_heart(id);
 })
+
+$(document).on("mouseenter", ".route-card", function() {
+    $(this).animate({
+        marginTop: "-=3%"
+    }, 250)
+    $(this).removeClass("shadow").addClass("shadow-lg")
+})
+$(document).on("mouseleave", ".route-card", function() {
+    $(this).animate({
+        marginTop: "0"
+    }, 250)
+    $(this).removeClass("shadow-lg").addClass("shadow")
+})

@@ -52,12 +52,12 @@
           <form>
             <div class="form-group routes-form">
               <label for="fromPlace">FROM</label><br>
-              <input placeholder="Search for your starting place" class="input_default routes-input form-control" id="fromPlace">
+              <input placeholder="I want to go from ..." class="input_default routes-input form-control" id="fromPlace">
             </div>
             <img src="icons/arrow-down-up.svg" class="arrow-up-down float-right" alt="arrow-up-down-logo">
             <div class="form-group">
               <label for="toPlace">TO</label><br>
-              <input placeholder="Search for your destination place" class="input_default routes-input form-control" id="toPlace">
+              <input placeholder="I want to go to ..." class="input_default routes-input form-control" id="toPlace">
             </div>
             <button type="button" class="btn color-yellow border-0 text-black" id="addRouteButton">Add Route</button>
             <button type="button" class="btn color-yellow border-0 text-black float-right" id="searchRouteButton">Search Route</button>
@@ -176,7 +176,7 @@
           $(".spinner").hide();
         })
       } else {
-        $("#recommended-routes").append("<h4 id='recommended-routes-text'>Recommended Routes</h4>");
+        $("#recommended-routes").append("<h4 id='recommended-routes-text'>Not sure where to go? Check out our recommended routes!</h4>");
         var dataList = [];
         var query = routesRef.orderByKey();
         query.limitToFirst(2).once('value').then(function(snapshot) {
