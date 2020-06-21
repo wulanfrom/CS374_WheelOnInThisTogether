@@ -1,6 +1,10 @@
+#addRouteButton:hover, #searchRouteButton:hover, #goRatesButton:hover{
+  color: white;
+}
+/*
 #addToMyListCard{
   padding-top:8px;
-}
+} */
 
 #addToMyListCardLists{
   width: 100%;
@@ -63,6 +67,11 @@ body{
   margin-top: 16px;
 }
 
+#goRatesButton{
+  width: 50%;
+  display: inline-block;
+}
+
 #no_result{
   position: absolute;
   top: 260px;
@@ -73,6 +82,12 @@ body{
   height: 156px;
   margin: 12px 4px 0 0;
   display: inline-block;
+}
+
+/* Idea by https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
+.place-picture:hover{
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 #recommended-routes{
@@ -145,7 +160,7 @@ body{
 }
 
 .spinner-border {
-    position: relative;
+    position: absolute;
     left: 45%;
     top: 35%;
     margin: 0px;

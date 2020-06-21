@@ -23,13 +23,13 @@ query.once('value').then(function(snapshot) {
     source: from_set,
     autoFocus: true,
     delay: 0,
-    minLength: 0
+    minLength: 1
   });
   $("#toPlace").autocomplete({
     source: to_set,
     autoFocus: true,
     delay: 0,
-    minLength: 0
+    minLength: 1
   });
 })
 
@@ -311,16 +311,49 @@ $("#individual-backto").click(function() {
 
 $("#searchRouteButton").click(function() {
   //  changeMapPlace(document.getElementById("toPlace").value);
-  searchRoute();
+
+  let inputsFrom = document.getElementById('fromPlace').value;
+  let inputsTo = document.getElementById('toPlace').value;
+  let alertMessage = document.getElementsByClassName('alertMessage')[0];
+
+  $('.alertMessage').addClass('alert alert-danger');
+
+  if ((inputsFrom == "") && (inputsTo == "")) {
+    alertMessage.innerHTML = "Please fill in your starting place and destination."
+    $(".alertMessage").slideDown()
+    setTimeout(function() {
+      $(".alertMessage").slideUp()
+    }, 5000);
+  } else if (inputsFrom == "") {
+    alertMessage.innerHTML = "Please fill in your starting place.";
+    $(".alertMessage").slideDown()
+    setTimeout(function() {
+      $(".alertMessage").slideUp()
+    }, 5000);
+  } else if (inputsTo == "") {
+    alertMessage.innerHTML = "Please fill in your destination.";
+    $(".alertMessage").slideDown()
+    setTimeout(function() {
+      $(".alertMessage").slideUp()
+    }, 5000);
+  } else {
+    searchRoute();
+  }
 })
 
 $("#addRouteButton").click(function() {
   alert("Sorry, 'Add Routes' is not implemented yet. Please search from the available routes.");
 })
 
-$("#addToMyListCard").click(function() {
-  alert("Sorry, 'Add to My List' is not implemented yet.");
+$("#goRatesButton").click(function() {
+  var destrate = document.getElementById("hidtoPlace").innerHTML;
+  var destencoded = encodeURIComponent(destrate.toLowerCase());
+  window.location.href = "restaurant_rate.html?name=" + destencoded;
 })
+
+// $("#addToMyListCard").click(function() {
+//   alert("Sorry, 'Add to My List' is not implemented yet.");
+// })
 
 $(".arrow-up-down").click(function() {
   var temp = document.getElementById("fromPlace").value;
@@ -363,14 +396,20 @@ $('.like_icon').on('click', function() {
 })
 
 $(document).on("mouseenter", ".route-card", function() {
-    $(this).animate({
-        marginTop: "-=3%"
-    }, 250)
-    $(this).removeClass("shadow").addClass("shadow-lg")
+  $(this).animate({
+    marginTop: "-=3%"
+  }, 250)
+  $(this).removeClass("shadow").addClass("shadow-lg")
 })
 $(document).on("mouseleave", ".route-card", function() {
-    $(this).animate({
-        marginTop: "0"
-    }, 250)
-    $(this).removeClass("shadow-lg").addClass("shadow")
+  $(this).animate({
+    marginTop: "0"
+  }, 250)
+  $(this).removeClass("shadow-lg").addClass("shadow")
 })
+
+//Thank you very much http://jsfiddle.net/4p57wx8r/
+$(document).on("click", ".place-picture", function() {
+  $('.imagepreview').attr('src', $(this).attr('src'));
+  $('#imagemodal').modal('show');
+});
