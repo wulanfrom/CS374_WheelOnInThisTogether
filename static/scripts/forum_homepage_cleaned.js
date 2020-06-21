@@ -350,7 +350,7 @@ $(document).ready(function(){
 
         	};
 		});
-		$(".spinner").hide();
+		// $(".spinner").hide();
 	}
 
 	$('.categories').on('click', function() {

@@ -433,15 +433,18 @@ $(document).ready(function(){
 
 	//Load all pre-existing comments
 	function get_comments(){
+		$(".spinner").show();
 		var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
 		comment_array = [];
 		var comments_section_length = 0;
+		$(".spinner").show();
 		firebase.database().ref("post_comment/"+ post_key +"/user_comments/").once('value', function(snapshot){
 			snapshot.forEach(function(childSnapshot){
 		        var childKey = childSnapshot.key;
 		        var childValue = childSnapshot.val(); //object
 		        comment_array.push(Object.values(childValue)); //convert object to array
 		    });
+		    $(".spinner").hide();
 
 			comment_array = comment_array.reverse(); //so that most recent comment comes at the top
 			if (comment_array.length > 0){

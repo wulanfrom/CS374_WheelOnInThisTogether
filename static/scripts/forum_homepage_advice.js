@@ -113,9 +113,11 @@ $(document).ready(function(){
 	});
 	
 	function add_new_post(){
+		$(".spinner").show();
 		var post_section = document.getElementById('post_container');
 		// post_container.innerHTML = "";
 		post_array = []; 
+		$(".spinner").show();
 		firebase.database().ref('post_comment').once('value', function(snapshot){
 			snapshot.forEach(function(childSnapshot){
 			var childKey = childSnapshot.key; //key of post
@@ -126,6 +128,7 @@ $(document).ready(function(){
 			}
 			// post_array.push(Object.values(childContent)); //convert to array
 		});
+		$(".spinner").hide();
 
 		post_array = post_array.reverse(); //so most recent post is displayed at the top
 		if (post_array.length > 0){
