@@ -39,7 +39,7 @@ $(document).ready(function() {
     })
 
    $("#search-route-btn").click(function() {
-       console.log("Search button")
+        window.open('routes-index.html','_self')
    })
 
     $("#post-btn").click(function() {
@@ -188,15 +188,15 @@ $(document).ready(function() {
 
 function insert_data() {
     var new_data = {
-        name: "sungsimdang bakery",
-        address: "15 Daejong-ro 480beon-gil, Eunhaeng-dong, Jung-gu, Daejeon, South Korea",
-        site: "https://www.starbucks.co.kr/",
+        name: "museum of fine arts",
+        address: "465 Huntington Ave, Boston, MA 02115, United States",
+        site: "www.mfa.org",
         rating: {
             accessibility: 4,
             facility: 4,
             safety: 4,
         },
-        tel: "+82 1588-8069",
+        tel: "617-267-9300",
         user_ratings: [{
             accessibility: 4,
             facility: 4,
