@@ -37,12 +37,8 @@ $(document).ready(function(){
 		console.log('button is pushed');
 		get_post();
 		add_new_post();
-
-		//Clear Input box
-		const topic_input = document.getElementById("topic_input");
-		const user_input = document.getElementById("user_input");
-		topic_input.innerHTML = "";
-		user_input.innerHTML = "";
+		document.getElementById("input_default").value = "";
+		document.getElementById("user_input").value = "";
 	});
 
 	// $('.heart_button').hover(function(){
@@ -351,6 +347,7 @@ $(document).ready(function(){
         	};
 		});
 		// $(".spinner").hide();
+
 	}
 
 	$('.categories').on('click', function() {
