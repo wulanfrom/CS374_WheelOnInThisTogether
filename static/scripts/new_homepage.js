@@ -60,24 +60,24 @@ $(document).ready(function () {
 
         if ((inputsFrom == "") && (inputsTo == "")) { 
             alertMessage.innerHTML = "Please fill in your starting place and destination."
-            setTimeout(function(){
-                $('.alertMessage').removeClass('alert alert-danger');
-                alertMessage.innerHTML = "";
-            }, 3000);
+            $(".alertMessage").slideDown()
+            setTimeout(function() {
+                $(".alertMessage").slideUp()
+            }, 5000);
         }
         else if (inputsFrom == "") { 
             alertMessage.innerHTML = "Please fill in your starting place.";
-            setTimeout(function(){
-                $('.alertMessage').removeClass('alert alert-danger');
-                alertMessage.innerHTML = "";
-            }, 3000);
+            $(".alertMessage").slideDown()
+            setTimeout(function() {
+                $(".alertMessage").slideUp()
+            }, 5000);
         }
         else if (inputsTo == "") { 
             alertMessage.innerHTML = "Please fill in your destination.";
-            setTimeout(function(){
-                $('.alertMessage').removeClass('alert alert-danger');
-                alertMessage.innerHTML = "";
-            }, 3000);
+            $(".alertMessage").slideDown()
+            setTimeout(function() {
+                $(".alertMessage").slideUp()
+            }, 5000);
         }
         else {
             for (k=0; k<from_places.length; k++) {
