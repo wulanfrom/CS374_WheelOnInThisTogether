@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.arrow-up-down:hover, .like_icon:hover{
+  cursor: pointer;
+}
+
 body{
   background-color: #f1f4f7;
 }
@@ -82,14 +86,14 @@ body{
 }
 
 /* Thank you https://stackoverflow.com/questions/5449031/move-link-image-5px-up-on-hover */
-.route-card:hover {
-    -moz-transform: translate(-5px, -5px);
-    -ms-transform: translate(-5px, -5px);
-    -o-transform: translate(-5px, -5px);
-    -webkit-transform: translate(-5px, -5px);
-    transform: translate(-5px, -5px);
+/* .route-card:hover {
+    -moz-transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
     cursor: pointer;
-}
+} */
 
 .route-card-contents{
   max-height: 120px;
@@ -199,7 +203,7 @@ body{
 .ui-state-focus {
   text-decoration: none;
   color: #262626;
-  background: #D0EBFF;
+  background-color: #D0EBFF;
   cursor: pointer;
 }
 

@@ -322,6 +322,12 @@ $("#addToMyListCard").click(function() {
   alert("Sorry, 'Add to My List' is not implemented yet.");
 })
 
+$(".arrow-up-down").click(function() {
+  var temp = document.getElementById("fromPlace").value;
+  document.getElementById("fromPlace").value = document.getElementById("toPlace").value;
+  document.getElementById("toPlace").value = temp;
+})
+
 $(document).on("click", ".route-card", function() {
   movePage($(this));
 })
@@ -354,4 +360,17 @@ $('.like_icon').on('click', function() {
   var this_id = document.getElementById("hidID");
   var id = this_id.innerHTML;
   click_heart(id);
+})
+
+$(document).on("mouseenter", ".route-card", function() {
+    $(this).animate({
+        marginTop: "-=3%"
+    }, 250)
+    $(this).removeClass("shadow").addClass("shadow-lg")
+})
+$(document).on("mouseleave", ".route-card", function() {
+    $(this).animate({
+        marginTop: "0"
+    }, 250)
+    $(this).removeClass("shadow-lg").addClass("shadow")
 })
