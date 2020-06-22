@@ -113,7 +113,7 @@ $(document).ready(function () {
     $('.rest-card').on('click', function() {
         let restaurantRates = $(this).find('.card-title').html();
         if (restaurantRates == "Jungsik Seoul") { window.open('restaurant_rate.html?name=jungsik%20seoul','_self'); }
-        else if (restaurantRates == "Museum of Fine Arts") { window.open('restaurant_rate.html?name=museum%20of%20fine%20arts','_self'); }
+        else if (restaurantRates == "Museum of Fine Arts") { window.open('restaurant_rate.html?name=museum%20of%20fine%20arts,%20boston','_self'); }
         else if (restaurantRates == "Haeundae Beach") { window.open('restaurant_rate.html?name=haeundae%20beach','_self'); }
         else if (restaurantRates == "Robinsons Otis") { window.open('restaurant_rate.html?name=robinsons%20otis','_self'); }
     })
