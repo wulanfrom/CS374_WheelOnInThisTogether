@@ -28,6 +28,9 @@ $(document).ready(function() {
     $("#error-msg").hide()
     $("#error-comment").hide()
     $("#success-msg").hide()
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
 
     get_restaurant_db(rest_name).then((res) => {
         $(".spinner").hide()
@@ -35,6 +38,7 @@ $(document).ready(function() {
         rest_rating = res.val().rating
         rest_comment_size = Object.keys(res.val().user_ratings).length
         console.log(res.val())
+        display_pictures(rest_name, rest_key)
         display_rating_page(res.val())
     })
 
@@ -67,30 +71,35 @@ $(document).ready(function() {
                 safety: safety_input,
                 comment: $("#review-comment").val(),
                 username: "wheelie",
-                likes: 0
+                likes: 0,
+                liked: "no"
             }
             var overall = Math.round((facility_input + access_input+safety_input)/3)
             //Update the restaurant rating on database
             var updates = {}
-            updates['restaurant/'+rest_key+'/rating/overall'] = rest_rating.overall + overall
             updates['restaurant/'+rest_key+'/rating/facility'] = rest_rating.facility + facility_input
             updates['restaurant/'+rest_key+'/rating/accessibility'] = rest_rating.accessibility + access_input
             updates['restaurant/'+rest_key+'/rating/safety'] = rest_rating.safety + safety_input
 
             //Update the rating on the page
-            rest_rating.overall = rest_rating.overall + overall
             rest_rating.facility = rest_rating.facility + facility_input
             rest_rating.accessibility = rest_rating.accessibility + access_input
             rest_rating.safety = rest_rating.safety + safety_input
 
             rest_comment_size = rest_comment_size + 1
+            console.log(rest_rating)
+            console.log(rest_rating)
             update_page_star(rest_rating, rest_comment_size)
 
+            console.log(overall)
             firebase.database().ref().update(updates)
             console.log(input_data)
-            insert_new_comment(rest_key, input_data).then(function() {
+            insert_new_comment(rest_key, input_data).then(function(res) {
                 //Refresh and add the new comment
-                $("#comment-list").prepend(comment_format(input_data))
+                var with_key = [res, input_data]
+                console.log("wow")
+                console.log(res)
+                $("#comment-list").prepend(comment_format(with_key))
                 $("#rating-modal").modal('hide')
                 $("#success-msg").slideDown()
                 setTimeout(function() {
@@ -244,13 +253,40 @@ async function display_image(rest_name) {
     }
 }
 
+async function display_pictures(rest_name, rest_key) {
+    try {
+        var ref = firebase.database().ref("restaurant/"+rest_key+"/pictures")
+        // var result = null
+        await ref.once('value', function(snapshot) {
+            snapshot.forEach(res => {
+                var img_ref = firebase.storage().ref('restaurants/'+rest_name+'/'+res.val())
+                img_ref.getDownloadURL().then(function(url) {
+                    //Display the image
+                    console.log(url)
+                    add_picture(url)
+                    // $(".rstrnt-img").attr("src", url)
+                })
+            });
+        })
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+function add_picture(picture_url) {
+    var picture_html = "<div class='col-md-4'> <img src='" + picture_url + "' class='picture-card'> </div>"
+    $("#picture-list").append(picture_html)
+}
+
 function comment_format(rating_entry) {
     var comment_key = rating_entry[0]
     const user_rating = rating_entry[1]
+    console.log(rating_entry)
     var liked_icon = "<img src='icons/heart.svg' width='18' height='18' class='heart-unfilled'>"
-    if (user_rating.liked == "yes") {
-        liked_icon = "<img src='icons/heart-fill.svg' width='18' height='18' class='heart-filled'>"
-    }
+    // if (user_rating.liked == "yes") {
+    //     liked_icon = "<img src='icons/heart-fill.svg' width='18' height='18' class='heart-filled'>"
+    // }
     //Comment star
     var facility_star = "<div class='col-lg-6 col-md-6 col-sm-6 col-6'><h5>" + generate_star(user_rating.facility) +"</h5></div>"
     var facility_title = "<div class='col-lg-5 col-md-6 col-sm-6 col-6'><h5 class='category-title py-1'> Facility </h5></div>"
@@ -321,13 +357,18 @@ function generate_star(num, size=24) {
     for (i = 0; i < num; i++) {
         star_html += "<img src='icons/star-fill.svg' width='"+size+"' height='"+size+"'></img>\n"
     }
+    for (i = 0; i < 5-num; i++) {
+        star_html += "<img src='icons/star.svg' width='"+size+"' height='"+size+"'></img>\n"
+    }
     return star_html
 }
 
 async function insert_new_comment(rest_key, new_comment) {
     try {
         const ref = firebase.database().ref("restaurant/"+rest_key).child("user_ratings")
-        await ref.push(new_comment)
+        var result = await ref.push(new_comment)
+        console.log(result.key)
+        return result.key
     }
     catch(error) {
         console.log(error)
@@ -337,8 +378,12 @@ async function insert_new_comment(rest_key, new_comment) {
 
 function update_page_star(rest_rating, size) {
     const rating = rest_rating
-    $(".rstrnt-overall").html(generate_star(Math.round(rating.overall/size), 36))
+    var overall = (rating.facility + rating.accessibility + rating.safety)/3
+    console.log(overall)
+    $(".rstrnt-overall").html(generate_star(Math.round(overall/size), 36))
     $(".rstrnt-facility").html(generate_star(Math.round(rating.facility/size), 24))
     $(".rstrnt-access").html(generate_star(Math.round(rating.accessibility/size), 24))
     $(".rstrnt-safety").html(generate_star(Math.round(rating.safety/size), 24))
+
+    $(".overall-avg").text(Math.round(overall*100/size)/100)
 }
