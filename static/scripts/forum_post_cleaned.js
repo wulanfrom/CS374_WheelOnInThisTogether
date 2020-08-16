@@ -142,7 +142,7 @@ $(document).ready(function(){
 			var items = snapshot.val();
 			var items_content = Object.values(items);
 			// console.log('items: '+ Object.values(items));
-			var liked = items_content[5];
+			var liked = items_content[2];
 			// console.log('liked: '+ !liked);
 			console.log('liked: '+ liked);
 			//If liked, popup comes up
